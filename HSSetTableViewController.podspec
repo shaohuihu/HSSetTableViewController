@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.author             = { "hushaohui" => "hushaohui186@gmail.com" }
 
   s.source       = { :git => "https://github.com/shaohuihu/HSSetTableViewController.git", :tag => s.version }
-  s.source_files  = "HSSetTableViewController"
+  s.source_files  = "HSSetTableViewController/**/*.{h,m}"
   s.resources     = "HSSetTableViewController/HSSetTableViewController.bundle"
   s.requires_arc = true
   s.framework    = "UIKit"
