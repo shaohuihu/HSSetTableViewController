@@ -13,7 +13,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "UIColor+HSExtension.h"
+
 
 //标题左边的cell间距
 #define HS_KCellMargin 15.0
