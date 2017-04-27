@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/shaohuihu/HSSetTableViewController.git", :tag => s.version }
   s.source_files  = "HSSetTableViewController/*.{h,m}"
+  s.public_header_files = 'HSSetTableViewController/*.{h}'
   s.resources     = "HSSetTableViewController/HSSetTableViewController.bundle"
   s.requires_arc = true
   s.framework    = "UIKit"
