@@ -13,7 +13,7 @@
 /**
  主控制器
  */
-@interface HSSetTableViewController : UITableViewController
+@interface HSSetTableViewMainController : UITableViewController
 
 @property (nonatomic, strong)NSMutableArray *hs_dataArry;  ///<数据源
 

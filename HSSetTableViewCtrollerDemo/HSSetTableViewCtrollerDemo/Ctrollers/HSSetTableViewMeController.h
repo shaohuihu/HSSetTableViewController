@@ -7,7 +7,7 @@
 //
 
 #import "HSSetTableViewController.h"
-
-@interface HSSetTableViewMeController : HSSetTableViewController
+#import "HSSetTableViewController.h"
+@interface HSSetTableViewMeController : HSSetTableViewMainController
 
 @end

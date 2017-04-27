@@ -7,8 +7,7 @@
 //
 
 #import "HSSetTableViewControllerConst.h"
-#import "HSSetTableViewController.h"
-#import "HSSetTableViewControllerHeader.h"
+#import "HSSetTableViewMainController.h"
 #import "HSBaseCellModel.h"
 #import "HSTextCellModel.h"
 #import "HSSwitchCellModel.h"

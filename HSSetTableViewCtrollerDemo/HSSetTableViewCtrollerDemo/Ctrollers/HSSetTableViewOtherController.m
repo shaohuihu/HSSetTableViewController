@@ -7,7 +7,7 @@
 //
 
 #import "HSSetTableViewOtherController.h"
-#import "HSSetTableViewControllerHeader.h"
+#import "HSSetTableViewController.h"
 #import "UIImageView+WebCache.h"
 #import "SDWebImageManager.h"
 @interface HSSetTableViewOtherController ()

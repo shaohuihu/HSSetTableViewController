@@ -6,18 +6,18 @@
 //  Copyright © 2017年 ZLHD. All rights reserved.
 //
 
-#import "HSSetTableViewController.h"
+#import "HSSetTableViewMainController.h"
 #import "HSBaseTableViewCell.h"
 #import "HSBaseCellModel.h"
 #import "NSArray+HSSafeAccess.h"
 #import "UIView+HSFrame.h"
 #import "HSSetTableViewControllerConst.h"
 #import "HSTextCellModel.h"
-@interface HSSetTableViewController ()
+@interface HSSetTableViewMainController ()
 
 @end
 
-@implementation HSSetTableViewController
+@implementation HSSetTableViewMainController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

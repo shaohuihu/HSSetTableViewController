@@ -39,7 +39,7 @@
 		3BFD665F1EB1DD050001E324 /* NSString+HSHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD663F1EB1DD050001E324 /* NSString+HSHeight.m */; };
 		3BFD66601EB1DD050001E324 /* UIColor+HSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD66411EB1DD050001E324 /* UIColor+HSExtension.m */; };
 		3BFD66611EB1DD050001E324 /* UIView+HSFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD66431EB1DD050001E324 /* UIView+HSFrame.m */; };
-		3BFD66621EB1DD050001E324 /* HSSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD66461EB1DD050001E324 /* HSSetTableViewController.m */; };
+		3BFD66621EB1DD050001E324 /* HSSetTableViewMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD66461EB1DD050001E324 /* HSSetTableViewMainController.m */; };
 		3BFD66631EB1DD050001E324 /* HSSetTableViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BFD66471EB1DD050001E324 /* HSSetTableViewController.bundle */; };
 		3BFD66641EB1DD050001E324 /* HSSetTableViewControllerConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD66491EB1DD050001E324 /* HSSetTableViewControllerConst.m */; };
 		3BFD66651EB1DD050001E324 /* HSBaseCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD664D1EB1DD050001E324 /* HSBaseCellModel.m */; };
@@ -135,12 +135,12 @@
 		3BFD66411EB1DD050001E324 /* UIColor+HSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HSExtension.m"; sourceTree = "<group>"; };
 		3BFD66421EB1DD050001E324 /* UIView+HSFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HSFrame.h"; sourceTree = "<group>"; };
 		3BFD66431EB1DD050001E324 /* UIView+HSFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HSFrame.m"; sourceTree = "<group>"; };
-		3BFD66451EB1DD050001E324 /* HSSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetTableViewController.h; sourceTree = "<group>"; };
-		3BFD66461EB1DD050001E324 /* HSSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSetTableViewController.m; sourceTree = "<group>"; };
+		3BFD66451EB1DD050001E324 /* HSSetTableViewMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetTableViewMainController.h; sourceTree = "<group>"; };
+		3BFD66461EB1DD050001E324 /* HSSetTableViewMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSetTableViewMainController.m; sourceTree = "<group>"; };
 		3BFD66471EB1DD050001E324 /* HSSetTableViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HSSetTableViewController.bundle; sourceTree = "<group>"; };
 		3BFD66481EB1DD050001E324 /* HSSetTableViewControllerConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetTableViewControllerConst.h; sourceTree = "<group>"; };
 		3BFD66491EB1DD050001E324 /* HSSetTableViewControllerConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSetTableViewControllerConst.m; sourceTree = "<group>"; };
-		3BFD664A1EB1DD050001E324 /* HSSetTableViewControllerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetTableViewControllerHeader.h; sourceTree = "<group>"; };
+		3BFD664A1EB1DD050001E324 /* HSSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetTableViewController.h; sourceTree = "<group>"; };
 		3BFD664C1EB1DD050001E324 /* HSBaseCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSBaseCellModel.h; sourceTree = "<group>"; };
 		3BFD664D1EB1DD050001E324 /* HSBaseCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSBaseCellModel.m; sourceTree = "<group>"; };
 		3BFD664E1EB1DD050001E324 /* HSImageCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSImageCellModel.h; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 				3BFD66471EB1DD050001E324 /* HSSetTableViewController.bundle */,
 				3BFD66481EB1DD050001E324 /* HSSetTableViewControllerConst.h */,
 				3BFD66491EB1DD050001E324 /* HSSetTableViewControllerConst.m */,
-				3BFD664A1EB1DD050001E324 /* HSSetTableViewControllerHeader.h */,
+				3BFD664A1EB1DD050001E324 /* HSSetTableViewController.h */,
 				3BFD664B1EB1DD050001E324 /* Model */,
 				3BFD66541EB1DD050001E324 /* View */,
 			);
@@ -346,8 +346,8 @@
 		3BFD66441EB1DD050001E324 /* Ctroller */ = {
 			isa = PBXGroup;
 			children = (
-				3BFD66451EB1DD050001E324 /* HSSetTableViewController.h */,
-				3BFD66461EB1DD050001E324 /* HSSetTableViewController.m */,
+				3BFD66451EB1DD050001E324 /* HSSetTableViewMainController.h */,
+				3BFD66461EB1DD050001E324 /* HSSetTableViewMainController.m */,
 			);
 			path = Ctroller;
 			sourceTree = "<group>";
@@ -545,7 +545,7 @@
 				3BB3C4A91EAB991D004A9BA9 /* ViewController.m in Sources */,
 				3B07CCF71EB1A21300CB0ADE /* SDWebImageDownloaderOperation.m in Sources */,
 				3B07CCF91EB1A21300CB0ADE /* SDWebImagePrefetcher.m in Sources */,
-				3BFD66621EB1DD050001E324 /* HSSetTableViewController.m in Sources */,
+				3BFD66621EB1DD050001E324 /* HSSetTableViewMainController.m in Sources */,
 				3B07CCFD1EB1A21300CB0ADE /* UIImage+WebP.m in Sources */,
 				3B07CCF81EB1A21300CB0ADE /* SDWebImageManager.m in Sources */,
 				3B07CCF21EB1A21300CB0ADE /* NSData+ImageContentType.m in Sources */,

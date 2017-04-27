@@ -7,10 +7,10 @@
 //
 
 #import "HSSetTableViewController.h"
-
+#import "HSSetTableViewController.h"
 /**
  个人信息
  */
-@interface HSSetTableInfoController : HSSetTableViewController
+@interface HSSetTableInfoController : HSSetTableViewMainController
 
 @end

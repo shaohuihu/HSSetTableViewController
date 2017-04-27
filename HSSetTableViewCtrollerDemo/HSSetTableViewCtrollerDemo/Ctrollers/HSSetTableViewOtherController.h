@@ -7,10 +7,11 @@
 //
 
 #import "HSSetTableViewController.h"
+#import "HSSetTableViewController.h"
 
 /**
  复杂界面
  */
-@interface HSSetTableViewOtherController : HSSetTableViewController
+@interface HSSetTableViewOtherController : HSSetTableViewMainController
 
 @end
