@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.description  = <<-DESC
+                   The generic tableView sets the interface wrapper, including cell updates, multiple lines of text on the right, and single line text. Switch and picture cell model, easy to use, automatic code layout, support for rotation, integration is simple.
                    DESC
   s.homepage     = "https://github.com/shaohuihu/HSSetTableViewController"
   s.license      = { :type => "MIT", :file => "LICENSE" }
