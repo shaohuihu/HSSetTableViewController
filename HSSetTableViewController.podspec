@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
   s.source_files  = "HSSetTableViewController/*.{h,m}"
   s.resources     = "HSSetTableViewController/HSSetTableViewController.bundle"
   s.requires_arc = true
+  s.framework    = "UIKit"
 
 
 end
