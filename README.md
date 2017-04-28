@@ -1,5 +1,4 @@
 # HSSetTableViewController
-===
 A powerful set of interface tableView framework, can be configured to support cell updates
 
 这是一个自定义类似设置界面的tableViewController，包含多种不同cell。代码自动布局，仅需要少量代码就完成界面搭建和功能实现
@@ -7,7 +6,6 @@ A powerful set of interface tableView framework, can be configured to support ce
 使用：继承HSSetTableViewMainController  
 包含头文件
 #import "HSSetTableViewController"
-
 
 HSBaseCellModel *photo = [[HSBaseCellModel alloc] initWithTitle:@"相册" actionBlock:^(HSBaseCellModel *model) {
         HSLog(@"点击相册")
@@ -46,7 +44,7 @@ HSBaseCellModel *photo = [[HSBaseCellModel alloc] initWithTitle:@"相册" action
     [self.tableView reloadData];
     
     需要更新的时候调用：- (void)updateCellModel:(HSBaseCellModel *)cellModel;
-    ----------
+   
  
 
 
