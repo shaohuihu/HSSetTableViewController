@@ -114,8 +114,8 @@
     [self.hs_dataArry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSMutableArray *sections = (NSMutableArray *)obj;
         [sections enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if([obj isKindOfClass:[HSTextRightModel class]]){
-                HSTextRightModel *model = (HSTextRightModel *)obj;
+            if([obj isKindOfClass:[HSTextCellModel class]]){
+                HSTextCellModel *model = (HSTextCellModel *)obj;
                 model.detailText = model.detailText;
             }
         }];

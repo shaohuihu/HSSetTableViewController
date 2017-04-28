@@ -28,14 +28,14 @@
         
     }];
     //名字
-    HSTextRightModel *name = [[HSTextRightModel alloc] initWithTitle:@"名字" detailText:@"人名的名义" actionBlock:^(HSBaseCellModel *model) {
+    HSTextCellModel *name = [[HSTextCellModel alloc] initWithTitle:@"名字" detailText:@"人名的名义" actionBlock:^(HSBaseCellModel *model) {
         
     }];
     
     
     
     //微信号
-    HSTextRightModel *number = [[HSTextRightModel alloc] initWithTitle:@"微信号" detailText:@"HSSetTableView" actionBlock:^(HSBaseCellModel *model) {
+    HSTextCellModel *number = [[HSTextCellModel alloc] initWithTitle:@"微信号" detailText:@"HSSetTableView" actionBlock:^(HSBaseCellModel *model) {
         
     }];
     number.isCanClick = NO;
@@ -58,14 +58,14 @@
     }];
     
     //性别
-    HSTextRightModel *sex = [[HSTextRightModel alloc] initWithTitle:@"性别" detailText:@"男" actionBlock:nil];
+    HSTextCellModel *sex = [[HSTextCellModel alloc] initWithTitle:@"性别" detailText:@"男" actionBlock:nil];
     
     //地区
-    HSTextRightModel *area = [[HSTextRightModel alloc] initWithTitle:@"地区" detailText:@"四川 成都" actionBlock:nil];
+    HSTextCellModel *area = [[HSTextCellModel alloc] initWithTitle:@"地区" detailText:@"四川 成都" actionBlock:nil];
     
     
     //个性签名
-    HSTextRightModel *sign = [[HSTextRightModel alloc] initWithTitle:@"签名" detailText:@"气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹" actionBlock:nil];
+    HSTextCellModel *sign = [[HSTextCellModel alloc] initWithTitle:@"签名" detailText:@"气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹" actionBlock:nil];
     
     NSMutableArray *section0 = [NSMutableArray arrayWithObjects:header,name,number,qrCode,address, nil];
     NSMutableArray *section1 = [NSMutableArray arrayWithObjects:sex,area,sign,nil];

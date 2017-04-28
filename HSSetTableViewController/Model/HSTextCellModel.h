@@ -8,7 +8,7 @@
 
 #import "HSBaseCellModel.h"
 
-@interface HSTextRightModel : HSBaseCellModel
+@interface HSTextCellModel : HSBaseCellModel
 
 @property (nonatomic, assign)CGFloat heightOne;  ///<一行文本的高度
 @property (nonatomic, assign)CGFloat heightMore;  ///<多行文本高度

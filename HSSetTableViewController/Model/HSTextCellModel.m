@@ -9,7 +9,7 @@
 #import "HSTextCellModel.h"
 #import "NSString+HSHeight.h"
 #import "HSSetTableViewControllerConst.h"
-@implementation HSTextRightModel
+@implementation HSTextCellModel
 
 - (instancetype)initWithTitle:(NSString *)title detailText:(NSString *)detailText actionBlock:(ClickActionBlock)block
 {

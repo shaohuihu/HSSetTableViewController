@@ -39,8 +39,8 @@
     //详细文本
     __block BOOL update = YES;
     
-    HSTextRightModel *cell2 = [[HSTextRightModel alloc] initWithTitle:@"文本更新" detailText:@"加班加到口吐二两鲜血" actionBlock:^(HSBaseCellModel *model) {
-        HSTextRightModel *detailModel = (HSTextRightModel *)model;
+    HSTextCellModel *cell2 = [[HSTextCellModel alloc] initWithTitle:@"文本更新" detailText:@"加班加到口吐二两鲜血" actionBlock:^(HSBaseCellModel *model) {
+        HSTextCellModel *detailModel = (HSTextCellModel *)model;
         detailModel.detailText = (update == YES?@"加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血":@"加班加到口吐二两鲜血");
         [weakSelf updateCellModel:detailModel];
         update = !update;

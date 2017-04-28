@@ -60,7 +60,7 @@
 {
     [super setupDataModel:model];
     
-    HSTextRightModel *rightModel = (HSTextRightModel *)model;
+    HSTextCellModel *rightModel = (HSTextCellModel *)model;
     self.detailLabel.text = model.detailText;
     self.detailLabel.textColor = rightModel.detailColor ? rightModel.detailColor:[UIColor grayColor];
     self.detailLabel.font = rightModel.detailFont ? rightModel.detailFont:[UIFont systemFontOfSize:13.0];
