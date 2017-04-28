@@ -1,11 +1,12 @@
 # HSSetTableViewController
 
-这是一个自定义类似设置界面的tableViewController，包含多种不同cell。代码自动布局，仅需要少量代码就完成界面搭建和功能实现
+这是一个自定义类似设置界面的tableViewController，包含多种不同cell。cell模型由HSBaseCellModel
+代码自动布局，仅需要少量代码就完成界面搭建和功能实现
 使用：继承HSSetTableViewMainController  
 包含头文件
 #import "HSSetTableViewController"
 
-     HSBaseCellModel *photo = [[HSBaseCellModel alloc] initWithTitle:@"相册" actionBlock:^(HSBaseCellModel *model) {
+    HSBaseCellModel *photo = [[HSBaseCellModel alloc] initWithTitle:@"相册" actionBlock:^(HSBaseCellModel *model) {
         HSLog(@"点击相册")
     }];
     photo.icon = [UIImage imageNamed:@"MoreMyAlbum"];
@@ -44,8 +45,19 @@
     需要更新的时候调用：
     - (void)updateCellModel:(HSBaseCellModel *)cellModel;
     
-    [我的博客](http://blog.csdn.net/guodongxiaren "悬停显示")  
-   
+    
+    //其它类型
+      //头像
+    UIImage *icon = [UIImage imageNamed:@"ic_icon_header"];
+    HSImageCellModel *header = [[HSImageCellModel alloc] initWithTitle:@"头像" placeHoldImage:nil bigImage:icon actionBlock:^(HSBaseCellModel *model) {
+        
+    } imageBlock:^{
+        
+    }];
+    
+    //多行文本
+    HSTextRightModel *sign = [[HSTextRightModel alloc] initWithTitle:@"签名" detailText:@"气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹" actionBlock:nil];
+   
  
 
 
