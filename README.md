@@ -1,64 +1,80 @@
 # HSSetTableViewController
 
-这是一个自定义类似设置界面的tableViewController，包含多种不同cell。cell模型由HSBaseCellModel
-代码自动布局，仅需要少量代码就完成界面搭建和功能实现
-使用：继承HSSetTableViewMainController  
-包含头文件
-#import "HSSetTableViewController"
+- 🔍 一个比较简单实用类似tableView设置界面cell.每个App基本都能用到。
+## Features
+- [x] 支持最基本cell(左边标题，右边箭头)
+- [x] 支持右边文本cell(左边标题，右边文本，文本属性可配置，高度内部自适应)
+- [x] 支持开关cell(左边标题，右边switch)
+- [x] 支持图片cell(左边标题，右边图片)
+- [x] 支持cell点击以及其它控件事件回调
+- [x] 代码手动布局，横屏竖屏均适配
 
-    HSBaseCellModel *photo = [[HSBaseCellModel alloc] initWithTitle:@"相册" actionBlock:^(HSBaseCellModel *model) {
-        HSLog(@"点击相册")
-    }];
-    photo.icon = [UIImage imageNamed:@"MoreMyAlbum"];
-    
-    HSBaseCellModel *favorite = [[HSBaseCellModel alloc] initWithTitle:@"收藏" actionBlock:^(HSBaseCellModel *model) {
-        HSLog(@"点击收藏")
-    }];
-    favorite.icon = [UIImage imageNamed:@"MoreMyFavorites"];
-    
-    
-    HSBaseCellModel *wallet = [[HSBaseCellModel alloc] initWithTitle:@"钱包" actionBlock:^(HSBaseCellModel *model) {
-        HSLog(@"点击钱包")
-    }];
-    wallet.icon = [UIImage imageNamed:@"MoreMyAlbum"];
-    
-    
-    HSBaseCellModel *expression = [[HSBaseCellModel alloc] initWithTitle:@"表情" actionBlock:^(HSBaseCellModel *model) {
-        HSLog(@"点击表情")
-    }];
-    expression.icon = [UIImage imageNamed:@"MoreExpressionShops"];
-    
-    HSBaseCellModel *setting = [[HSBaseCellModel alloc] initWithTitle:@"设置" actionBlock:^(HSBaseCellModel *model) {
-        HSLog(@"点击设置")
-    }];
-    setting.icon = [UIImage imageNamed:@"MoreExpressionShops"];
-    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:photo,favorite,wallet, nil];
-    NSMutableArray *section1 = [NSMutableArray arrayWithObjects:expression,nil];
-    NSMutableArray *section2 = [NSMutableArray arrayWithObjects:setting,nil];
+## Requirements
+* Xcode 8.0 or later
 
+## Architecture
+### Main
+- `HSBaseCellModel`
+- `HSImageCellModel`
+- `HSSwitchCellModel`
+- `HSTextCellModel`
+- `HSSetTableViewMainController`
+
+### Category
+- `NSArray+HSSafeAccess`
+- `NSBundle+HSImage`
+- `NSBundle+HSImage`
+- `UIColor+HSExtension`
+- `UIView+HSFrame`
+
+## <a id="Renderings"></a>Renderings
+
+<img src="https://github.com/iphone5solo/learngit/raw/master/imagesForPYSearch/PYSearchDemo.gif" width="375"> 
+
+## <a id="Styles"></a>Styles
+
+#### Hot search style
+<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo.gif" width="375"> 
+## <a id="How to use"></a>How to use
+* Use CocoaPods:
+  - `pod "HSSetTableViewController"`
+  - Import the main file：`#import <HSSetTableViewController.h>`
+* Manual import：
+  - Drag All files in the `HSSetTableViewController` folder to project
+  - Import the main file：`#import "HSSetTableViewController.h"`
+  
+  
+## <a id="Details"></a>Details (See the example program HSSetTableViewControllerDemo for details)
+```objc
+    // 1.创建cell模型
+     HSBaseCellModel *cell0 = [[HSBaseCellModel alloc] initWithTitle:@"分割线从0开始" actionBlock:^(HSBaseCellModel *model) {
+        NSLog(@"基本cell点击事件");
+    }];
+    // 2. 创建右边文本显示cell（文本高度自适应）
+    HSTextCellModel *cell2 = [[HSTextCellModel alloc] initWithTitle:@"文本更新" detailText:@"加班加到口吐二两鲜血" actionBlock:^(HSBaseCellModel *model) {
+        NSLog(@"文本cell点击事件");
+    }];
+    // 3. 创建右边显示开关cell
+    HSSwitchCellModel *cell3 = [[HSSwitchCellModel alloc] initWithTitle:@"开关控制" switchType:YES switchBlock:^(HSBaseCellModel *model, BOOL on) {
+        NSLog(@"开关控制 --%d",on);
+    }];
+    //4.下载图片
+    UIImage *placeHolder = [UIImage imageNamed:@"ic_icon_header"];
+    HSImageCellModel *cell4 = [[HSImageCellModel alloc]      		initWithTitle:@"头像下载更新" placeHoldImage:placeHolder bigImage:nil actionBlock:^(HSBaseCellModel *model) {
+        NSLog(@”cell点击事件”)
+    } imageBlock:^{
+        NSLog(@”头像点击事件”)
+    }];
+    //5.添加到数据源
+    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,nil];
     [self.hs_dataArry addObject:section0];
-    [self.hs_dataArry addObject:section1];
-    [self.hs_dataArry addObject:section2];
-    
     [self.tableView reloadData];
     
-    需要更新的时候调用：
-    - (void)updateCellModel:(HSBaseCellModel *)cellModel;
-    
-    
-    //其它类型
-      //头像
-    UIImage *icon = [UIImage imageNamed:@"ic_icon_header"];
-    HSImageCellModel *header = [[HSImageCellModel alloc] initWithTitle:@"头像" placeHoldImage:nil bigImage:icon actionBlock:^(HSBaseCellModel *model) {
-        
-    } imageBlock:^{
-        
-    }];
-    
-    //多行文本
-    HSTextRightModel *sign = [[HSTextRightModel alloc] initWithTitle:@"签名" detailText:@"气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹" actionBlock:nil];
-   
- 
 
+   //6.更新每个cellModel属性，更改属性值后，只需要调用- (void)updateCellModel:(HSBaseCellModel *)cellModel; 就可以完成界面刷新。
+``
+## <a id="Hope"></a>Hope
 
+- 如果有任何问题，你可以 [issues me](https://github.com/shaohuihu/HSSetTableViewController/issues/new)! 
+- 后续将会对cell扩展和配置，希望能支持更多的主流App.
 

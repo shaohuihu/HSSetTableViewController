@@ -24,7 +24,7 @@
      __weak __typeof(&*self)weakSelf = self;
     
     HSBaseCellModel *cell0 = [[HSBaseCellModel alloc] initWithTitle:@"分割线从0开始" actionBlock:^(HSBaseCellModel *model) {
-        
+        NSLog(@"点击事件");
     }];
     cell0.noSeparateOffset = YES;
     
@@ -65,6 +65,7 @@
     
     NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,nil];
     [self.hs_dataArry addObject:section0];
+    [self.tableView reloadData];
     
 
     [self downloadImage];
