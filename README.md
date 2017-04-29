@@ -29,19 +29,15 @@
 
 ## <a id="Renderings"></a>Renderings
 
-<img src="https://github.com/iphone5solo/learngit/raw/master/imagesForPYSearch/PYSearchDemo.gif" width="375"> 
+<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo.gif"> 
 
-## <a id="Styles"></a>Styles
-
-#### Hot search style
-<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo.gif" width="375"> 
 ## <a id="How to use"></a>How to use
-* Use CocoaPods:
+* 使用 CocoaPods:
   - `pod "HSSetTableViewController"`
-  - Import the main file：`#import <HSSetTableViewController.h>`
-* Manual import：
-  - Drag All files in the `HSSetTableViewController` folder to project
-  - Import the main file：`#import "HSSetTableViewController.h"`
+  - 导入头文件：`#import <HSSetTableViewController.h>`
+* 直接导入：
+  - 拖动 `HSSetTableViewController` 文件夹到你工程
+  - 导入头文件：`#import "HSSetTableViewController.h"`
   
   
 ## <a id="Details"></a>Details (See the example program HSSetTableViewControllerDemo for details)
@@ -70,9 +66,8 @@
     [self.hs_dataArry addObject:section0];
     [self.tableView reloadData];
     
-
    //6.更新每个cellModel属性，更改属性值后，只需要调用- (void)updateCellModel:(HSBaseCellModel *)cellModel; 就可以完成界面刷新。
-``
+```
 ## <a id="Hope"></a>Hope
 
 - 如果有任何问题，你可以 [issues me](https://github.com/shaohuihu/HSSetTableViewController/issues/new)! 
