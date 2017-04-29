@@ -10,7 +10,7 @@
 - [x] 代码手动布局，横屏竖屏均适配
 
 ## Requirements
-* Xcode 8.0 or later
+* Xcode 7.0以上
 
 ## Architecture
 ### Main
@@ -72,4 +72,5 @@
 
 - 如果有任何问题，你可以 [issues me](https://github.com/shaohuihu/HSSetTableViewController/issues/new)! 
 - 后续将会对cell扩展和配置，希望能支持更多的主流App.
+- 希望能给更多童鞋带来开发的方便，可以一起讨论，如果你喜欢请给个star。
 
