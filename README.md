@@ -65,9 +65,17 @@
     NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,nil];
     [self.hs_dataArry addObject:section0];
     [self.tableView reloadData];
+   
+   //6.更新每个cellModel属性后，只需要调用完成刷新
+   [self updateCellModel:cell4];
     
-   //6.更新每个cellModel属性，更改属性值后，只需要调用- (void)updateCellModel:(HSBaseCellModel *)cellModel; 就可以完成界面刷新。
 ```
+
+## <a id="Warning"></a>Hope
+
+- 因为涉及到更新问题，添加到数据源的形式请使用NSMutableArray，不要使用NSArray存放。
+- 不是把cell模型直接放入基类数据源，是先放入NSMutableArray的形式。再用self.hs_dataArry添加NSMutableArray。
+
 ## <a id="Hope"></a>Hope
 
 - 如果有任何问题，你可以 [issues me](https://github.com/shaohuihu/HSSetTableViewController/issues/new)! 
