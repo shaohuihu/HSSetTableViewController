@@ -71,7 +71,7 @@
     
 ```
 
-## <a id="Warning"></a>Hope
+## <a id="Warning"></a>Warning
 
 - 因为涉及到更新问题，添加到数据源的形式请使用NSMutableArray，不要使用NSArray存放。
 - 不是把cell模型直接放入基类数据源，是先放入NSMutableArray的形式。再用self.hs_dataArry添加NSMutableArray。
