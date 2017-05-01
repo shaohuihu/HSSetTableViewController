@@ -1,6 +1,6 @@
 # HSSetTableViewController
 
-- 🔍 一个比较简单实用类似tableView设置界面cell.每个App基本都能用到。
+- 一个比较简单实用类似tableView设置界面cell.每个App基本都能用到。
 ## Features
 - [x] 支持最基本cell(左边标题，右边箭头)
 - [x] 支持右边文本cell(左边标题，右边文本，文本属性可配置，高度内部自适应)
