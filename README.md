@@ -29,7 +29,7 @@
 
 ## <a id="Renderings"></a>Renderings
 
-<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo.gif"> 
+<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo1.gif"> 
 
 ## <a id="How to use"></a>How to use
 * 使用 CocoaPods:
