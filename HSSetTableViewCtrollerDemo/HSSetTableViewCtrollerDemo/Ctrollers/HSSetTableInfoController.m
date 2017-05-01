@@ -67,6 +67,8 @@
     //个性签名
     HSTextCellModel *sign = [[HSTextCellModel alloc] initWithTitle:@"签名" detailText:@"气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹" actionBlock:nil];
     
+ 
+    
     NSMutableArray *section0 = [NSMutableArray arrayWithObjects:header,name,number,qrCode,address, nil];
     NSMutableArray *section1 = [NSMutableArray arrayWithObjects:sex,area,sign,nil];
     [self.hs_dataArry addObject:section0];
@@ -89,7 +91,7 @@
 
 - (void)dealloc
 {
-    HSLog(@"控制器销毁")
+    NSLog(@"%@控制器销毁",self.class);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -26,7 +26,10 @@
     HSBaseCellModel *cell0 = [[HSBaseCellModel alloc] initWithTitle:@"分割线从0开始" actionBlock:^(HSBaseCellModel *model) {
         NSLog(@"点击事件");
     }];
+   
     cell0.noSeparateOffset = YES;
+    cell0.separateHeight = 2;
+    cell0.separateColor = [UIColor redColor];
     
     
     
@@ -45,9 +48,15 @@
         [weakSelf updateCellModel:detailModel];
         update = !update;
     }];
-    
+    cell2.arrowWidth = 30;
+    cell2.arrowHeight = 20;
+    cell2.arrowImage = [UIImage imageNamed:@"MoreMyBankCard"];
+    cell2.leftPading = 100;
     cell2.detailFont = [UIFont boldSystemFontOfSize:20];
     cell2.detailColor = [UIColor blueColor];
+    
+    
+   
     
     
     HSSwitchCellModel *cell3 = [[HSSwitchCellModel alloc] initWithTitle:@"开关控制" switchType:YES switchBlock:^(HSBaseCellModel *model, BOOL on) {
@@ -63,7 +72,15 @@
     }];
     self.cell4 = cell4;
     
-    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,nil];
+    
+    HSTextCellModel *cell5 = [[HSTextCellModel alloc] initWithTitle:@"文本2" detailText:@"加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血" actionBlock:^(HSBaseCellModel *model) {
+        
+    }];
+    
+    cell5.leftPading = 250;
+    cell5.detailColor = [UIColor redColor];
+    
+    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,cell5,nil];
     [self.hs_dataArry addObject:section0];
     [self.tableView reloadData];
     
@@ -79,6 +96,11 @@
         self.cell4.bigImage = image;
         [self updateCellModel:self.cell4];
     }];
+}
+
+- (void)dealloc
+{
+    NSLog(@"%@控制器销毁",self.class);
 }
 
 

@@ -14,23 +14,32 @@ typedef void(^ClickActionBlock)(HSBaseCellModel *model);
 @interface HSBaseCellModel : NSObject
 
 
+/**
+ 基础属性
+ */
 @property (nonatomic, copy)   NSString   *cellClass;  ///<该模型绑定的cell类名
 @property (nonatomic, copy)   NSString   *identifier;  ///<唯一标识符(更新会用到)
-@property (nonatomic, copy  ) NSString   *title;///<cell标题(左边)
-@property (nonatomic, strong) UIImage    *icon;///<cell图片(左边)
-@property (nonatomic, copy  ) NSString   *detailText;///<cell详细内容
-@property (nonatomic, assign) CGFloat    cellHeight;  ///<cell高度(默认有高度)
 @property (nonatomic, assign) UITableViewCellStyle cellStyle;  ///<
 @property (nonatomic, assign) BOOL isCanClick;  ///<是否有点击效果(默认有)
 @property (nonatomic, copy  ) ClickActionBlock actionBlock;///<cell点击事件
 
+
+/**
+ 显示相关
+ */
+@property (nonatomic, copy  ) NSString   *title;///<cell标题(左边)
+@property (nonatomic, strong) UIImage    *icon;///<cell图片(左边)
+@property (nonatomic, assign) CGFloat    cellHeight;  ///<cell高度(默认有高度)
 @property (nonatomic, assign) BOOL showArrow;///<是否显示右导航箭头(默认为YES)
-@property (nonatomic, assign)BOOL noSeparateOffset;  ///<没有分割线偏移(默认为NO)
+@property (nonatomic, assign) BOOL noSeparateOffset;  ///<没有分割线偏移(默认为NO)
 @property (nonatomic, strong) UIColor *titleColor;  ///<cell标题color
 @property (nonatomic, strong) UIFont *titleFont;  ///<cell标题font
+@property (nonatomic, assign) CGFloat separateHeight;  ///<分割线高度
+@property (nonatomic, strong) UIColor *separateColor;  ///<分割线颜色
 
-
-//初始化方法(普通cell和右边有文本的cell)
+@property (nonatomic, strong)UIImage *arrowImage;  ///<箭头image
+@property (nonatomic, assign)CGFloat arrowWidth;  ///<箭头宽度
+@property (nonatomic, assign)CGFloat arrowHeight;  ///<箭头高度
 
 /**
  model初始化方法

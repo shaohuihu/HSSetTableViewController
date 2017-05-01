@@ -81,7 +81,7 @@
 
 - (void)dealloc
 {
-    HSLog(@"控制器销毁")
+    NSLog(@"%@控制器销毁",self.class);
 }
 
 

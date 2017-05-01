@@ -116,7 +116,7 @@
         [sections enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if([obj isKindOfClass:[HSTextCellModel class]]){
                 HSTextCellModel *model = (HSTextCellModel *)obj;
-                model.detailText = model.detailText;
+                [model setDetailText:model.detailText];
             }
         }];
         

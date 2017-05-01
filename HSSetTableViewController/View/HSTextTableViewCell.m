@@ -14,6 +14,7 @@
 
 @property (nonatomic, weak)UILabel *detailLabel;  ///<详细文本内容
 @property (nonatomic, weak)NSLayoutConstraint *detailRightConstraint;  ///<
+@property (nonatomic, weak)NSLayoutConstraint *detailLeftconstraint;  ///<
 @end
 @implementation HSTextTableViewCell
 
@@ -48,7 +49,10 @@
     [self.contentView addConstraint:constraintRight];
     self.detailRightConstraint = constraintRight;
     
-    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.detailLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:HS_KCellTextLeftPading]];
+    
+    NSLayoutConstraint *constraintLeft = [NSLayoutConstraint constraintWithItem:self.detailLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:HS_KCellTextLeftPading];
+    [self.contentView addConstraint:constraintLeft];
+    self.detailLeftconstraint = constraintLeft;
     
     
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.detailLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
@@ -61,15 +65,16 @@
     [super setupDataModel:model];
     
     HSTextCellModel *rightModel = (HSTextCellModel *)model;
-    self.detailLabel.text = model.detailText;
-    self.detailLabel.textColor = rightModel.detailColor ? rightModel.detailColor:[UIColor grayColor];
-    self.detailLabel.font = rightModel.detailFont ? rightModel.detailFont:[UIFont systemFontOfSize:13.0];
+    self.detailLabel.text = rightModel.detailText;
+    self.detailLabel.textColor = rightModel.detailColor ;
+    self.detailLabel.font = rightModel.detailFont;
     //根据箭头显示设置约束
     if(self.cellModel.showArrow){
-        self.detailRightConstraint.constant = - HS_KCellMargin -HS_KCellMargin/2- HS_KArrowWidth;
+        self.detailRightConstraint.constant = - HS_KCellMargin - HS_KCellMargin/2- rightModel.arrowWidth;
     }else{
         self.detailRightConstraint.constant = - HS_KCellMargin;
     }
+    self.detailLeftconstraint.constant = rightModel.leftPading;
 }
 
 

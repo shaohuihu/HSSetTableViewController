@@ -13,22 +13,31 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "UIColor+HSExtension.h"
 
 
-//标题左边的cell间距
+//标题左边的默认cell间距
 #define HS_KCellMargin 15.0
-//cell分割线高度
+//cell分割线默认高度
 #define HS_KSeparateHeight .5
+//cell分割线默认颜色
 #define HS_KSeparateColor [UIColor hs_colorWithHexString:@"#e6e6e6"]
-//箭头宽度
-#define HS_KArrowWidth 8
+//标题默认字体大小
+#define HS_KTitleFont  [UIFont systemFontOfSize:15.0]
+//标题默认字体颜色
+#define HS_KTitleColor  [UIColor blackColor]
+//详细文本默认字体大小
+#define HS_KDetailFont [UIFont systemFontOfSize:13.0]
+//标题默详细文本字体颜色
+#define HS_KDetailColor  [UIColor grayColor]
 
+//箭头默认宽度
+#define HS_KArrowWidth 8
+//箭头默认高度
 #define HS_kArrowHeight 13
 //右边文本离左边的边距
 #define HS_KCellTextLeftPading  150
-//文本行间距
-#define HS_KCellWordSpace 0
-//距离cell上下边距pading
+//距离cell上下默认边距pading
 #define HS_KCellPading  5
 //cell默认高度
 #define HS_KCellHeight 44

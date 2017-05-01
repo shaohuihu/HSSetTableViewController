@@ -8,6 +8,8 @@
 
 #import "HSBaseCellModel.h"
 #import "HSSetTableViewControllerConst.h"
+#import "NSBundle+HSImage.h"
+
 @implementation HSBaseCellModel
 
 - (instancetype)initWithTitle:(NSString *)title actionBlock:(ClickActionBlock)block;
@@ -21,6 +23,13 @@
         self.actionBlock = block;
         self.cellClass = HSBaseCellModelCellClass;
         self.isCanClick = YES;
+        self.separateColor = HS_KSeparateColor;
+        self.separateHeight = HS_KSeparateHeight;
+        self.titleFont = HS_KTitleFont;
+        self.titleColor = HS_KTitleColor;
+        self.arrowImage = [NSBundle hs_imageNamed:@"ic_hs_tableView_arrow"];
+        self.arrowWidth = HS_KArrowWidth;
+        self.arrowHeight = HS_kArrowHeight;
     }
     return self;
 }
