@@ -38,8 +38,8 @@
 * 直接导入：
   - 拖动 `HSSetTableViewController` 文件夹到你工程
   - 导入头文件：`#import "HSSetTableViewController.h"`
-  
-  
+* 类使用: 
+  - 你的UIViewController只需要继承基类HSSetTableViewMainController即可
 ## <a id="Details"></a>Details (See the example program HSSetTableViewControllerDemo for details)
 ```objc
     // 1.创建cell模型
