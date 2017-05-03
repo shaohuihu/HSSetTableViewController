@@ -111,18 +111,20 @@
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
+     __weak __typeof(&*self)weakSelf = self;
     [self.hs_dataArry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSMutableArray *sections = (NSMutableArray *)obj;
         [sections enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if([obj isKindOfClass:[HSTextCellModel class]]){
                 HSTextCellModel *model = (HSTextCellModel *)obj;
                 [model setDetailText:model.detailText];
+                [weakSelf updateCellModel:model];
             }
         }];
         
     }];
     
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 }
 
 
