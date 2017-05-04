@@ -26,6 +26,7 @@
 		3B07CCFE1EB1A21300CB0ADE /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCEC1EB1A21300CB0ADE /* UIImageView+HighlightedWebCache.m */; };
 		3B07CCFF1EB1A21300CB0ADE /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCEE1EB1A21300CB0ADE /* UIImageView+WebCache.m */; };
 		3B07CD001EB1A21300CB0ADE /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCF01EB1A21300CB0ADE /* UIView+WebCacheOperation.m */; };
+		3B693F871EB9E02500601AF8 /* NSAttributedString+HSHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B693F861EB9E02500601AF8 /* NSAttributedString+HSHeight.m */; };
 		3BB3C4A31EAB991D004A9BA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB3C4A21EAB991D004A9BA9 /* main.m */; };
 		3BB3C4A61EAB991D004A9BA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB3C4A51EAB991D004A9BA9 /* AppDelegate.m */; };
 		3BB3C4A91EAB991D004A9BA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB3C4A81EAB991D004A9BA9 /* ViewController.m */; };
@@ -109,6 +110,8 @@
 		3B07CCEE1EB1A21300CB0ADE /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		3B07CCEF1EB1A21300CB0ADE /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		3B07CCF01EB1A21300CB0ADE /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		3B693F851EB9E02500601AF8 /* NSAttributedString+HSHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+HSHeight.h"; sourceTree = "<group>"; };
+		3B693F861EB9E02500601AF8 /* NSAttributedString+HSHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+HSHeight.m"; sourceTree = "<group>"; };
 		3BB3C49E1EAB991D004A9BA9 /* HSSetTableViewCtrollerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSSetTableViewCtrollerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BB3C4A21EAB991D004A9BA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BB3C4A41EAB991D004A9BA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				3BFD66411EB1DD050001E324 /* UIColor+HSExtension.m */,
 				3BFD66421EB1DD050001E324 /* UIView+HSFrame.h */,
 				3BFD66431EB1DD050001E324 /* UIView+HSFrame.m */,
+				3B693F851EB9E02500601AF8 /* NSAttributedString+HSHeight.h */,
+				3B693F861EB9E02500601AF8 /* NSAttributedString+HSHeight.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 				3B07CCF61EB1A21300CB0ADE /* SDWebImageDownloader.m in Sources */,
 				3BFD66671EB1DD050001E324 /* HSSwitchCellModel.m in Sources */,
 				3BFD666A1EB1DD050001E324 /* HSImageTableViewCell.m in Sources */,
+				3B693F871EB9E02500601AF8 /* NSAttributedString+HSHeight.m in Sources */,
 				3BFD665E1EB1DD050001E324 /* NSBundle+HSImage.m in Sources */,
 				3BFD665F1EB1DD050001E324 /* NSString+HSHeight.m in Sources */,
 				3B07CCFF1EB1A21300CB0ADE /* UIImageView+WebCache.m in Sources */,

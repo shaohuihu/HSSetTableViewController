@@ -80,7 +80,43 @@
     cell5.leftPading = 250;
     cell5.detailColor = [UIColor redColor];
     
-    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,cell5,nil];
+    
+   
+    
+    NSString *balance =@"88";
+    NSMutableAttributedString *aString = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"账户: %@元",balance]];
+    
+    [aString addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor]range:NSMakeRange(0,1)];
+    
+    [aString addAttribute:NSForegroundColorAttributeName value:[UIColor yellowColor]range:NSMakeRange(1,1)];
+    
+    [aString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor]range:NSMakeRange(2,1)];
+    
+    [aString addAttribute:NSForegroundColorAttributeName value:[UIColor purpleColor]range:NSMakeRange(3,1)];
+
+    NSString *detailbalance =@"888888888888888888888888888888888888888888888888888";
+    NSMutableAttributedString *detailaString = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"账户余额: %@元",detailbalance]];
+//    
+//    [detailaString addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor]range:NSMakeRange(0,1)];
+//    
+//    [detailaString addAttribute:NSForegroundColorAttributeName value:[UIColor yellowColor]range:NSMakeRange(1,1)];
+//    
+//    [detailaString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor]range:NSMakeRange(2,1)];
+//    
+//    [detailaString addAttribute:NSForegroundColorAttributeName value:[UIColor purpleColor]range:NSMakeRange(3,1)];
+    
+//    [detailaString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15]range:NSMakeRange(6, 8)];
+    
+    //富文本标题
+//    HSBaseCellModel *cell6 = [[HSBaseCellModel alloc] initWithAttributeTitle:aString actionBlock:nil];
+    
+    HSTextCellModel *cell6 = [[HSTextCellModel alloc] initWithAttributeTitle:aString detailAttributeText:detailaString actionBlock:nil];
+    cell6.leftPading = 100;
+    
+    
+    
+//    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,cell5,cell6,nil];
+    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell6,nil];
     [self.hs_dataArry addObject:section0];
     [self.tableView reloadData];
     

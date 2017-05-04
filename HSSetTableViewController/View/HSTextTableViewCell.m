@@ -65,9 +65,16 @@
     [super setupDataModel:model];
     
     HSTextCellModel *rightModel = (HSTextCellModel *)model;
-    self.detailLabel.text = rightModel.detailText;
-    self.detailLabel.textColor = rightModel.detailColor ;
-    self.detailLabel.font = rightModel.detailFont;
+    if(rightModel.attributeDetailText){
+        self.detailLabel.numberOfLines = 1;
+        self.detailLabel.attributedText = rightModel.attributeDetailText;
+    }else{
+        self.detailLabel.numberOfLines = 0;
+        self.detailLabel.text = rightModel.detailText;
+        self.detailLabel.textColor = rightModel.detailColor ;
+        self.detailLabel.font = rightModel.detailFont;
+    }
+    
     //根据箭头显示设置约束
     if(self.cellModel.showArrow){
         self.detailRightConstraint.constant = - HS_KCellMargin - HS_KCellMargin/2- rightModel.arrowWidth;

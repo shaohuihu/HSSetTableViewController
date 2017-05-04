@@ -9,18 +9,53 @@
 #import "HSTextCellModel.h"
 #import "NSString+HSHeight.h"
 #import "HSSetTableViewControllerConst.h"
+#import "NSAttributedString+HSHeight.h"
+#import <CoreText/CoreText.h>
 @implementation HSTextCellModel
 
 - (instancetype)initWithTitle:(NSString *)title detailText:(NSString *)detailText actionBlock:(ClickActionBlock)block
 {
     if(self = [super initWithTitle:title actionBlock:block]){
-        
         self.leftPading = HS_KCellTextLeftPading;
         self.detailFont = HS_KDetailFont;
         self.detailColor = HS_KDetailColor;
         self.detailText = detailText;
         self.cellClass = HSTextCellModelCellClass;
-        
+    }
+    return self;
+}
+
+- (instancetype)initWithTitle:(NSString *)title attributrDetailText:(NSAttributedString *)attributrDetailText actionBlock:(ClickActionBlock)block
+{
+    if(self = [super initWithTitle:title actionBlock:block]){
+        self.leftPading = HS_KCellTextLeftPading;
+        self.detailFont = HS_KDetailFont;
+        self.detailColor = HS_KDetailColor;
+        self.attributeDetailText = attributrDetailText;
+        self.cellClass = HSTextCellModelCellClass;
+    }
+    return self;
+}
+
+- (instancetype)initWithAttributeTitle:(NSAttributedString *)attributeTitle detailAttributeText:(NSAttributedString *)attributeDetailText actionBlock:(ClickActionBlock)block
+{
+    if(self = [super initWithAttributeTitle:attributeTitle actionBlock:block]){
+        self.leftPading = HS_KCellTextLeftPading;
+        self.attributeDetailText = attributeDetailText;
+        self.cellClass = HSTextCellModelCellClass;
+    }
+    return self;
+}
+
+- (instancetype)initWithAttributeTitle:(NSAttributedString *)attributeTitle detailText:(NSString *)detailText actionBlock:(ClickActionBlock)block
+
+{
+    if(self = [super initWithAttributeTitle:attributeTitle actionBlock:block]){
+        self.leftPading = HS_KCellTextLeftPading;
+        self.detailFont = HS_KDetailFont;
+        self.detailColor = HS_KDetailColor;
+        self.detailText = detailText;
+        self.cellClass = HSTextCellModelCellClass;
     }
     return self;
 }
@@ -49,8 +84,27 @@
     if(detailText == nil){
         return;
     }
-    
     _detailText = detailText;
+    if(self.attributeDetailText) {
+        //如果外部设置过富文本，则忽略纯文本计算
+        return;
+    }
+    [self heightSizeWithTextObject:detailText];
+   
+}
+
+- (void)setAttributeDetailText:(NSAttributedString *)attributeDetailText
+{
+    if(attributeDetailText == nil) {
+        return;
+    }
+    _attributeDetailText = attributeDetailText;
+    [self heightSizeWithTextObject:attributeDetailText];
+    
+}
+
+- (void)heightSizeWithTextObject:(id)object
+{
     //初始化文本高度  外部不可任意改变不然界面看起来很奇怪
     self.cellHeight = 0.0f;
     UIDeviceOrientation duration = [[UIDevice currentDevice]orientation];
@@ -60,8 +114,33 @@
     }else{
         screenWidth = HS_SCREEN_HEIGHT < HS_SCREEN_WIDTH ? HS_SCREEN_HEIGHT:HS_SCREEN_WIDTH;
     }
-    CGFloat height = [detailText hs_heightWithFont:self.detailFont constrainedToWidth:screenWidth - self.leftPading - (self.showArrow ?  HS_KCellMargin + HS_KCellMargin/2 + self.arrowWidth : HS_KCellMargin)];
-    if(height < self.detailFont.pointSize + 5){
+    CGFloat height = 0;
+    UIFont *font;
+    if([object isKindOfClass:[NSString class]]){
+       height = [(NSString *)object hs_heightWithFont:self.detailFont constrainedToWidth:screenWidth - self.leftPading - (self.showArrow ?  HS_KCellMargin + HS_KCellMargin/2 + self.arrowWidth : HS_KCellMargin)];
+        font = self.detailFont;
+    }else{
+      
+    
+//        CGRect frame = [(NSAttributedString *)object boundingRectWithSize:CGSizeMake(screenWidth - self.leftPading - (self.showArrow ?  HS_KCellMargin + HS_KCellMargin/2 + self.arrowWidth : HS_KCellMargin), CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+//        HSLog(@"frame ---%f",frame.size.height);
+//        font = HS_KDetailFont;
+//        height = size.height;
+        
+//        CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)(NSAttributedString *)object);
+//        CGSize targetSize = CGSizeMake(screenWidth - self.leftPading - (self.showArrow ?  HS_KCellMargin + HS_KCellMargin/2 + self.arrowWidth : HS_KCellMargin), CGFLOAT_MAX);
+//        CGSize fitSize = CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRangeMake(0, [(NSAttributedString *)object length]), NULL, targetSize, NULL);
+//        HSLog(@"fitSize ---%f",fitSize.height);
+//        CFRelease(framesetter);
+        
+//        UITextView *view=[[UITextView alloc] initWithFrame:CGRectMake(0, 0, screenWidth - self.leftPading - (self.showArrow ?  HS_KCellMargin + HS_KCellMargin/2 + self.arrowWidth : HS_KCellMargin), 0)];
+//        view.attributedText=(NSAttributedString *)object;
+//        CGSize textSize=[view sizeThatFits:CGSizeMake(screenWidth - self.leftPading - (self.showArrow ?  HS_KCellMargin + HS_KCellMargin/2 + self.arrowWidth : HS_KCellMargin), CGFLOAT_MAX)];
+//        height=textSize.height;
+//        NSLog(@"height ---%f",height);
+    }
+    
+    if(height < font.pointSize + 5 || height == 0){
         //说明只有一行
         self.heightOne = height;
         self.heightMore = .0f;

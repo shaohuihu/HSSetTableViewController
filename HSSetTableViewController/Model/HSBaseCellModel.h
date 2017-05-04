@@ -27,6 +27,7 @@ typedef void(^ClickActionBlock)(HSBaseCellModel *model);
 /**
  显示相关
  */
+@property (nonatomic, copy  )NSAttributedString *attributeTitle;  ///<cell富文本标题(如果设置了这个，title属性将失效)
 @property (nonatomic, copy  ) NSString   *title;///<cell标题(左边)
 @property (nonatomic, strong) UIImage    *icon;///<cell图片(左边)
 @property (nonatomic, assign) CGFloat    cellHeight;  ///<cell高度(默认有高度)
@@ -49,6 +50,16 @@ typedef void(^ClickActionBlock)(HSBaseCellModel *model);
  @return HSBaseCellModel
  */
 - (instancetype)initWithTitle:(NSString *)title actionBlock:(ClickActionBlock)block;
+
+
+/**
+ model初始化方法
+
+ @param attributeTitle 模型富文本标题
+ @param block block回调
+ @return HSBaseCellModel
+ */
+- (instancetype)initWithAttributeTitle:(NSAttributedString *)attributeTitle actionBlock:(ClickActionBlock)block;
 
 
 
