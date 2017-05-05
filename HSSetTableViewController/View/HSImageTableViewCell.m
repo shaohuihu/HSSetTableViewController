@@ -10,6 +10,7 @@
 #import "HSImageCellModel.h"
 #import "UIView+HSFrame.h"
 #import "HSSetTableViewControllerConst.h"
+#import "UIImageView+WebCache.h"
 @interface HSImageTableViewCell()
 
 @property (nonatomic, weak)UIImageView *bigImageView;  ///<右边图片显示
@@ -76,11 +77,14 @@
     [super setupDataModel:model];
     
     HSImageCellModel *bigModel = (HSImageCellModel *)model;
-    self.bigImageView.image = bigModel.bigImage == nil ? bigModel.placeHodlerImage:bigModel.bigImage;
+    if(!bigModel.imageIcon){
+       [self.bigImageView sd_setImageWithURL: [NSURL URLWithString:bigModel.imageUrl] placeholderImage:bigModel.placeHoderImage];
+    }else{
+        self.bigImageView.image = bigModel.imageIcon;
+    }
+    
     self.bigImageView.layer.cornerRadius = bigModel.cornerRadius > 0 ? bigModel.cornerRadius : 0.f;
-    
 
-    
     if(bigModel.imageWidth > 0){
         self.bigImageWidthConstraint.constant = bigModel.imageWidth;
     }

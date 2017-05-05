@@ -32,7 +32,7 @@ typedef void(^ClickActionBlock)(HSBaseCellModel *model);
 @property (nonatomic, strong) UIImage    *icon;///<cell图片(左边)
 @property (nonatomic, assign) CGFloat    cellHeight;  ///<cell高度(默认有高度)
 @property (nonatomic, assign) BOOL showArrow;///<是否显示右导航箭头(默认为YES)
-@property (nonatomic, assign) BOOL noSeparateOffset;  ///<没有分割线偏移(默认为NO)
+@property (nonatomic, assign) CGFloat separateOffset;  ///<分割线左边间距(默认为NO)
 @property (nonatomic, strong) UIColor *titleColor;  ///<cell标题color
 @property (nonatomic, strong) UIFont *titleFont;  ///<cell标题font
 @property (nonatomic, assign) CGFloat separateHeight;  ///<分割线高度

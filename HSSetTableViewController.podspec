@@ -25,6 +25,7 @@ Pod::Spec.new do |s|
   s.resources     = "HSSetTableViewController/HSSetTableViewController.bundle"
   s.requires_arc = true
   s.framework    = "UIKit"
+  s.dependency 'SDWebImage', '~> 3.7.6'
 
 
 end

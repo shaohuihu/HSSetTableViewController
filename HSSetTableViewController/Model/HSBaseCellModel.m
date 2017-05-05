@@ -23,6 +23,7 @@
         self.actionBlock = block;
         self.cellClass = HSBaseCellModelCellClass;
         self.isCanClick = YES;
+        self.separateOffset = HS_KCellPading;
         self.separateColor = HS_KSeparateColor;
         self.separateHeight = HS_KSeparateHeight;
         self.titleFont = HS_KTitleFont;

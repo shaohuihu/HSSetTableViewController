@@ -25,6 +25,7 @@
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
 }
 - (NSMutableArray *)hs_dataArry
 {
@@ -55,7 +56,7 @@
     cell.tableView = tableView;
     [cell setupDataModel:cellModel];
     cell.topLine.hidden = indexPath.row != 0;
-    [cell.bottomLine setHs_x:(indexPath.row == sections.count - 1 ? 0:(cellModel.noSeparateOffset ? 0 : HS_KCellMargin))];
+    [cell.bottomLine setHs_x:(indexPath.row == sections.count - 1 ? 0:cellModel.separateOffset)];
     //处理分割线
     return cell;
 }

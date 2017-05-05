@@ -31,6 +31,7 @@
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    tableView.cellLayoutMarginsFollowReadableWidth  = NO;
     [self.view addSubview:tableView];
     self.tableView = tableView;
     self.dataSource = @[@"我(仿微信)",@"个人信息(仿微信)",@"复杂界面(更新)"];

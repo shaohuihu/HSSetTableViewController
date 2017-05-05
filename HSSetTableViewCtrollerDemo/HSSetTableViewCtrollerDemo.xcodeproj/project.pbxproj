@@ -454,7 +454,7 @@
 				TargetAttributes = {
 					3BB3C49D1EAB991D004A9BA9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = AF7R9ERQWF;
+						DevelopmentTeam = Q696M3HF8N;
 						ProvisioningStyle = Automatic;
 					};
 					3BB3C4B61EAB991D004A9BA9 = {
@@ -710,9 +710,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AF7R9ERQWF;
+				DEVELOPMENT_TEAM = Q696M3HF8N;
 				INFOPLIST_FILE = HSSetTableViewCtrollerDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZD.HSSetTableViewCtrollerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -723,9 +723,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AF7R9ERQWF;
+				DEVELOPMENT_TEAM = Q696M3HF8N;
 				INFOPLIST_FILE = HSSetTableViewCtrollerDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZD.HSSetTableViewCtrollerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
