@@ -1,6 +1,7 @@
 # HSSetTableViewController
 
-- 一个比较简单实用类似tableView设置界面cell.100% App都能用到，封装性强，你只需要一些很简单配置代码。就可以完成页面的搭建
+- 一个比较简单实用类似tableView设置界面cell.
+100% App都能用到，封装性强，你只需要一些很简单配置代码。就可以完成页面的搭建
 - 本库优势：
    1. 支持标题，详细文本配置，分割线自定义，箭头自定义，适配不同App风格。
    3. 支持cell右边文本更新，高度内部计算。支持横竖屏自动适应文本高度。
@@ -35,12 +36,12 @@
 
 ## <a id="Renderings"></a>Renderings
 
-<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo1.gif"> 
+<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo1.gif"> <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/QQChat.png"> 
 
 ## <a id="How to use"></a>How to use
 * 使用 CocoaPods:
 请先安装cocoapods,如果版本太老无法找到,请升级cocopods到最新版本 命令：pod repo update
-  - `pod 'HSSetTableViewController', '~> 1.1.0"`
+  - `pod 'HSSetTableViewController', '~> 1.1.1'`
   - 导入头文件：`#import <HSSetTableViewController.h>`
 * 直接导入：
   - 拖动 `HSSetTableViewController` 文件夹到你工程
