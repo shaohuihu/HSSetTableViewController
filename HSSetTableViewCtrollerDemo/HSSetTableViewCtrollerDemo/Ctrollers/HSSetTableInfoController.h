@@ -9,7 +9,7 @@
 #import "HSSetTableViewController.h"
 #import "HSSetTableViewController.h"
 /**
- 个人信息
+ 微信个人信息
  */
 @interface HSSetTableInfoController : HSSetTableViewMainController
 

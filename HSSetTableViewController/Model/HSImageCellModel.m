@@ -10,11 +10,11 @@
 #import "HSSetTableViewControllerConst.h"
 
 @implementation HSImageCellModel
-- (instancetype)initWithTitle:(NSString *)title placeHoldImage:(UIImage *)placeHoldImage bigImage:(UIImage *)bigImage actionBlock:(ClickActionBlock)actionblock imageBlock:(ClickImageBlock)imageBlock;
+- (instancetype)initWithTitle:(NSString *)title placeholderImage:(UIImage *)placeholderImage imageUrl:(NSString *)imageUrl actionBlock:(ClickActionBlock)actionblock imageBlock:(ClickImageBlock)imageBlock;
 {
     if(self = [super initWithTitle:title actionBlock:actionblock]){
-        self.placeHodlerImage = placeHoldImage;
-        self.bigImage = bigImage;
+        self.placeHoderImage = placeholderImage;
+        self.imageUrl = imageUrl;
         self.imageBlock = imageBlock;
         self.imageWidth = HS_KImageWidth;
         self.imageHieght = HS_KImageHeight;

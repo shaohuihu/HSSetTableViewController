@@ -22,11 +22,9 @@
     
     //头像
     UIImage *icon = [UIImage imageNamed:@"ic_icon_header"];
-    HSImageCellModel *header = [[HSImageCellModel alloc] initWithTitle:@"头像" placeHoldImage:nil bigImage:icon actionBlock:^(HSBaseCellModel *model) {
+    HSImageCellModel *header = [[HSImageCellModel alloc] initWithTitle:@"头像" placeholderImage:icon imageUrl:nil actionBlock:^(HSBaseCellModel *model) {
         
-    } imageBlock:^{
-        
-    }];
+    } imageBlock:nil];
     //名字
     HSTextCellModel *name = [[HSTextCellModel alloc] initWithTitle:@"名字" detailText:@"人名的名义" actionBlock:^(HSBaseCellModel *model) {
         
@@ -43,11 +41,9 @@
     
     //我的二维码
     UIImage *image = [UIImage imageNamed:@"ic_icon_qrCode"];
-    HSImageCellModel *qrCode = [[HSImageCellModel alloc] initWithTitle:@"我的二维码" placeHoldImage:nil bigImage:image actionBlock:^(HSBaseCellModel *model) {
+    HSImageCellModel *qrCode = [[HSImageCellModel alloc] initWithTitle:@"我的二维码" placeholderImage:image imageUrl:nil actionBlock:^(HSBaseCellModel *model) {
         
-    } imageBlock:^{
-        
-    }];
+    } imageBlock:nil];
     qrCode.imageWidth = 15;
     qrCode.imageHieght = 15;
     qrCode.cellHeight = HS_KCellHeight;
@@ -76,18 +72,6 @@
 
 }
 
-#pragma mark tableView代理方法
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 10;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
-    [view setBackgroundColor:[UIColor hs_colorWithHexString:@"#EBEDEF"]];
-    return view;
-}
 
 - (void)dealloc
 {

@@ -97,10 +97,14 @@
 - (void)setupDataModel:(HSBaseCellModel *)model
 {
     self.cellModel = model;
-    self.textLabel.text = self.cellModel.title;
-    self.textLabel.font = self.cellModel.titleFont;
+    if(self.cellModel.attributeTitle){
+        self.textLabel.attributedText = self.cellModel.attributeTitle;
+    }else{
+         self.textLabel.text = self.cellModel.title;
+         self.textLabel.textColor = self.cellModel.titleColor;
+         self.textLabel.font = self.cellModel.titleFont;
+    }
     self.imageView.image = model.icon;
-    self.textLabel.textColor = self.cellModel.titleColor;
     [self.bottomLine setHs_y:model.cellHeight - model.separateHeight];
     [self.bottomLine setHs_height:model.separateHeight];
     [self.topLine setHs_height:model.separateHeight];

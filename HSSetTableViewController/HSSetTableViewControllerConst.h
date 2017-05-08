@@ -30,6 +30,8 @@
 #define HS_KDetailFont [UIFont systemFontOfSize:13.0]
 //标题默详细文本字体颜色
 #define HS_KDetailColor  [UIColor grayColor]
+//分组section之间的距离
+#define HS_SectionHeight  10
 
 //箭头默认宽度
 #define HS_KArrowWidth 8
