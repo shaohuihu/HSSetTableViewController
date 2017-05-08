@@ -73,8 +73,6 @@
     HSBaseCellModel *record = [[HSBaseCellModel alloc] initWithTitle:@"聊天记录" actionBlock:nil];
     //空间清理
     HSBaseCellModel *clean = [[HSBaseCellModel alloc] initWithTitle:@"空间清理" actionBlock:nil];
-    
-    
     //消息通知
     HSBaseCellModel *security = [[HSBaseCellModel alloc] initWithTitle:@"账号、设备安全" actionBlock:nil];
     //聊天记录
@@ -83,8 +81,6 @@
     HSBaseCellModel *help = [[HSBaseCellModel alloc] initWithTitle:@"辅助功能" actionBlock:nil];
     //关于QQ与帮助
     HSBaseCellModel *about = [[HSBaseCellModel alloc] initWithTitle:@"关于QQ与帮助" actionBlock:nil];
-    
-    
     
     
     
