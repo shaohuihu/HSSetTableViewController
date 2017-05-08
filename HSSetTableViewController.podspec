@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HSSetTableViewController"
-  s.version      = "1.0.4"
+  s.version      = "1.1.0"
   s.summary      = "A powerful set of interface tableView framework, can be configured to support cell updates"
   s.ios.deployment_target = '8.0'
 
