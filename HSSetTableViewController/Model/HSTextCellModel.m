@@ -9,7 +9,6 @@
 #import "HSTextCellModel.h"
 #import "NSString+HSHeight.h"
 #import "HSSetTableViewControllerConst.h"
-#import "NSAttributedString+HSHeight.h"
 #import <CoreText/CoreText.h>
 @implementation HSTextCellModel
 

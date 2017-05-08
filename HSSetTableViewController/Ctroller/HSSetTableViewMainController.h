@@ -34,4 +34,26 @@
  */
 - (void)updateCellModel:(HSBaseCellModel *)cellModel animation:(UITableViewRowAnimation)animation;
 
+
+
+/**
+ footer 高度 tableView代理方法
+
+ @param tableView tableView
+ @param section section
+ @return footer高度
+ */
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
+
+
+
+/**
+ footer View tableView代理方法
+
+ @param tableView tableView
+ @param section section
+ @return footer View
+ */
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section;
+
 @end

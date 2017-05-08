@@ -25,7 +25,10 @@
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
+    #ifdef NSFoundationVersionNumber_iOS_9_x_Max
     self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
+    #endif
+   
 }
 - (NSMutableArray *)hs_dataArry
 {
@@ -80,6 +83,29 @@
         cellModel.actionBlock(cellModel);
     }
 }
+
+#pragma mark tableView代理方法
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    //如果是最后一个section
+    if(section == self.hs_dataArry.count - 1){
+       return 0;
+    }
+    return HS_SectionHeight;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    
+    //如果是最后一个section
+    if(section == self.hs_dataArry.count - 1){
+        return nil;
+    }
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, HS_SectionHeight)];
+    [view setBackgroundColor:[UIColor clearColor]];
+    return view;
+}
+
 
 - (void)updateCellModel:(HSBaseCellModel *)cellModel
 {

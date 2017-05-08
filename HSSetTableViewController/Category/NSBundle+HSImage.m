@@ -7,7 +7,7 @@
 //
 
 #import "NSBundle+HSImage.h"
-
+#import "HSBaseTableViewCell.h"
 @implementation NSBundle (HSImage)
 
 
@@ -18,7 +18,7 @@
         hs_Bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"HSSetTableViewController" ofType:@"bundle"]];
         
         if (nil == hs_Bundle) {
-            
+             hs_Bundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[HSBaseTableViewCell class]] pathForResource:@"HSSetTableViewController" ofType:@"bundle"]];
         }
     }
     return hs_Bundle;

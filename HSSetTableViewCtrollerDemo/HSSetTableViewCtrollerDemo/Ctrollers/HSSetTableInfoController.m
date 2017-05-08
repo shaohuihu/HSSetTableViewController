@@ -72,18 +72,6 @@
 
 }
 
-#pragma mark tableView代理方法
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 10;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
-    [view setBackgroundColor:[UIColor hs_colorWithHexString:@"#EBEDEF"]];
-    return view;
-}
 
 - (void)dealloc
 {

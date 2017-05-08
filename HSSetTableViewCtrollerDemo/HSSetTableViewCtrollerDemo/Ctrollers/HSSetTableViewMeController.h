@@ -8,6 +8,10 @@
 
 #import "HSSetTableViewController.h"
 #import "HSSetTableViewController.h"
+
+/**
+ 微信我
+ */
 @interface HSSetTableViewMeController : HSSetTableViewMainController
 
 @end
