@@ -40,7 +40,7 @@
 ## <a id="How to use"></a>How to use
 * 使用 CocoaPods:
 请先安装cocoapods,如果版本太老无法找到,请升级cocopods到最新版本 命令：pod repo update
-  - `pod 'HSSetTableViewController', '~> 1.1.1'`
+  - `pod 'HSSetTableViewController'
   - 导入头文件：`#import <HSSetTableViewController.h>`
 * 直接导入：
   - 拖动 `HSSetTableViewController` 文件夹到你工程
