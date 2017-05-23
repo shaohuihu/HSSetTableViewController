@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+     self.view.backgroundColor = [UIColor hs_colorWithHexString:@"#EBEDEF"];
+    
      __weak __typeof(&*self)weakSelf = self;
     
     HSBaseCellModel *cell0 = [[HSBaseCellModel alloc] initWithTitle:@"分割线从0开始" actionBlock:^(HSBaseCellModel *model) {
@@ -70,18 +72,13 @@
     } imageBlock:^{
         
     }];
+    cell4.controlRightOffset = 40;
+    cell4.showArrow = YES;
+   // cell4.arrowControlRightOffset = 15;
     self.cell4 = cell4;
     
     
-    HSTextCellModel *cell5 = [[HSTextCellModel alloc] initWithTitle:@"文本2" detailText:@"加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血加班加到口吐二两鲜血" actionBlock:^(HSBaseCellModel *model) {
-        
-    }];
-    
-    cell5.leftPading = 250;
-    cell5.detailColor = [UIColor redColor];
-    
-    
-   
+
     
     NSString *balance =@"88";
     NSMutableAttributedString *aString = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"账户: %@元",balance]];
@@ -94,34 +91,23 @@
     
     [aString addAttribute:NSForegroundColorAttributeName value:[UIColor purpleColor]range:NSMakeRange(3,1)];
 
-    NSString *detailbalance =@"88888888";
-    NSMutableAttributedString *detailaString = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"账户余额: %@元",detailbalance]];
+    NSString *detailbalance =@"详细内容";
+    NSMutableAttributedString *detailaString = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"账: %@元",detailbalance]];
 
-    [detailaString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor]range:NSMakeRange(6, 8)];
+    [detailaString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor]range:NSMakeRange(0, 1)];
 
     HSTextCellModel *cell6 = [[HSTextCellModel alloc] initWithAttributeTitle:aString detailAttributeText:detailaString actionBlock:nil];
     cell6.leftPading = 100;
     
     
     
-    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,cell5,cell6,nil];
+    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,cell6,nil];
 //    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell6,nil];
     [self.hs_dataArry addObject:section0];
     [self.tableView reloadData];
-    
-
-    //[self downloadImage];
 }
 
-//- (void)downloadImage
-//{
-//    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:@"http://scimg.jb51.net/170405/2-1F40522332a13.jpg"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-//        
-//    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-//        self.cell4.bigImage = image;
-//        [self updateCellModel:self.cell4];
-//    }];
-//}
+
 
 - (void)dealloc
 {

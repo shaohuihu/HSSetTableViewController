@@ -17,11 +17,10 @@ typedef void(^ClickActionBlock)(HSBaseCellModel *model);
 /**
  基础属性
  */
-@property (nonatomic, copy)   NSString   *cellClass;  ///<该模型绑定的cell类名
-@property (nonatomic, copy)   NSString   *identifier;  ///<唯一标识符(更新会用到)
-@property (nonatomic, assign) UITableViewCellStyle cellStyle;  ///<
-@property (nonatomic, assign) BOOL isCanClick;  ///<是否有点击效果(默认有)
-@property (nonatomic, copy  ) ClickActionBlock actionBlock;///<cell点击事件
+@property (nonatomic,  copy)   NSString   *cellClass;  ///<该模型绑定的cell类名
+@property (nonatomic,  copy)   NSString   *identifier;  ///<唯一标识符(更新会用到)
+@property (nonatomic,assign)   UITableViewCellSelectionStyle   selectionStyle;//选中cell效果
+@property (nonatomic,  copy) ClickActionBlock actionBlock;///<cell点击事件
 
 
 /**
@@ -41,6 +40,15 @@ typedef void(^ClickActionBlock)(HSBaseCellModel *model);
 @property (nonatomic, strong)UIImage *arrowImage;  ///<箭头image
 @property (nonatomic, assign)CGFloat arrowWidth;  ///<箭头宽度
 @property (nonatomic, assign)CGFloat arrowHeight;  ///<箭头高度
+
+
+
+/**
+ 其它偏移属性
+ */
+@property (nonatomic, assign)CGFloat controlRightOffset;  ///<子类控件(比如，文本，开关，图片)cellModel距右边屏幕的间距默认15,如果有箭头，则就是箭头到右屏幕的间距，配合arrowControlRightOffset 使用
+
+@property (nonatomic, assign)CGFloat arrowControlRightOffset;  ///<子类控件(比如，文本，开关，图片)距右边箭头间距默认15/2 = 7.5，(如果箭头隐藏，此属性则无效)
 
 /**
  model初始化方法

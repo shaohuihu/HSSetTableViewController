@@ -12,7 +12,9 @@
 #import "UIView+HSFrame.h"
 
 @interface HSSwitchTableViewCell()
-@property (nonatomic, weak)UISwitch *switchItem;  ///<
+@property (nonatomic, weak)UISwitch *switchItem;  ///<开关
+
+@property (nonatomic, weak)NSLayoutConstraint *switchRightConstaint;  ///<
 @end
 
 @implementation HSSwitchTableViewCell
@@ -24,6 +26,7 @@
     if(cell == nil){
         cell = [[HSSwitchTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }
@@ -43,7 +46,10 @@
 
 - (void)setupSwitchItemConstrnts
 {
-    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.switchItem attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeRight multiplier:1.0 constant:- HS_KCellMargin]];
+    
+    NSLayoutConstraint *switchRightConstaint = [NSLayoutConstraint constraintWithItem:self.switchItem attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeRight multiplier:1.0 constant: -HS_KCellMargin];
+    [self.contentView addConstraint:switchRightConstaint];
+    self.switchRightConstaint = switchRightConstaint;
     
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.switchItem attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
     
@@ -57,6 +63,7 @@
     [super setupDataModel:model];
     HSSwitchCellModel *switchModel = (HSSwitchCellModel *)model;
     self.switchItem.on = switchModel.on;
+    self.switchRightConstaint.constant = - model.controlRightOffset;
     
 }
 
@@ -68,6 +75,8 @@
     if(model.switchBlock){
         model.switchBlock(self.cellModel,switchItem.on);
     }
+    
+   
 }
 
 

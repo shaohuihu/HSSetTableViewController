@@ -16,8 +16,7 @@ typedef void(^ClickImageBlock)();
 @property (nonatomic, strong)UIImage *placeHoderImage;  ///<初始化图片
 @property (nonatomic, copy)NSString *imageUrl;  ///<显示图片url
 @property (nonatomic, strong)UIImage *imageIcon;  ///<图片icon
-@property (nonatomic, assign)CGFloat imageWidth;  ///<图片宽度
-@property (nonatomic, assign)CGFloat imageHieght;  ///<图片高度
+@property (nonatomic, assign)CGSize imageSize;  ///<图片大小
 @property (nonatomic, assign)CGFloat cornerRadius;  ///<图片圆角
 
 @property (nonatomic, copy)ClickImageBlock imageBlock;  ///<点击图片block

@@ -15,7 +15,7 @@
     if(self = [super initWithTitle:title actionBlock:nil]){
         self.cellClass = HSSwitchCellModelCellClass;
         self.switchBlock = block;
-        self.isCanClick = NO;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.showArrow = NO;
         self.on = on;
     }

@@ -8,6 +8,10 @@
 
 #import "HSSetTableViewMainController.h"
 
+
+/**
+ 统一自定义风格
+ */
 @interface HSSetTableViewCustomController : HSSetTableViewMainController
 
 @end

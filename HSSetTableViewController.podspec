@@ -9,12 +9,12 @@
 Pod::Spec.new do |s|
 
   s.name         = "HSSetTableViewController"
-  s.version      = "1.1.1"
-  s.summary      = "A powerful set of interface tableView framework, can be configured to support cell updates"
+  s.version      = "1.1.3"
+  s.summary      = "所有App都能用到的设置界面和个人信息框架，高度封装，外部只需要组装数据源。简单实用！"
   s.ios.deployment_target = '8.0'
 
   s.description  = <<-DESC
-                   The generic tableView sets the interface wrapper, including cell updates, multiple lines of text on the right, and single line text. Switch and picture cell model, easy to use, automatic code layout, support for rotation, integration is simple.
+                   争取打造天朝最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！
                    DESC
   s.homepage     = "https://github.com/shaohuihu/HSSetTableViewController"
   s.license      = { :type => "MIT", :file => "LICENSE" }

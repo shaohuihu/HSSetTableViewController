@@ -50,6 +50,7 @@
     NSMutableArray *section1 = [NSMutableArray arrayWithObjects:expression,nil];
     NSMutableArray *section2 = [NSMutableArray arrayWithObjects:setting,nil];
 
+   // [self.hs_dataArry addObject:photo];
     [self.hs_dataArry addObject:section0];
     [self.hs_dataArry addObject:section1];
     [self.hs_dataArry addObject:section2];
@@ -66,15 +67,15 @@
     return viewHeader;
 }
 
-#pragma mark tableView代理方法
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+#pragma mark tableView代理方法,重写基类footer方法
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
 {
-    return 10;
+    return 50;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section;
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 10)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
     [view setBackgroundColor:[UIColor hs_colorWithHexString:@"#EBEDEF"]];
     return view;
 }

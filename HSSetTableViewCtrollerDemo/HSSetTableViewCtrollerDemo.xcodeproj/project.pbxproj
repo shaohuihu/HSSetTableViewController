@@ -26,6 +26,7 @@
 		3B07CCFE1EB1A21300CB0ADE /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCEC1EB1A21300CB0ADE /* UIImageView+HighlightedWebCache.m */; };
 		3B07CCFF1EB1A21300CB0ADE /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCEE1EB1A21300CB0ADE /* UIImageView+WebCache.m */; };
 		3B07CD001EB1A21300CB0ADE /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCF01EB1A21300CB0ADE /* UIView+WebCacheOperation.m */; };
+		3B719B8D1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B719B8C1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m */; };
 		3BB3C4A31EAB991D004A9BA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB3C4A21EAB991D004A9BA9 /* main.m */; };
 		3BB3C4A61EAB991D004A9BA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB3C4A51EAB991D004A9BA9 /* AppDelegate.m */; };
 		3BB3C4A91EAB991D004A9BA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB3C4A81EAB991D004A9BA9 /* ViewController.m */; };
@@ -110,6 +111,8 @@
 		3B07CCEE1EB1A21300CB0ADE /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		3B07CCEF1EB1A21300CB0ADE /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		3B07CCF01EB1A21300CB0ADE /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		3B719B8B1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetTableViewCustomController.h; sourceTree = "<group>"; };
+		3B719B8C1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSetTableViewCustomController.m; sourceTree = "<group>"; };
 		3BB3C49E1EAB991D004A9BA9 /* HSSetTableViewCtrollerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSSetTableViewCtrollerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BB3C4A21EAB991D004A9BA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BB3C4A41EAB991D004A9BA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				3B07CCCC1EB18D3800CB0ADE /* HSSetTableViewOtherController.m */,
 				3BF577891EC01AD1006E3814 /* HSSetTableViewQQController.h */,
 				3BF5778A1EC01AD1006E3814 /* HSSetTableViewQQController.m */,
+				3B719B8B1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.h */,
+				3B719B8C1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m */,
 			);
 			path = Ctrollers;
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 				3BFD66611EB1DD050001E324 /* UIView+HSFrame.m in Sources */,
 				3BFD66691EB1DD050001E324 /* HSBaseTableViewCell.m in Sources */,
 				3B07CCCA1EB18D1000CB0ADE /* HSSetTableInfoController.m in Sources */,
+				3B719B8D1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m in Sources */,
 				3BB3C4A91EAB991D004A9BA9 /* ViewController.m in Sources */,
 				3B07CCF71EB1A21300CB0ADE /* SDWebImageDownloaderOperation.m in Sources */,
 				3B07CCF91EB1A21300CB0ADE /* SDWebImagePrefetcher.m in Sources */,

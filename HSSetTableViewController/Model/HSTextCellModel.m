@@ -10,6 +10,12 @@
 #import "NSString+HSHeight.h"
 #import "HSSetTableViewControllerConst.h"
 #import <CoreText/CoreText.h>
+
+@interface HSTextCellModel()
+@property (nonatomic, assign) CGFloat heightOne;  ///<一行文本的高度
+@property (nonatomic, assign) CGFloat heightMore;  ///<多行文本高度
+
+@end
 @implementation HSTextCellModel
 
 - (instancetype)initWithTitle:(NSString *)title detailText:(NSString *)detailText actionBlock:(ClickActionBlock)block
@@ -18,6 +24,7 @@
         self.leftPading = HS_KCellTextLeftPading;
         self.detailFont = HS_KDetailFont;
         self.detailColor = HS_KDetailColor;
+       
         self.detailText = detailText;
         self.cellClass = HSTextCellModelCellClass;
     }
@@ -71,6 +78,18 @@
     [self setDetailText:self.detailText];
 }
 
+- (void)setArrowControlRightOffset:(CGFloat)arrowControlRightOffset
+{
+    [super setArrowControlRightOffset:arrowControlRightOffset];
+    [self setDetailText:self.detailText];
+}
+
+- (void)setControlRightOffset:(CGFloat)controlRightOffset
+{
+    [super setControlRightOffset:controlRightOffset];
+    [self setDetailText:self.detailText];
+}
+
 - (void)setLeftPading:(CGFloat)leftPading
 {
     _leftPading = leftPading;
@@ -116,27 +135,11 @@
     CGFloat height = 0;
     UIFont *font;
     if([object isKindOfClass:[NSString class]]){
-       height = [(NSString *)object hs_heightWithFont:self.detailFont constrainedToWidth:screenWidth - self.leftPading - (self.showArrow ?  HS_KCellMargin + HS_KCellMargin/2 + self.arrowWidth : HS_KCellMargin)];
+       height = [(NSString *)object hs_heightWithFont:self.detailFont constrainedToWidth:screenWidth - self.leftPading - (self.showArrow ?  self.controlRightOffset + self.arrowControlRightOffset + self.arrowWidth : self.controlRightOffset)];
         font = self.detailFont;
+        
     }else{
-      
-    
-//        CGRect frame = [(NSAttributedString *)object boundingRectWithSize:CGSizeMake(screenWidth - self.leftPading - (self.showArrow ?  HS_KCellMargin + HS_KCellMargin/2 + self.arrowWidth : HS_KCellMargin), CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
-//        HSLog(@"frame ---%f",frame.size.height);
-//        font = HS_KDetailFont;
-//        height = size.height;
         
-//        CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)(NSAttributedString *)object);
-//        CGSize targetSize = CGSizeMake(screenWidth - self.leftPading - (self.showArrow ?  HS_KCellMargin + HS_KCellMargin/2 + self.arrowWidth : HS_KCellMargin), CGFLOAT_MAX);
-//        CGSize fitSize = CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRangeMake(0, [(NSAttributedString *)object length]), NULL, targetSize, NULL);
-//        HSLog(@"fitSize ---%f",fitSize.height);
-//        CFRelease(framesetter);
-        
-//        UITextView *view=[[UITextView alloc] initWithFrame:CGRectMake(0, 0, screenWidth - self.leftPading - (self.showArrow ?  HS_KCellMargin + HS_KCellMargin/2 + self.arrowWidth : HS_KCellMargin), 0)];
-//        view.attributedText=(NSAttributedString *)object;
-//        CGSize textSize=[view sizeThatFits:CGSizeMake(screenWidth - self.leftPading - (self.showArrow ?  HS_KCellMargin + HS_KCellMargin/2 + self.arrowWidth : HS_KCellMargin), CGFLOAT_MAX)];
-//        height=textSize.height;
-//        NSLog(@"height ---%f",height);
     }
     
     if(height < font.pointSize + 5 || height == 0){

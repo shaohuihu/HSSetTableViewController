@@ -22,7 +22,7 @@
         self.identifier = [NSString stringWithFormat:@"%lf",now];
         self.actionBlock = block;
         self.cellClass = HSBaseCellModelCellClass;
-        self.isCanClick = YES;
+        self.selectionStyle = UITableViewCellSelectionStyleDefault;
         self.separateOffset = HS_KCellMargin;
         self.separateColor = HS_KSeparateColor;
         self.separateHeight = HS_KSeparateHeight;
@@ -31,6 +31,8 @@
         self.arrowImage = [NSBundle hs_imageNamed:@"ic_hs_tableView_arrow"];
         self.arrowWidth = HS_KArrowWidth;
         self.arrowHeight = HS_kArrowHeight;
+        self.controlRightOffset = HS_KCellMargin;
+        self.arrowControlRightOffset = HS_KCellMargin/2;
     }
     return self;
 }
@@ -45,7 +47,7 @@
         self.identifier = [NSString stringWithFormat:@"%lf",now];
         self.actionBlock = block;
         self.cellClass = HSBaseCellModelCellClass;
-        self.isCanClick = YES;
+        self.selectionStyle = UITableViewCellSelectionStyleDefault;
         self.separateColor = HS_KSeparateColor;
         self.separateHeight = HS_KSeparateHeight;
         self.titleFont = HS_KTitleFont;
@@ -53,6 +55,8 @@
         self.arrowImage = [NSBundle hs_imageNamed:@"ic_hs_tableView_arrow"];
         self.arrowWidth = HS_KArrowWidth;
         self.arrowHeight = HS_kArrowHeight;
+        self.controlRightOffset = HS_KCellMargin;
+        self.arrowControlRightOffset = HS_KCellMargin/2;
     }
     return self;
 }

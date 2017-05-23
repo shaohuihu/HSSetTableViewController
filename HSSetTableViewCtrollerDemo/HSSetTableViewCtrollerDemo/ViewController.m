@@ -11,6 +11,7 @@
 #import "HSSetTableInfoController.h"
 #import "HSSetTableViewOtherController.h"
 #import "HSSetTableViewQQController.h"
+#import "HSSetTableViewCustomController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak)UITableView *tableView;  ///<
 @property (nonatomic, strong)NSArray *dataSource;  ///<
@@ -35,8 +36,8 @@
     tableView.cellLayoutMarginsFollowReadableWidth  = NO;
     [self.view addSubview:tableView];
     self.tableView = tableView;
-    self.dataSource = @[@"我(仿微信)",@"个人信息(仿微信)",@"复杂界面(更新)",@"个人资料(QQ)"];
-    self.classSource = @[@"HSSetTableViewMeController",@"HSSetTableInfoController",@"HSSetTableViewOtherController",@"HSSetTableViewQQController"];
+    self.dataSource = @[@"我(仿微信)",@"个人信息(仿微信)",@"复杂界面(更新)",@"个人资料(QQ)",@"统一风格(自定义)"];
+    self.classSource = @[@"HSSetTableViewMeController",@"HSSetTableInfoController",@"HSSetTableViewOtherController",@"HSSetTableViewQQController",@"HSSetTableViewCustomController"];
 }
 
 - (NSArray *)dataSource

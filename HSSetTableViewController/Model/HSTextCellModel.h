@@ -13,8 +13,7 @@
 
 @property (nonatomic, copy)   NSString *detailText;  ///<详细文本
 @property (nonatomic, copy)   NSAttributedString *attributeDetailText;  ///<设置富文本内容后detailText将失效
-@property (nonatomic, assign) CGFloat heightOne;  ///<一行文本的高度
-@property (nonatomic, assign) CGFloat heightMore;  ///<多行文本高度
+
 @property (nonatomic, strong) UIColor *detailColor;  ///<cell详细文本color
 @property (nonatomic, strong) UIFont *detailFont;  ///<cell详细文本Font
 @property (nonatomic, assign) CGFloat leftPading;  ///<距离左边的间距

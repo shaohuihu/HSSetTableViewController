@@ -36,7 +36,7 @@
     HSTextCellModel *number = [[HSTextCellModel alloc] initWithTitle:@"微信号" detailText:@"HSSetTableView" actionBlock:^(HSBaseCellModel *model) {
         
     }];
-    number.isCanClick = NO;
+    number.selectionStyle = UITableViewCellSelectionStyleNone;
     number.showArrow = NO;
     
     //我的二维码
@@ -44,8 +44,7 @@
     HSImageCellModel *qrCode = [[HSImageCellModel alloc] initWithTitle:@"我的二维码" placeholderImage:image imageUrl:nil actionBlock:^(HSBaseCellModel *model) {
         
     } imageBlock:nil];
-    qrCode.imageWidth = 15;
-    qrCode.imageHieght = 15;
+    qrCode.imageSize = CGSizeMake(15, 15);
     qrCode.cellHeight = HS_KCellHeight;
     
     //我的地址
@@ -58,15 +57,17 @@
     
     //地区
     HSTextCellModel *area = [[HSTextCellModel alloc] initWithTitle:@"地区" detailText:@"四川 成都" actionBlock:nil];
-    
-    
+//
+//    
     //个性签名
     HSTextCellModel *sign = [[HSTextCellModel alloc] initWithTitle:@"签名" detailText:@"气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹" actionBlock:nil];
+//    sign.controlRightOffset = 30;
+//    sign.arrowControlRightOffset = 50;
     
  
     
     NSMutableArray *section0 = [NSMutableArray arrayWithObjects:header,name,number,qrCode,address, nil];
-    NSMutableArray *section1 = [NSMutableArray arrayWithObjects:sex,area,sign,nil];
+    NSMutableArray *section1 = [NSMutableArray arrayWithObjects:area,sex,sign,nil];
     [self.hs_dataArry addObject:section0];
     [self.hs_dataArry addObject:section1];
 

@@ -18,6 +18,7 @@
 
 @property (nonatomic, weak)NSLayoutConstraint *arrowWidthContraint;  ///<箭头宽度contraint
 @property (nonatomic, weak)NSLayoutConstraint *arrowHeightContraint;  ///<箭头高度contraint
+@property (nonatomic, weak)NSLayoutConstraint *arrowRightContraint;  ///<箭头距右边contraint
 @end
 
 
@@ -70,7 +71,9 @@
 - (void)setupArrowImageConstraints
 {
    
-    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.arrow attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeRight multiplier:1.0 constant:-HS_KCellMargin]];
+    NSLayoutConstraint *arrowRightContraint = [NSLayoutConstraint constraintWithItem:self.arrow attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeRight multiplier:1.0 constant:-HS_KCellMargin];
+    [self.contentView addConstraint:arrowRightContraint];
+    self.arrowRightContraint = arrowRightContraint;
     
     
     NSLayoutConstraint *arrowWidthContraint = [NSLayoutConstraint constraintWithItem:self.arrow attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HS_KArrowWidth];
@@ -112,10 +115,11 @@
     [self.topLine setBackgroundColor:model.separateColor.CGColor];
     
     self.arrow.hidden = !self.cellModel.showArrow;
-    self.selectionStyle = !model.isCanClick ? UITableViewCellSelectionStyleNone:UITableViewCellSelectionStyleDefault;
+    self.selectionStyle = model.selectionStyle;
     self.arrow.image = model.arrowImage;
     self.arrowWidthContraint.constant = model.arrowWidth;
     self.arrowHeightContraint.constant = model.arrowHeight;
+    self.arrowRightContraint.constant = - model.controlRightOffset;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

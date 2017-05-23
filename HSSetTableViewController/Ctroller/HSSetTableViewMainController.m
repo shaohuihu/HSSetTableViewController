@@ -13,7 +13,7 @@
 #import "UIView+HSFrame.h"
 #import "HSSetTableViewControllerConst.h"
 #import "HSTextCellModel.h"
-@interface HSSetTableViewMainController ()
+@interface HSSetTableViewMainController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -21,14 +21,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.showsVerticalScrollIndicator = NO;
+
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    tableView.translatesAutoresizingMaskIntoConstraints = NO;
+    tableView.backgroundColor = [UIColor clearColor];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    tableView.showsVerticalScrollIndicator = NO;
     #ifdef NSFoundationVersionNumber_iOS_9_x_Max
-    self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
+    tableView.cellLayoutMarginsFollowReadableWidth = NO;
     #endif
+    [self.view addSubview:tableView];
+    self.tableView = tableView;
+    
+    [self setupTableViewConstrint];
    
+}
+
+//设置tableView约束
+- (void)setupTableViewConstrint
+{
+    
+    NSLayoutConstraint *tableViewTopConstraint = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    [self.view addConstraint:tableViewTopConstraint];
+    
+    
+    NSLayoutConstraint *tableViewLeftConstraint = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
+    [self.view addConstraint:tableViewLeftConstraint];
+   
+    
+    NSLayoutConstraint *tableViewWidthConstraint = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
+    [self.view addConstraint:tableViewWidthConstraint];
+    
+    NSLayoutConstraint *tableViewHeightConstraint = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+    [self.view addConstraint:tableViewHeightConstraint];
+    
 }
 - (NSMutableArray *)hs_dataArry
 {
@@ -47,12 +76,14 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSMutableArray *rows = [self.hs_dataArry hs_objectWithIndex:section];
+    NSAssert([rows isKindOfClass:[NSMutableArray class]], @"此对象必须为一个可变数组,请检查数据源组装方式是否正确!");
     return rows.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSMutableArray *sections = [self.hs_dataArry hs_objectWithIndex:indexPath.section];
+    NSAssert([sections isKindOfClass:[NSMutableArray class]], @"此对象必须为一个可变数组,请检查数据源组装方式是否正确!");
     HSBaseCellModel *cellModel = (HSBaseCellModel *)[sections hs_objectWithIndex:indexPath.row];
     Class class = NSClassFromString(cellModel.cellClass);
     HSBaseTableViewCell *cell = [class cellWithIdentifier:cellModel.cellClass tableView:tableView];
@@ -68,6 +99,7 @@
 {
     
     NSMutableArray *sections = [self.hs_dataArry hs_objectWithIndex:indexPath.section];
+    NSAssert([sections isKindOfClass:[NSMutableArray class]], @"此对象必须为一个可变数组,请检查数据源组装方式是否正确!");
     HSBaseCellModel *cellModel = (HSBaseCellModel *)[sections hs_objectWithIndex:indexPath.row];
 
     Class class =  NSClassFromString(cellModel.cellClass);
@@ -77,6 +109,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSMutableArray *sections = [self.hs_dataArry hs_objectWithIndex:indexPath.section];
+    NSAssert([sections isKindOfClass:[NSMutableArray class]], @"此对象必须为一个可变数组,请检查数据源组装方式是否正确!");
     HSBaseCellModel *cellModel = (HSBaseCellModel *)[sections hs_objectWithIndex:indexPath.row];
     [tableView deselectRowAtIndexPath:indexPath animated:cellModel.actionBlock == nil];
     if(cellModel.actionBlock){
@@ -117,6 +150,7 @@
     NSMutableArray *tempData = [NSMutableArray arrayWithArray:self.hs_dataArry];
     [tempData enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx1, BOOL * _Nonnull stop) {
         NSMutableArray *sections = (NSMutableArray *)obj;
+        NSAssert([sections isKindOfClass:[NSMutableArray class]], @"此对象必须为一个可变数组,请检查数据源组装方式是否正确!");
         [sections enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx2, BOOL * _Nonnull stop) {
             HSBaseCellModel *model  = (HSBaseCellModel *)obj;
             if([model.identifier isEqualToString:cellModel.identifier]){
@@ -141,6 +175,7 @@
      __weak __typeof(&*self)weakSelf = self;
     [self.hs_dataArry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSMutableArray *sections = (NSMutableArray *)obj;
+        NSAssert([sections isKindOfClass:[NSMutableArray class]], @"此对象必须为一个可变数组,请检查数据源组装方式是否正确!");
         [sections enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if([obj isKindOfClass:[HSTextCellModel class]]){
                 HSTextCellModel *model = (HSTextCellModel *)obj;
@@ -150,6 +185,21 @@
         }];
         
     }];
+}
+
+
+- (void)dealloc
+{
+    if(self.tableView){
+        self.tableView.delegate = nil;
+        self.tableView.dataSource = nil;
+        [self.tableView removeFromSuperview];
+        self.tableView = nil;
+    }
+    if(self.hs_dataArry){
+        [self.hs_dataArry removeAllObjects];
+        self.hs_dataArry = nil;
+    }
 }
 
 

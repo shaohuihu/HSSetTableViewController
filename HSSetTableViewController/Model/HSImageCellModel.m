@@ -16,8 +16,7 @@
         self.placeHoderImage = placeholderImage;
         self.imageUrl = imageUrl;
         self.imageBlock = imageBlock;
-        self.imageWidth = HS_KImageWidth;
-        self.imageHieght = HS_KImageHeight;
+        self.imageSize = CGSizeMake(HS_KImageWidth, HS_KImageHeight);
         self.cornerRadius = .0f;
         self.cellHeight  = HS_KImageCellHeight;
         self.cellClass = HSImageCellModelCellClass;

@@ -85,16 +85,16 @@
     
     self.bigImageView.layer.cornerRadius = bigModel.cornerRadius > 0 ? bigModel.cornerRadius : 0.f;
 
-    if(bigModel.imageWidth > 0){
-        self.bigImageWidthConstraint.constant = bigModel.imageWidth;
+    if(bigModel.imageSize.width > 0){
+        self.bigImageWidthConstraint.constant = bigModel.imageSize.width;
     }
-    if(bigModel.imageHieght > 0){
-        self.bigImageHeightConstaint.constant = bigModel.imageHieght;
+    if(bigModel.imageSize.height > 0){
+        self.bigImageHeightConstaint.constant = bigModel.imageSize.height;
     }
     if(bigModel.showArrow){
-         self.bigImageRightConstraint.constant = - HS_KCellMargin-HS_KCellMargin/2-HS_KArrowWidth;
+         self.bigImageRightConstraint.constant = - model.controlRightOffset - model.arrowControlRightOffset- model.arrowWidth;
     }else{
-        self.bigImageRightConstraint.constant = - HS_KCellMargin;
+        self.bigImageRightConstraint.constant = - model.controlRightOffset;
     }
 }
 

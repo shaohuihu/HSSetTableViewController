@@ -14,7 +14,7 @@
 
 @property (nonatomic, weak)UILabel *detailLabel;  ///<详细文本内容
 @property (nonatomic, weak)NSLayoutConstraint *detailRightConstraint;  ///<
-@property (nonatomic, weak)NSLayoutConstraint *detailLeftconstraint;  ///<
+@property (nonatomic, weak)NSLayoutConstraint *detailLeftConstraint;  ///<
 @end
 @implementation HSTextTableViewCell
 
@@ -38,7 +38,6 @@
     detailTextLabel.textAlignment = NSTextAlignmentRight;
     [self.contentView addSubview:detailTextLabel];
     self.detailLabel = detailTextLabel;
-    
     [self setupdetailLabelConstraints];
 }
 
@@ -52,7 +51,7 @@
     
     NSLayoutConstraint *constraintLeft = [NSLayoutConstraint constraintWithItem:self.detailLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:HS_KCellTextLeftPading];
     [self.contentView addConstraint:constraintLeft];
-    self.detailLeftconstraint = constraintLeft;
+    self.detailLeftConstraint = constraintLeft;
     
     
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.detailLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
@@ -77,11 +76,11 @@
     
     //根据箭头显示设置约束
     if(self.cellModel.showArrow){
-        self.detailRightConstraint.constant = - HS_KCellMargin - HS_KCellMargin/2- rightModel.arrowWidth;
+        self.detailRightConstraint.constant = - self.cellModel.controlRightOffset - self.cellModel.arrowControlRightOffset - self.cellModel.arrowWidth;
     }else{
-        self.detailRightConstraint.constant = - HS_KCellMargin;
+        self.detailRightConstraint.constant = - self.cellModel.controlRightOffset;
     }
-    self.detailLeftconstraint.constant = rightModel.leftPading;
+    self.detailLeftConstraint.constant = rightModel.leftPading;
 }
 
 

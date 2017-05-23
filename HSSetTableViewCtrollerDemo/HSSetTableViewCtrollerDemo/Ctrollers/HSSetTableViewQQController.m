@@ -26,8 +26,7 @@
     } imageBlock:^{
         
     }];
-    head.imageWidth = 30;
-    head.imageHieght = 30;
+    head.imageSize = CGSizeMake(30.0f, 30.0f);
     head.cornerRadius = 15;
     head.cellHeight = HS_KCellHeight;
     
@@ -94,6 +93,11 @@
     [self.hs_dataArry addObject:section3];
     [self.tableView reloadData];
     
+}
+
+- (void)dealloc
+{
+    NSLog(@"%@控制器销毁",self.class);
 }
 
 
