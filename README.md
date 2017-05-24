@@ -43,7 +43,7 @@
   - `pod 'HSSetTableViewController'
   - 导入头文件：`#import <HSSetTableViewController.h>`
 * 直接导入：
-  - 拖动 `HSSetTableViewController` 文件夹到你工程
+  - 拖动 `HSSetTableViewController` 文件夹以及SDWebImage到你工程目录。
   - 导入头文件：`#import "HSSetTableViewController.h"`
 * 类使用: 
   - 你的UIViewController只需要继承基类HSSetTableViewMainController即可
