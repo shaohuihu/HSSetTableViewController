@@ -1,6 +1,6 @@
 # HSSetTableViewController
 
-争取打造天朝最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！100% App都能用到!!
+最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！100% App都能用到!!
 - 本库优势：
    1. 支持标题，详细文本配置，分割线自定义，箭头自定义，适配不同App风格。
    3. 支持cell右边文本更新，高度内部计算。支持横竖屏自动适应文本高度。
