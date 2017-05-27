@@ -33,6 +33,12 @@
 //分组section之间的距离
 #define HS_SectionHeight  10
 
+//默认左间距
+#define HS_KLeftMargin 15
+//iconView默认宽高
+#define HS_KIconViewWH 20
+//titleLable右侧占屏幕比例
+#define HS_KTitleRightScale 0.3
 //箭头默认宽度
 #define HS_KArrowWidth 8
 //箭头默认高度
@@ -43,10 +49,10 @@
 #define HS_KCellPading  5
 //cell默认高度
 #define HS_KCellHeight 44
-//开关默认宽度
-#define HS_KSwitchWidth 50
-//开关默认高度
-#define HS_KSwitchHeight 30
+//开关默认比例
+#define HS_KSwitchScale 1.0
+//输入框默认高度
+#define HS_KTextFieldHeight 30
 //大图默认cell高度
 #define HS_KImageCellHeight 90
 //右边大图默认宽度
@@ -67,7 +73,7 @@ UIKIT_EXTERN NSString *const HSBaseCellModelCellClass;
 UIKIT_EXTERN NSString *const HSImageCellModelCellClass;
 UIKIT_EXTERN NSString *const HSSwitchCellModelCellClass;
 UIKIT_EXTERN NSString *const HSTextCellModelCellClass;
-
+UIKIT_EXTERN NSString *const HSTextFieldCellModelCellClass;
 
 #endif /* HSSetTableViewConst_h */
 

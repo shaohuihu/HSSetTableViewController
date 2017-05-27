@@ -13,6 +13,6 @@
 #import "HSSwitchCellModel.h"
 #import "HSImageCellModel.h"
 #import "UIColor+HSExtension.h"
-
+#import "HSTextFieldCellModel.h"
 
 
