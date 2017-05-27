@@ -34,6 +34,7 @@ typedef void(^ClickActionBlock)(HSBaseCellModel *model);
 @property (nonatomic, assign) CGFloat separateOffset;  ///<分割线左边间距(默认为0)
 @property (nonatomic, strong) UIColor *titleColor;  ///<cell标题color
 @property (nonatomic, strong) UIFont *titleFont;  ///<cell标题font
+@property (nonatomic, assign) BOOL adjustsFontSizeToFitWidth;  ///<是否根据标题宽度自动缩小字体
 @property (nonatomic, assign) CGFloat separateHeight;  ///<分割线高度
 @property (nonatomic, strong) UIColor *separateColor;  ///<分割线颜色
 
@@ -52,7 +53,7 @@ typedef void(^ClickActionBlock)(HSBaseCellModel *model);
 
 /**
  model初始化方法
-
+ 
  @param title 模型标题
  @param block block类型
  @return HSBaseCellModel
@@ -62,7 +63,7 @@ typedef void(^ClickActionBlock)(HSBaseCellModel *model);
 
 /**
  model初始化方法
-
+ 
  @param attributeTitle 模型富文本标题
  @param block block回调
  @return HSBaseCellModel

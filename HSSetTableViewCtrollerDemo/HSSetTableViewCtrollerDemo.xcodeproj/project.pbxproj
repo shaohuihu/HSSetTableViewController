@@ -52,6 +52,9 @@
 		3BFD666A1EB1DD050001E324 /* HSImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD66581EB1DD050001E324 /* HSImageTableViewCell.m */; };
 		3BFD666B1EB1DD050001E324 /* HSSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD665A1EB1DD050001E324 /* HSSwitchTableViewCell.m */; };
 		3BFD666C1EB1DD050001E324 /* HSTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD665C1EB1DD050001E324 /* HSTextTableViewCell.m */; };
+		654C2FDB1ED9503F001987EB /* NSString+HSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 654C2FDA1ED9503F001987EB /* NSString+HSExtension.m */; };
+		654C2FDE1ED950DF001987EB /* HSTextFieldCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654C2FDD1ED950DF001987EB /* HSTextFieldCellModel.m */; };
+		654C2FE11ED951C3001987EB /* HSTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 654C2FE01ED951C3001987EB /* HSTextFieldTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +166,12 @@
 		3BFD665A1EB1DD050001E324 /* HSSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSwitchTableViewCell.m; sourceTree = "<group>"; };
 		3BFD665B1EB1DD050001E324 /* HSTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSTextTableViewCell.h; sourceTree = "<group>"; };
 		3BFD665C1EB1DD050001E324 /* HSTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSTextTableViewCell.m; sourceTree = "<group>"; };
+		654C2FD91ED9503F001987EB /* NSString+HSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HSExtension.h"; sourceTree = "<group>"; };
+		654C2FDA1ED9503F001987EB /* NSString+HSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HSExtension.m"; sourceTree = "<group>"; };
+		654C2FDC1ED950DF001987EB /* HSTextFieldCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSTextFieldCellModel.h; sourceTree = "<group>"; };
+		654C2FDD1ED950DF001987EB /* HSTextFieldCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSTextFieldCellModel.m; sourceTree = "<group>"; };
+		654C2FDF1ED951C3001987EB /* HSTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		654C2FE01ED951C3001987EB /* HSTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSTextFieldTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +354,8 @@
 				3BFD663D1EB1DD050001E324 /* NSBundle+HSImage.m */,
 				3BFD663E1EB1DD050001E324 /* NSString+HSHeight.h */,
 				3BFD663F1EB1DD050001E324 /* NSString+HSHeight.m */,
+				654C2FD91ED9503F001987EB /* NSString+HSExtension.h */,
+				654C2FDA1ED9503F001987EB /* NSString+HSExtension.m */,
 				3BFD66401EB1DD050001E324 /* UIColor+HSExtension.h */,
 				3BFD66411EB1DD050001E324 /* UIColor+HSExtension.m */,
 				3BFD66421EB1DD050001E324 /* UIView+HSFrame.h */,
@@ -373,6 +384,8 @@
 				3BFD66511EB1DD050001E324 /* HSSwitchCellModel.m */,
 				3BFD66521EB1DD050001E324 /* HSTextCellModel.h */,
 				3BFD66531EB1DD050001E324 /* HSTextCellModel.m */,
+				654C2FDC1ED950DF001987EB /* HSTextFieldCellModel.h */,
+				654C2FDD1ED950DF001987EB /* HSTextFieldCellModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,6 +401,8 @@
 				3BFD665A1EB1DD050001E324 /* HSSwitchTableViewCell.m */,
 				3BFD665B1EB1DD050001E324 /* HSTextTableViewCell.h */,
 				3BFD665C1EB1DD050001E324 /* HSTextTableViewCell.m */,
+				654C2FDF1ED951C3001987EB /* HSTextFieldTableViewCell.h */,
+				654C2FE01ED951C3001987EB /* HSTextFieldTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -533,6 +548,7 @@
 				3B07CCF11EB1A21300CB0ADE /* MKAnnotationView+WebCache.m in Sources */,
 				3B07CCC71EB18CE600CB0ADE /* HSSetTableViewMeController.m in Sources */,
 				3BFD66651EB1DD050001E324 /* HSBaseCellModel.m in Sources */,
+				654C2FDB1ED9503F001987EB /* NSString+HSExtension.m in Sources */,
 				3BFD66641EB1DD050001E324 /* HSSetTableViewControllerConst.m in Sources */,
 				3B07CCF41EB1A21300CB0ADE /* SDWebImageCompat.m in Sources */,
 				3B07CCF31EB1A21300CB0ADE /* SDImageCache.m in Sources */,
@@ -544,7 +560,9 @@
 				3B07CCF61EB1A21300CB0ADE /* SDWebImageDownloader.m in Sources */,
 				3BFD66671EB1DD050001E324 /* HSSwitchCellModel.m in Sources */,
 				3BFD666A1EB1DD050001E324 /* HSImageTableViewCell.m in Sources */,
+				654C2FDE1ED950DF001987EB /* HSTextFieldCellModel.m in Sources */,
 				3BFD665E1EB1DD050001E324 /* NSBundle+HSImage.m in Sources */,
+				654C2FE11ED951C3001987EB /* HSTextFieldTableViewCell.m in Sources */,
 				3BFD665F1EB1DD050001E324 /* NSString+HSHeight.m in Sources */,
 				3B07CCFF1EB1A21300CB0ADE /* UIImageView+WebCache.m in Sources */,
 				3BFD66601EB1DD050001E324 /* UIColor+HSExtension.m in Sources */,

@@ -12,6 +12,7 @@
 typedef void(^switchBlock)(HSBaseCellModel *model,BOOL on);
 @interface HSSwitchCellModel : HSBaseCellModel
 @property (nonatomic, assign)BOOL on;  ///<开关状态
+@property (nonatomic, assign)CGFloat switchScale;  ///< 开关默认比例
 @property (nonatomic, copy)switchBlock switchBlock;  ///< block调用
 
 

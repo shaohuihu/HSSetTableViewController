@@ -53,15 +53,13 @@
     
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.switchItem attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
     
-    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.switchItem attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HS_KSwitchWidth]];
-    
-    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.switchItem attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HS_KSwitchHeight]];
 }
 
 - (void)setupDataModel:(HSBaseCellModel *)model
 {
     [super setupDataModel:model];
     HSSwitchCellModel *switchModel = (HSSwitchCellModel *)model;
+    self.switchItem.transform = CGAffineTransformMakeScale(switchModel.switchScale, switchModel.switchScale);//缩放
     self.switchItem.on = switchModel.on;
     self.switchRightConstaint.constant = - model.controlRightOffset;
     
@@ -76,7 +74,7 @@
         model.switchBlock(self.cellModel,switchItem.on);
     }
     
-   
+    
 }
 
 

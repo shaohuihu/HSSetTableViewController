@@ -21,18 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-     self.view.backgroundColor = [UIColor hs_colorWithHexString:@"#EBEDEF"];
+    self.view.backgroundColor = [UIColor hs_colorWithHexString:@"#EBEDEF"];
     
-     __weak __typeof(&*self)weakSelf = self;
+    __weak __typeof(&*self)weakSelf = self;
     
     HSBaseCellModel *cell0 = [[HSBaseCellModel alloc] initWithTitle:@"分割线从0开始" actionBlock:^(HSBaseCellModel *model) {
         NSLog(@"点击事件");
     }];
-   
+    
     cell0.separateOffset = 0;
     cell0.separateHeight = 2;
     cell0.separateColor = [UIColor redColor];
-    
     
     
     HSBaseCellModel *cell1 = [[HSBaseCellModel alloc] initWithTitle:@"标题颜色和字体" actionBlock:^(HSBaseCellModel *model) {
@@ -58,12 +57,13 @@
     cell2.detailColor = [UIColor blueColor];
     
     
-   
+    
     
     
     HSSwitchCellModel *cell3 = [[HSSwitchCellModel alloc] initWithTitle:@"开关控制" switchType:YES switchBlock:^(HSBaseCellModel *model, BOOL on) {
         HSLog(@"开关控制")
     }];
+    cell3.switchScale = 0.5;
     
     //下载图片
     UIImage *placeHolder = [UIImage imageNamed:@"ic_icon_header"];
@@ -74,11 +74,11 @@
     }];
     cell4.controlRightOffset = 40;
     cell4.showArrow = YES;
-   // cell4.arrowControlRightOffset = 15;
+    // cell4.arrowControlRightOffset = 15;
     self.cell4 = cell4;
     
     
-
+    
     
     NSString *balance =@"88";
     NSMutableAttributedString *aString = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"账户: %@元",balance]];
@@ -90,19 +90,24 @@
     [aString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor]range:NSMakeRange(2,1)];
     
     [aString addAttribute:NSForegroundColorAttributeName value:[UIColor purpleColor]range:NSMakeRange(3,1)];
-
+    
     NSString *detailbalance =@"详细内容";
     NSMutableAttributedString *detailaString = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"账: %@元",detailbalance]];
-
+    
     [detailaString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor]range:NSMakeRange(0, 1)];
-
+    
     HSTextCellModel *cell6 = [[HSTextCellModel alloc] initWithAttributeTitle:aString detailAttributeText:detailaString actionBlock:nil];
     cell6.leftPading = 100;
     
+    HSTextFieldCellModel *cell7 = [[HSTextFieldCellModel alloc] initWithTitle:@"文本框文本框文本框" placeholder:@"请输入" textFieldBlock:^(HSBaseCellModel *model, NSString *contentText) {
+        HSLog(@"%@", contentText);
+    }];
+    cell7.adjustsFontSizeToFitWidth = YES;
+    //    cell7.matchTwoDecimal = YES;
+    cell7.maxLength = 10;
     
-    
-    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,cell6,nil];
-//    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell6,nil];
+    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,cell6,cell7,nil];
+    //    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell6,nil];
     [self.hs_dataArry addObject:section0];
     [self.tableView reloadData];
 }

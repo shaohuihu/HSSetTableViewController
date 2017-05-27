@@ -16,6 +16,6 @@ NSString *const HSBaseCellModelCellClass = @"HSBaseTableViewCell";
 NSString *const HSImageCellModelCellClass = @"HSImageTableViewCell";
 NSString *const HSSwitchCellModelCellClass = @"HSSwitchTableViewCell";
 NSString *const HSTextCellModelCellClass = @"HSTextTableViewCell";
-
+NSString *const HSTextFieldCellModelCellClass = @"HSTextFieldTableViewCell";
 
 #endif /* HSSetTableViewControllConst_h */
