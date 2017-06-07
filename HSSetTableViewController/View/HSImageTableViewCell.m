@@ -27,6 +27,7 @@
     if(cell == nil){
         cell = [[HSImageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
+    
     return cell;
 }
 
