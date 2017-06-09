@@ -7,9 +7,9 @@
 //
 
 #import "HSBaseTableViewCell.h"
-
+#import "HSTitleTableViewCell.h"
 
 //右边大图cell
-@interface HSImageTableViewCell : HSBaseTableViewCell
+@interface HSImageTableViewCell : HSTitleTableViewCell
 
 @end

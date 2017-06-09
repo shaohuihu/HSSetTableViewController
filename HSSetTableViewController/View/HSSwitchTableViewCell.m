@@ -63,7 +63,10 @@
     [super setupDataModel:model];
     HSSwitchCellModel *switchModel = (HSSwitchCellModel *)model;
     self.switchItem.on = switchModel.on;
-    self.switchRightConstaint.constant = - model.controlRightOffset;
+    if(switchModel.onTintColor){
+        self.switchItem.onTintColor = switchModel.onTintColor;
+    }
+    self.switchRightConstaint.constant = - switchModel.controlRightOffset;
     
 }
 

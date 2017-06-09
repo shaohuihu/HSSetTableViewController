@@ -10,8 +10,10 @@
 #import "HSSetTableViewMainController.h"
 #import "HSBaseCellModel.h"
 #import "HSTextCellModel.h"
+#import "HSCustomCellModel.h"
 #import "HSSwitchCellModel.h"
 #import "HSImageCellModel.h"
+#import "HSTitleCellModel.h"
 #import "UIColor+HSExtension.h"
 
 

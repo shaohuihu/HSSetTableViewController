@@ -75,10 +75,10 @@
     }
     
     //根据箭头显示设置约束
-    if(self.cellModel.showArrow){
-        self.detailRightConstraint.constant = - self.cellModel.controlRightOffset - self.cellModel.arrowControlRightOffset - self.cellModel.arrowWidth;
+    if(rightModel.showArrow){
+        self.detailRightConstraint.constant = - rightModel.controlRightOffset - rightModel.arrowControlRightOffset - rightModel.arrowWidth;
     }else{
-        self.detailRightConstraint.constant = - self.cellModel.controlRightOffset;
+        self.detailRightConstraint.constant = - rightModel.controlRightOffset;
     }
     self.detailLeftConstraint.constant = rightModel.leftPading;
 }

@@ -7,7 +7,7 @@
 //
 
 #import "HSBaseTableViewCell.h"
-
-@interface HSSwitchTableViewCell : HSBaseTableViewCell
+#import "HSTitleTableViewCell.h"
+@interface HSSwitchTableViewCell : HSTitleTableViewCell
 
 @end

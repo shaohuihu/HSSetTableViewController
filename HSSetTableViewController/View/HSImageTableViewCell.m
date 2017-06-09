@@ -85,17 +85,12 @@
     }
     
     self.bigImageView.layer.cornerRadius = bigModel.cornerRadius > 0 ? bigModel.cornerRadius : 0.f;
-
-    if(bigModel.imageSize.width > 0){
-        self.bigImageWidthConstraint.constant = bigModel.imageSize.width;
-    }
-    if(bigModel.imageSize.height > 0){
-        self.bigImageHeightConstaint.constant = bigModel.imageSize.height;
-    }
+    self.bigImageWidthConstraint.constant = bigModel.imageSize.width;
+    self.bigImageHeightConstaint.constant = bigModel.imageSize.height;
     if(bigModel.showArrow){
-         self.bigImageRightConstraint.constant = - model.controlRightOffset - model.arrowControlRightOffset- model.arrowWidth;
+         self.bigImageRightConstraint.constant = - bigModel.controlRightOffset - bigModel.arrowControlRightOffset - bigModel.arrowWidth;
     }else{
-        self.bigImageRightConstraint.constant = - model.controlRightOffset;
+        self.bigImageRightConstraint.constant = - bigModel.controlRightOffset;
     }
 }
 

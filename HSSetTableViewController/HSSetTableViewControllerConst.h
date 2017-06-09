@@ -63,6 +63,7 @@
 # define HSLog(...);
 #endif
 
+UIKIT_EXTERN NSString *const HSTitleCellModelCellClass;
 UIKIT_EXTERN NSString *const HSBaseCellModelCellClass;
 UIKIT_EXTERN NSString *const HSImageCellModelCellClass;
 UIKIT_EXTERN NSString *const HSSwitchCellModelCellClass;

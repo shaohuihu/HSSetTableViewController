@@ -52,6 +52,15 @@
 		3BFD666A1EB1DD050001E324 /* HSImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD66581EB1DD050001E324 /* HSImageTableViewCell.m */; };
 		3BFD666B1EB1DD050001E324 /* HSSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD665A1EB1DD050001E324 /* HSSwitchTableViewCell.m */; };
 		3BFD666C1EB1DD050001E324 /* HSTextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD665C1EB1DD050001E324 /* HSTextTableViewCell.m */; };
+		3BFF33181EEA9F2A00299CEB /* HSTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF33171EEA9F2A00299CEB /* HSTitleTableViewCell.m */; };
+		3BFF331B1EEAA24000299CEB /* HSTitleCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF331A1EEAA24000299CEB /* HSTitleCellModel.m */; };
+		3BFF331E1EEAB77200299CEB /* HSCustomCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF331D1EEAB77200299CEB /* HSCustomCellModel.m */; };
+		3BFF33211EEABB9C00299CEB /* HSCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF33201EEABB9C00299CEB /* HSCustomTableViewCell.m */; };
+		3BFF33251EEABD5300299CEB /* HSHeaderCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF33241EEABD5300299CEB /* HSHeaderCellModel.m */; };
+		3BFF33281EEABD8E00299CEB /* HSHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF33271EEABD8E00299CEB /* HSHeaderTableViewCell.m */; };
+		3BFF332B1EEADCFA00299CEB /* HSZhiHuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF332A1EEADCFA00299CEB /* HSZhiHuTableViewController.m */; };
+		3BFF33341EEAE39900299CEB /* HSZhiHuCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF33331EEAE39900299CEB /* HSZhiHuCustomTableViewCell.m */; };
+		3BFF33371EEAE3C200299CEB /* HSZhiHuCustomCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF33361EEAE3C200299CEB /* HSZhiHuCustomCellModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +172,24 @@
 		3BFD665A1EB1DD050001E324 /* HSSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSwitchTableViewCell.m; sourceTree = "<group>"; };
 		3BFD665B1EB1DD050001E324 /* HSTextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSTextTableViewCell.h; sourceTree = "<group>"; };
 		3BFD665C1EB1DD050001E324 /* HSTextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSTextTableViewCell.m; sourceTree = "<group>"; };
+		3BFF33161EEA9F2A00299CEB /* HSTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HSTitleTableViewCell.h; path = ../Model/HSTitleTableViewCell.h; sourceTree = "<group>"; };
+		3BFF33171EEA9F2A00299CEB /* HSTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HSTitleTableViewCell.m; path = ../Model/HSTitleTableViewCell.m; sourceTree = "<group>"; };
+		3BFF33191EEAA24000299CEB /* HSTitleCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSTitleCellModel.h; sourceTree = "<group>"; };
+		3BFF331A1EEAA24000299CEB /* HSTitleCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSTitleCellModel.m; sourceTree = "<group>"; };
+		3BFF331C1EEAB77200299CEB /* HSCustomCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSCustomCellModel.h; sourceTree = "<group>"; };
+		3BFF331D1EEAB77200299CEB /* HSCustomCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSCustomCellModel.m; sourceTree = "<group>"; };
+		3BFF331F1EEABB9C00299CEB /* HSCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSCustomTableViewCell.h; sourceTree = "<group>"; };
+		3BFF33201EEABB9C00299CEB /* HSCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSCustomTableViewCell.m; sourceTree = "<group>"; };
+		3BFF33231EEABD5300299CEB /* HSHeaderCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSHeaderCellModel.h; sourceTree = "<group>"; };
+		3BFF33241EEABD5300299CEB /* HSHeaderCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSHeaderCellModel.m; sourceTree = "<group>"; };
+		3BFF33261EEABD8E00299CEB /* HSHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSHeaderTableViewCell.h; sourceTree = "<group>"; };
+		3BFF33271EEABD8E00299CEB /* HSHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSHeaderTableViewCell.m; sourceTree = "<group>"; };
+		3BFF33291EEADCFA00299CEB /* HSZhiHuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSZhiHuTableViewController.h; sourceTree = "<group>"; };
+		3BFF332A1EEADCFA00299CEB /* HSZhiHuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSZhiHuTableViewController.m; sourceTree = "<group>"; };
+		3BFF33321EEAE39900299CEB /* HSZhiHuCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSZhiHuCustomTableViewCell.h; sourceTree = "<group>"; };
+		3BFF33331EEAE39900299CEB /* HSZhiHuCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSZhiHuCustomTableViewCell.m; sourceTree = "<group>"; };
+		3BFF33351EEAE3C200299CEB /* HSZhiHuCustomCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSZhiHuCustomCellModel.h; sourceTree = "<group>"; };
+		3BFF33361EEAE3C200299CEB /* HSZhiHuCustomCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSZhiHuCustomCellModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +220,7 @@
 		3B07CCC41EB18CC700CB0ADE /* Ctrollers */ = {
 			isa = PBXGroup;
 			children = (
+				3BFF33221EEABD1C00299CEB /* custom */,
 				3B07CCC51EB18CE600CB0ADE /* HSSetTableViewMeController.h */,
 				3B07CCC61EB18CE600CB0ADE /* HSSetTableViewMeController.m */,
 				3B07CCC81EB18D1000CB0ADE /* HSSetTableInfoController.h */,
@@ -203,6 +231,8 @@
 				3BF5778A1EC01AD1006E3814 /* HSSetTableViewQQController.m */,
 				3B719B8B1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.h */,
 				3B719B8C1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m */,
+				3BFF33291EEADCFA00299CEB /* HSZhiHuTableViewController.h */,
+				3BFF332A1EEADCFA00299CEB /* HSZhiHuTableViewController.m */,
 			);
 			path = Ctrollers;
 			sourceTree = "<group>";
@@ -373,6 +403,10 @@
 				3BFD66511EB1DD050001E324 /* HSSwitchCellModel.m */,
 				3BFD66521EB1DD050001E324 /* HSTextCellModel.h */,
 				3BFD66531EB1DD050001E324 /* HSTextCellModel.m */,
+				3BFF33191EEAA24000299CEB /* HSTitleCellModel.h */,
+				3BFF331A1EEAA24000299CEB /* HSTitleCellModel.m */,
+				3BFF331C1EEAB77200299CEB /* HSCustomCellModel.h */,
+				3BFF331D1EEAB77200299CEB /* HSCustomCellModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +414,8 @@
 		3BFD66541EB1DD050001E324 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3BFF33161EEA9F2A00299CEB /* HSTitleTableViewCell.h */,
+				3BFF33171EEA9F2A00299CEB /* HSTitleTableViewCell.m */,
 				3BFD66551EB1DD050001E324 /* HSBaseTableViewCell.h */,
 				3BFD66561EB1DD050001E324 /* HSBaseTableViewCell.m */,
 				3BFD66571EB1DD050001E324 /* HSImageTableViewCell.h */,
@@ -388,8 +424,25 @@
 				3BFD665A1EB1DD050001E324 /* HSSwitchTableViewCell.m */,
 				3BFD665B1EB1DD050001E324 /* HSTextTableViewCell.h */,
 				3BFD665C1EB1DD050001E324 /* HSTextTableViewCell.m */,
+				3BFF331F1EEABB9C00299CEB /* HSCustomTableViewCell.h */,
+				3BFF33201EEABB9C00299CEB /* HSCustomTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3BFF33221EEABD1C00299CEB /* custom */ = {
+			isa = PBXGroup;
+			children = (
+				3BFF33231EEABD5300299CEB /* HSHeaderCellModel.h */,
+				3BFF33241EEABD5300299CEB /* HSHeaderCellModel.m */,
+				3BFF33261EEABD8E00299CEB /* HSHeaderTableViewCell.h */,
+				3BFF33271EEABD8E00299CEB /* HSHeaderTableViewCell.m */,
+				3BFF33321EEAE39900299CEB /* HSZhiHuCustomTableViewCell.h */,
+				3BFF33331EEAE39900299CEB /* HSZhiHuCustomTableViewCell.m */,
+				3BFF33351EEAE3C200299CEB /* HSZhiHuCustomCellModel.h */,
+				3BFF33361EEAE3C200299CEB /* HSZhiHuCustomCellModel.m */,
+			);
+			path = custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,13 +592,17 @@
 				3BFD66661EB1DD050001E324 /* HSImageCellModel.m in Sources */,
 				3BFD665D1EB1DD050001E324 /* NSArray+HSSafeAccess.m in Sources */,
 				3B07CCFC1EB1A21300CB0ADE /* UIImage+MultiFormat.m in Sources */,
+				3BFF33341EEAE39900299CEB /* HSZhiHuCustomTableViewCell.m in Sources */,
 				3BFD666B1EB1DD050001E324 /* HSSwitchTableViewCell.m in Sources */,
 				3B07CCFB1EB1A21300CB0ADE /* UIImage+GIF.m in Sources */,
 				3B07CCF61EB1A21300CB0ADE /* SDWebImageDownloader.m in Sources */,
 				3BFD66671EB1DD050001E324 /* HSSwitchCellModel.m in Sources */,
 				3BFD666A1EB1DD050001E324 /* HSImageTableViewCell.m in Sources */,
 				3BFD665E1EB1DD050001E324 /* NSBundle+HSImage.m in Sources */,
+				3BFF33371EEAE3C200299CEB /* HSZhiHuCustomCellModel.m in Sources */,
 				3BFD665F1EB1DD050001E324 /* NSString+HSHeight.m in Sources */,
+				3BFF332B1EEADCFA00299CEB /* HSZhiHuTableViewController.m in Sources */,
+				3BFF331E1EEAB77200299CEB /* HSCustomCellModel.m in Sources */,
 				3B07CCFF1EB1A21300CB0ADE /* UIImageView+WebCache.m in Sources */,
 				3BFD66601EB1DD050001E324 /* UIColor+HSExtension.m in Sources */,
 				3B07CCFA1EB1A21300CB0ADE /* UIButton+WebCache.m in Sources */,
@@ -557,14 +614,19 @@
 				3B07CCF71EB1A21300CB0ADE /* SDWebImageDownloaderOperation.m in Sources */,
 				3B07CCF91EB1A21300CB0ADE /* SDWebImagePrefetcher.m in Sources */,
 				3BFD66621EB1DD050001E324 /* HSSetTableViewMainController.m in Sources */,
+				3BFF331B1EEAA24000299CEB /* HSTitleCellModel.m in Sources */,
 				3B07CCFD1EB1A21300CB0ADE /* UIImage+WebP.m in Sources */,
+				3BFF33281EEABD8E00299CEB /* HSHeaderTableViewCell.m in Sources */,
 				3B07CCF81EB1A21300CB0ADE /* SDWebImageManager.m in Sources */,
 				3B07CCF21EB1A21300CB0ADE /* NSData+ImageContentType.m in Sources */,
 				3BFD66681EB1DD050001E324 /* HSTextCellModel.m in Sources */,
 				3BF5778B1EC01AD1006E3814 /* HSSetTableViewQQController.m in Sources */,
+				3BFF33181EEA9F2A00299CEB /* HSTitleTableViewCell.m in Sources */,
 				3BFD666C1EB1DD050001E324 /* HSTextTableViewCell.m in Sources */,
 				3B07CCCD1EB18D3800CB0ADE /* HSSetTableViewOtherController.m in Sources */,
 				3BB3C4A61EAB991D004A9BA9 /* AppDelegate.m in Sources */,
+				3BFF33251EEABD5300299CEB /* HSHeaderCellModel.m in Sources */,
+				3BFF33211EEABB9C00299CEB /* HSCustomTableViewCell.m in Sources */,
 				3B07CD001EB1A21300CB0ADE /* UIView+WebCacheOperation.m in Sources */,
 				3B07CCFE1EB1A21300CB0ADE /* UIImageView+HighlightedWebCache.m in Sources */,
 				3BB3C4A31EAB991D004A9BA9 /* main.m in Sources */,

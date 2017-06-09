@@ -13,6 +13,7 @@
 #import <Foundation/Foundation.h>
 
 NSString *const HSBaseCellModelCellClass = @"HSBaseTableViewCell";
+NSString *const HSTitleCellModelCellClass = @"HSTitleTableViewCell";
 NSString *const HSImageCellModelCellClass = @"HSImageTableViewCell";
 NSString *const HSSwitchCellModelCellClass = @"HSSwitchTableViewCell";
 NSString *const HSTextCellModelCellClass = @"HSTextTableViewCell";

@@ -25,6 +25,7 @@
     HSImageCellModel *header = [[HSImageCellModel alloc] initWithTitle:@"头像" placeholderImage:icon imageUrl:nil actionBlock:^(HSBaseCellModel *model) {
         
     } imageBlock:nil];
+    
     //名字
     HSTextCellModel *name = [[HSTextCellModel alloc] initWithTitle:@"名字" detailText:@"人名的名义" actionBlock:^(HSBaseCellModel *model) {
         
@@ -48,7 +49,7 @@
     qrCode.cellHeight = HS_KCellHeight;
     
     //我的地址
-    HSBaseCellModel *address = [[HSBaseCellModel alloc] initWithTitle:@"我的地址" actionBlock:^(HSBaseCellModel *model) {
+    HSTitleCellModel *address = [[HSTitleCellModel alloc] initWithTitle:@"我的地址" actionBlock:^(HSBaseCellModel *model) {
         
     }];
     

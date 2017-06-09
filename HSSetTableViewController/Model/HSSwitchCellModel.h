@@ -7,11 +7,12 @@
 //
 
 #import "HSBaseCellModel.h"
-
+#import "HSTitleCellModel.h"
 @class HSBaseCellModel;
 typedef void(^switchBlock)(HSBaseCellModel *model,BOOL on);
-@interface HSSwitchCellModel : HSBaseCellModel
+@interface HSSwitchCellModel : HSTitleCellModel
 @property (nonatomic, assign)BOOL on;  ///<开关状态
+@property (nonatomic, strong)UIColor *onTintColor;  ///<
 @property (nonatomic, copy)switchBlock switchBlock;  ///< block调用
 
 

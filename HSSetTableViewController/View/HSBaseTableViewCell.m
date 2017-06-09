@@ -16,9 +16,7 @@
 
 @interface HSBaseTableViewCell()
 
-@property (nonatomic, weak)NSLayoutConstraint *arrowWidthContraint;  ///<箭头宽度contraint
-@property (nonatomic, weak)NSLayoutConstraint *arrowHeightContraint;  ///<箭头高度contraint
-@property (nonatomic, weak)NSLayoutConstraint *arrowRightContraint;  ///<箭头距右边contraint
+
 @end
 
 
@@ -59,36 +57,14 @@
     [self.contentView.layer addSublayer:bottomLine];
     self.bottomLine = bottomLine;
     
-    //添加右边剪头
-    UIImageView *arrow = [[UIImageView alloc] init];
-    arrow.frame = CGRectZero;
-    arrow.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.contentView addSubview:arrow];
-    self.arrow = arrow;
-    [self setupArrowImageConstraints];//设置图片约束
+   
 }
 
-- (void)setupArrowImageConstraints
+- (void)setupDataModel:(HSBaseCellModel *)model
 {
-   
-    NSLayoutConstraint *arrowRightContraint = [NSLayoutConstraint constraintWithItem:self.arrow attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeRight multiplier:1.0 constant:-HS_KCellMargin];
-    [self.contentView addConstraint:arrowRightContraint];
-    self.arrowRightContraint = arrowRightContraint;
-    
-    
-    NSLayoutConstraint *arrowWidthContraint = [NSLayoutConstraint constraintWithItem:self.arrow attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HS_KArrowWidth];
-    [self.contentView addConstraint:arrowWidthContraint];
-    self.arrowWidthContraint = arrowWidthContraint;
-    
-    
-    NSLayoutConstraint *arrowHeightContraint = [NSLayoutConstraint constraintWithItem:self.arrow attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:HS_kArrowHeight];
-    
-    [self.contentView addConstraint:arrowHeightContraint];
-    self.arrowHeightContraint = arrowHeightContraint;
-    
-    
-    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.arrow attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
+    self.selectionStyle = model.selectionStyle;
 }
+
 
 - (void)layoutSubviews
 {
@@ -97,30 +73,6 @@
     [self.topLine setHs_width:self.frame.size.width];
 }
 
-- (void)setupDataModel:(HSBaseCellModel *)model
-{
-    self.cellModel = model;
-    if(self.cellModel.attributeTitle){
-        self.textLabel.attributedText = self.cellModel.attributeTitle;
-    }else{
-         self.textLabel.text = self.cellModel.title;
-         self.textLabel.textColor = self.cellModel.titleColor;
-         self.textLabel.font = self.cellModel.titleFont;
-    }
-    self.imageView.image = model.icon;
-    [self.bottomLine setHs_y:model.cellHeight - model.separateHeight];
-    [self.bottomLine setHs_height:model.separateHeight];
-    [self.topLine setHs_height:model.separateHeight];
-    [self.bottomLine setBackgroundColor:model.separateColor.CGColor];
-    [self.topLine setBackgroundColor:model.separateColor.CGColor];
-    
-    self.arrow.hidden = !self.cellModel.showArrow;
-    self.selectionStyle = model.selectionStyle;
-    self.arrow.image = model.arrowImage;
-    self.arrowWidthContraint.constant = model.arrowWidth;
-    self.arrowHeightContraint.constant = model.arrowHeight;
-    self.arrowRightContraint.constant = - model.controlRightOffset;
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

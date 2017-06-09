@@ -7,8 +7,8 @@
 //
 
 #import "HSBaseCellModel.h"
-
-@interface HSTextCellModel : HSBaseCellModel
+#import "HSTitleCellModel.h"
+@interface HSTextCellModel : HSTitleCellModel
 
 
 @property (nonatomic, copy)   NSString *detailText;  ///<详细文本

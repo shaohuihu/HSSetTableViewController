@@ -67,19 +67,22 @@
     }];
     
     //消息通知
-    HSBaseCellModel *msg = [[HSBaseCellModel alloc] initWithTitle:@"消息通知" actionBlock:nil];
+    HSTitleCellModel *msg = [[HSTitleCellModel alloc] initWithTitle:@"消息通知" actionBlock:nil];
     //聊天记录
-    HSBaseCellModel *record = [[HSBaseCellModel alloc] initWithTitle:@"聊天记录" actionBlock:nil];
+    HSTitleCellModel *record = [[HSTitleCellModel alloc] initWithTitle:@"聊天记录" actionBlock:nil];
     //空间清理
-    HSBaseCellModel *clean = [[HSBaseCellModel alloc] initWithTitle:@"空间清理" actionBlock:nil];
+    HSTitleCellModel *clean = [[HSTitleCellModel alloc] initWithTitle:@"空间清理" actionBlock:nil];
     //消息通知
-    HSBaseCellModel *security = [[HSBaseCellModel alloc] initWithTitle:@"账号、设备安全" actionBlock:nil];
+    HSTitleCellModel *security = [[HSTitleCellModel alloc] initWithTitle:@"账号、设备安全" actionBlock:nil];
     //聊天记录
-    HSBaseCellModel *privacy = [[HSBaseCellModel alloc] initWithTitle:@"联系人、隐私" actionBlock:nil];
+    HSTitleCellModel *privacy = [[HSTitleCellModel alloc] initWithTitle:@"联系人、隐私" actionBlock:nil];
     //空间清理
-    HSBaseCellModel *help = [[HSBaseCellModel alloc] initWithTitle:@"辅助功能" actionBlock:nil];
+    HSTitleCellModel *help = [[HSTitleCellModel alloc] initWithTitle:@"辅助功能" actionBlock:nil];
     //关于QQ与帮助
-    HSBaseCellModel *about = [[HSBaseCellModel alloc] initWithTitle:@"关于QQ与帮助" actionBlock:nil];
+    HSTitleCellModel *about = [[HSTitleCellModel alloc] initWithTitle:@"关于QQ与帮助" actionBlock:nil];
+    about.showArrow = NO;
+    about.titleColor = [UIColor redColor];
+    about.titileTextAlignment = NSTextAlignmentCenter;
     
     
     

@@ -8,6 +8,9 @@
 
 #import "HSSetTableViewMeController.h"
 #import "HSSetTableViewController.h"
+#import "HSCustomCellModel.h"
+#import "HSHeaderCellModel.h"
+
 @interface HSSetTableViewMeController ()
 
 @end
@@ -20,43 +23,56 @@
     
     self.view.backgroundColor = [UIColor hs_colorWithHexString:@"#EBEDEF"];
     
-    HSBaseCellModel *photo = [[HSBaseCellModel alloc] initWithTitle:@"相册" actionBlock:^(HSBaseCellModel *model) {
+    
+     __weak __typeof(&*self)weakSelf = self;
+    HSHeaderCellModel *header = [[HSHeaderCellModel alloc] initWithCellIdentifier:@"HSHeaderTableViewCell" actionBlock:^(HSBaseCellModel *model) {
+        HSHeaderCellModel *hederModel = (HSHeaderCellModel *)model;
+        hederModel.customTitle = @"奔跑吧,兄弟";
+        [weakSelf updateCellModel:hederModel];
+    }];
+    header.customTitle = @"天霸动霸tuo";
+    header.cellHeight = 100;
+    
+    HSTitleCellModel *photo = [[HSTitleCellModel alloc] initWithTitle:@"相册" actionBlock:^(HSBaseCellModel *model) {
         HSLog(@"点击相册")
     }];
     photo.icon = [UIImage imageNamed:@"MoreMyAlbum"];
     
-    HSBaseCellModel *favorite = [[HSBaseCellModel alloc] initWithTitle:@"收藏" actionBlock:^(HSBaseCellModel *model) {
+    HSTitleCellModel *favorite = [[HSTitleCellModel alloc] initWithTitle:@"收藏" actionBlock:^(HSBaseCellModel *model) {
         HSLog(@"点击收藏")
     }];
     favorite.icon = [UIImage imageNamed:@"MoreMyFavorites"];
     
     
-    HSBaseCellModel *wallet = [[HSBaseCellModel alloc] initWithTitle:@"钱包" actionBlock:^(HSBaseCellModel *model) {
+    HSTitleCellModel *wallet = [[HSTitleCellModel alloc] initWithTitle:@"钱包" actionBlock:^(HSBaseCellModel *model) {
         HSLog(@"点击钱包")
     }];
     wallet.icon = [UIImage imageNamed:@"MoreMyAlbum"];
     
     
-    HSBaseCellModel *expression = [[HSBaseCellModel alloc] initWithTitle:@"表情" actionBlock:^(HSBaseCellModel *model) {
+    HSTitleCellModel *expression = [[HSTitleCellModel alloc] initWithTitle:@"表情" actionBlock:^(HSBaseCellModel *model) {
         HSLog(@"点击表情")
     }];
     expression.icon = [UIImage imageNamed:@"MoreExpressionShops"];
     
-    HSBaseCellModel *setting = [[HSBaseCellModel alloc] initWithTitle:@"设置" actionBlock:^(HSBaseCellModel *model) {
+    HSTitleCellModel *setting = [[HSTitleCellModel alloc] initWithTitle:@"设置" actionBlock:^(HSBaseCellModel *model) {
         HSLog(@"点击设置")
     }];
     setting.icon = [UIImage imageNamed:@"MoreExpressionShops"];
+    NSMutableArray *section = [NSMutableArray arrayWithObjects:header,nil];
     NSMutableArray *section0 = [NSMutableArray arrayWithObjects:photo,favorite,wallet, nil];
     NSMutableArray *section1 = [NSMutableArray arrayWithObjects:expression,nil];
     NSMutableArray *section2 = [NSMutableArray arrayWithObjects:setting,nil];
 
-   // [self.hs_dataArry addObject:photo];
+    [self.hs_dataArry addObject:section];
     [self.hs_dataArry addObject:section0];
     [self.hs_dataArry addObject:section1];
     [self.hs_dataArry addObject:section2];
+    
+    
     [self.tableView reloadData];
     
-    self.tableView.tableHeaderView = [self viewTableHeader];
+   // self.tableView.tableHeaderView = [self viewTableHeader];
 
 }
 
@@ -68,17 +84,17 @@
 }
 
 #pragma mark tableView代理方法,重写基类footer方法
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
-{
-    return 50;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section;
-{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-    [view setBackgroundColor:[UIColor hs_colorWithHexString:@"#EBEDEF"]];
-    return view;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
+//{
+//    return 50;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section;
+//{
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
+//    [view setBackgroundColor:[UIColor hs_colorWithHexString:@"#EBEDEF"]];
+//    return view;
+//}
 
 - (void)dealloc
 {

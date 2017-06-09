@@ -25,7 +25,7 @@
     
      __weak __typeof(&*self)weakSelf = self;
     
-    HSBaseCellModel *cell0 = [[HSBaseCellModel alloc] initWithTitle:@"分割线从0开始" actionBlock:^(HSBaseCellModel *model) {
+    HSTitleCellModel *cell0 = [[HSTitleCellModel alloc] initWithTitle:@"分割线从0开始" actionBlock:^(HSBaseCellModel *model) {
         NSLog(@"点击事件");
     }];
    
@@ -35,7 +35,7 @@
     
     
     
-    HSBaseCellModel *cell1 = [[HSBaseCellModel alloc] initWithTitle:@"标题颜色和字体" actionBlock:^(HSBaseCellModel *model) {
+    HSTitleCellModel *cell1 = [[HSTitleCellModel alloc] initWithTitle:@"标题颜色和字体" actionBlock:^(HSBaseCellModel *model) {
         
     }];
     cell1.titleFont = [UIFont boldSystemFontOfSize:20];
@@ -64,6 +64,7 @@
     HSSwitchCellModel *cell3 = [[HSSwitchCellModel alloc] initWithTitle:@"开关控制" switchType:YES switchBlock:^(HSBaseCellModel *model, BOOL on) {
         HSLog(@"开关控制")
     }];
+    cell3.onTintColor = [UIColor redColor];
     
     //下载图片
     UIImage *placeHolder = [UIImage imageNamed:@"ic_icon_header"];

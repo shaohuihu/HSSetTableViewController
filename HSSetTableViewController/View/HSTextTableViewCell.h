@@ -7,9 +7,9 @@
 //
 
 #import "HSBaseTableViewCell.h"
-
+#import "HSTitleTableViewCell.h"
 //右边有文本（箭头可显示也可隐藏）
-@interface HSTextTableViewCell : HSBaseTableViewCell
+@interface HSTextTableViewCell : HSTitleTableViewCell
 
 
 @end

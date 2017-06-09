@@ -10,11 +10,10 @@
 @class HSBaseCellModel;
 @interface HSBaseTableViewCell : UITableViewCell
 
-@property (nonatomic, weak)UITableView *tableView;  ///<表视图
 @property (nonatomic, strong)HSBaseCellModel *cellModel;  ///<cellModel
-@property (nonatomic, weak)UIImageView *arrow;  ///< 箭头
 @property (nonatomic, weak)CALayer *topLine;  ///<顶部分割线
 @property (nonatomic, weak)CALayer *bottomLine;  ///<底部分割线
+
 //cell初始化方法
 + (HSBaseTableViewCell *)cellWithIdentifier:(NSString *)cellIdentifier tableView:(UITableView *)tableView;
 //初始化UI方法
@@ -23,4 +22,5 @@
 - (void)setupDataModel:(HSBaseCellModel *)model;
 //获取cell高度方法
 + (CGFloat)getCellHeight:(HSBaseCellModel *)model;
+
 @end

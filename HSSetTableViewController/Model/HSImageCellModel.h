@@ -7,10 +7,10 @@
 //
 
 #import "HSBaseCellModel.h"
-
+#import "HSTitleCellModel.h"
 typedef void(^ClickImageBlock)();
 //右边大图model
-@interface HSImageCellModel : HSBaseCellModel
+@interface HSImageCellModel : HSTitleCellModel
 
 
 @property (nonatomic, strong)UIImage *placeHoderImage;  ///<初始化图片
