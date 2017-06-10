@@ -25,6 +25,7 @@
 - `HSBaseCellModel`
 - `HSImageCellModel`
 - `HSSwitchCellModel`
+- `HSTitleCellModel`
 - `HSTextCellModel`
 - `HSCustomCellModel`
 - `HSTitleTableViewCell`
