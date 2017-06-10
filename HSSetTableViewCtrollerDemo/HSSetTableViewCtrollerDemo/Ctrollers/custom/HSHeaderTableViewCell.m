@@ -64,7 +64,7 @@
 - (void)setupDataModel:(HSBaseCellModel *)model;
 {
     HSCustomCellModel *custom = (HSCustomCellModel *)model;
-    self.labelTitle.text = custom.customTitle;
+    self.labelTitle.text = custom.text;
 }
 
 @end

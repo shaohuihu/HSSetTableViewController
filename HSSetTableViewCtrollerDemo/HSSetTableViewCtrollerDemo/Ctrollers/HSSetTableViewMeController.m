@@ -27,10 +27,10 @@
      __weak __typeof(&*self)weakSelf = self;
     HSHeaderCellModel *header = [[HSHeaderCellModel alloc] initWithCellIdentifier:@"HSHeaderTableViewCell" actionBlock:^(HSBaseCellModel *model) {
         HSHeaderCellModel *hederModel = (HSHeaderCellModel *)model;
-        hederModel.customTitle = @"奔跑吧,兄弟";
+        hederModel.text = @"奔跑吧,兄弟";
         [weakSelf updateCellModel:hederModel];
     }];
-    header.customTitle = @"天霸动霸tuo";
+    header.detailText = @"天霸动霸tuo";
     header.cellHeight = 100;
     
     HSTitleCellModel *photo = [[HSTitleCellModel alloc] initWithTitle:@"相册" actionBlock:^(HSBaseCellModel *model) {

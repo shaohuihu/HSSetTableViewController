@@ -24,24 +24,24 @@
 //    //内置音效
     HSZhiHuCustomCellModel *sound = [[HSZhiHuCustomCellModel alloc] initWithCellIdentifier:@"HSZhiHuCustomTableViewCell" actionBlock:nil];
     sound.cellHeight = 60;
-    sound.customTitle = @"内置音效";
-    sound.cusomDetailTitle = @"应用内按钮点击音效";
+    sound.text = @"内置音效";
+    sound.detailText = @"应用内按钮点击音效";
     sound.hideSwitch = NO;
     sound.selectionStyle = UITableViewCellSelectionStyleNone;
     
     
     HSZhiHuCustomCellModel *noIcon = [[HSZhiHuCustomCellModel alloc] initWithCellIdentifier:@"HSZhiHuCustomTableViewCell" actionBlock:nil];
     noIcon.cellHeight = 60;
-    noIcon.customTitle = @"无图模式";
-    noIcon.cusomDetailTitle = @"使用wifi网络时不可下载图片";
+    noIcon.text = @"无图模式";
+    noIcon.detailText = @"使用wifi网络时不可下载图片";
     noIcon.hideSwitch = NO;
     noIcon.selectionStyle = UITableViewCellSelectionStyleNone;
     
     
     HSZhiHuCustomCellModel *titleFont = [[HSZhiHuCustomCellModel alloc] initWithCellIdentifier:@"HSZhiHuCustomTableViewCell" actionBlock:nil];
     titleFont.cellHeight = 60;
-    titleFont.customTitle = @"字体大小";
-    titleFont.cusomDetailTitle = @"除回答与专栏正文页面以外的字体调节";
+    titleFont.text = @"字体大小";
+    titleFont.detailText = @"除回答与专栏正文页面以外的字体调节";
     titleFont.hideSwitch = YES;
     
     

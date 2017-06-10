@@ -64,8 +64,8 @@
     
     self.arrow.hidden = !cellModel.hideSwitch;
     self.mySwitch.hidden = cellModel.hideSwitch;
-    self.textLabel.text = cellModel.customTitle;
-    self.detailTextLabel.text = cellModel.cusomDetailTitle;
+    self.textLabel.text = cellModel.text;
+    self.detailTextLabel.text = cellModel.detailText;
 }
 
 - (void)switchChang:(UISwitch *)switchItem

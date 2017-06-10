@@ -13,8 +13,8 @@
  */
 @interface HSCustomCellModel : HSBaseCellModel
 
-@property (nonatomic, copy  ) NSString   *customTitle;///<基类开放的属性(可用可不用，也可以自己定义熟悉)
-@property (nonatomic, copy  ) NSString   *cusomDetailTitle;  ///<基类开放属性(可用可不用，也可以自己定义属性)
+@property (nonatomic, copy  ) NSString   *text;///<基类开放的属性(可用可不用，也可以自己定义熟悉)
+@property (nonatomic, copy  ) NSString   *detailText;  ///<基类开放属性(可用可不用，也可以自己定义属性)
 
 /**
  自定义模型初始化方法,请特别注意调用自定义模型方法后，cell必须自定义切存在
