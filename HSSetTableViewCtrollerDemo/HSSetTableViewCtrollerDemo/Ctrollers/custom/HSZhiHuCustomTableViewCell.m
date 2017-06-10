@@ -13,8 +13,11 @@
 
 @interface HSZhiHuCustomTableViewCell()
 
+
+
 @property (nonatomic, weak)UISwitch *mySwitch;  ///<
 @property (nonatomic, weak)UIImageView *arrow;  ///<
+@property (nonatomic, strong)HSZhiHuCustomCellModel *switchModel;  ///<
 
 @end
 @implementation HSZhiHuCustomTableViewCell
@@ -37,14 +40,14 @@
     
     
     //添加switch
-    UISwitch *switchItem = [[UISwitch alloc] initWithFrame:CGRectMake(self.frame.size.width - HS_KSwitchWidth - HS_KCellMargin, (60 - HS_KSwitchHeight)/2, HS_KSwitchWidth, HS_KSwitchHeight)];
+    UISwitch *switchItem = [[UISwitch alloc] initWithFrame:CGRectMake(HS_SCREEN_WIDTH- HS_KSwitchWidth - HS_KCellMargin, (60 - HS_KSwitchHeight)/2, HS_KSwitchWidth, HS_KSwitchHeight)];
     [switchItem addTarget:self action:@selector(switchChang:) forControlEvents:UIControlEventValueChanged];
     switchItem.onTintColor = [UIColor blueColor];
     [self.contentView addSubview:switchItem];
     self.mySwitch = switchItem;
     
     //箭头
-    UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width-HS_KCellMargin - HS_KArrowWidth, (60 - HS_kArrowHeight)/2, HS_KArrowWidth, HS_kArrowHeight)];
+    UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(HS_SCREEN_WIDTH -HS_KCellMargin - HS_KArrowWidth, (60 - HS_kArrowHeight)/2, HS_KArrowWidth, HS_kArrowHeight)];
     arrow.image = [NSBundle hs_imageNamed:@"ic_hs_tableView_arrow"];
     [self.contentView addSubview:arrow];
     self.arrow = arrow;
@@ -55,7 +58,10 @@
 {
     [super setupDataModel:model];
     
+    
     HSZhiHuCustomCellModel *cellModel = (HSZhiHuCustomCellModel *)model;
+    self.switchModel = cellModel;
+    
     self.arrow.hidden = !cellModel.hideSwitch;
     self.mySwitch.hidden = cellModel.hideSwitch;
     self.textLabel.text = cellModel.customTitle;
@@ -64,11 +70,10 @@
 
 - (void)switchChang:(UISwitch *)switchItem
 {
-    HSSwitchCellModel *model =
-    (HSSwitchCellModel *)self.cellModel;
-    model.on = switchItem.on;
-    if(model.switchBlock){
-        model.switchBlock(self.cellModel,switchItem.on);
+    
+    self.switchModel.on = switchItem.on;
+    if(self.switchModel.block){
+        self.switchModel.block(self.switchModel,switchItem.on);
     }
     
     

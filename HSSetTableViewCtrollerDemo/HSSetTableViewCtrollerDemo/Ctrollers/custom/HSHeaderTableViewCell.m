@@ -48,13 +48,13 @@
     
     
     //添加右边剪头
-    UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(self.hs_width-HS_KCellMargin - HS_KArrowWidth, (100 - HS_kArrowHeight)/2, HS_KArrowWidth, HS_kArrowHeight)];
+    UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(HS_SCREEN_WIDTH-HS_KCellMargin - HS_KArrowWidth, (100 - HS_kArrowHeight)/2, HS_KArrowWidth, HS_kArrowHeight)];
     arrow.image = [NSBundle hs_imageNamed:@"ic_hs_tableView_arrow"];
     [self.contentView addSubview:arrow];
     
     //二维码
     UIImageView *qrCode = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ic_icon_qrCode"]];
-    qrCode.frame = CGRectMake(self.hs_width - HS_KArrowWidth - 2 * HS_KCellMargin - 15 , (100 - 15)/2, 15, 15);
+    qrCode.frame = CGRectMake(HS_SCREEN_WIDTH - HS_KArrowWidth - 2 * HS_KCellMargin - 15 , (100 - 15)/2, 15, 15);
     [self.contentView addSubview:qrCode];
     
 }
