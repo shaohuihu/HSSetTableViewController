@@ -81,7 +81,7 @@
     cell4.controlRightOffset = 40;
     cell4.showArrow = YES;
     
-    //5.自定义cell（HSHeaderCellModel必须继承HSCustomCellModel，HSHeaderTableViewCell必须继承HSCustomTableView,cellellIdentifier为自定义model绑定的自定义cell，一样的cellellIdentifier说明cell类型是一样，如有不理解请阅读demo）
+    //5.自定义cell（HSHeaderCellModel必须继承HSCustomCellModel，HSHeaderTableViewCell必须继承HSZhiHuCustomTableViewCell,cellellIdentifier为自定义model绑定的自定义cell，一样的cellellIdentifier说明cell类型是一样，如有不理解请阅读demo）
     __weak __typeof(&*self)weakSelf = self;
     HSHeaderCellModel *header = [[HSHeaderCellModel alloc] initWithCellIdentifier:@"HSHeaderTableViewCell" actionBlock:^(HSBaseCellModel *model) {
         HSHeaderCellModel *hederModel = (HSHeaderCellModel *)model;
