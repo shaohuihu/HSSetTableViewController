@@ -45,9 +45,9 @@
 ## <a id="Renderings"></a>Renderings
 
 <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo1.gif"> 
-<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo3.gif"> 
-<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo4.gif"> 
-<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo5.gif"> 
+<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo3.gif" width="375"> 
+<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo4.gif" width="375"> 
+<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo5.gif" width="375"> 
 
 ## <a id="How to use"></a>How to use
 * 使用 CocoaPods:
