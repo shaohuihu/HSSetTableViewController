@@ -30,7 +30,7 @@
         hederModel.text = @"奔跑吧,兄弟";
         [weakSelf updateCellModel:hederModel];
     }];
-    header.detailText = @"天霸动霸tuo";
+    header.text = @"天霸动霸tuo";
     header.cellHeight = 100;
     
     HSTitleCellModel *photo = [[HSTitleCellModel alloc] initWithTitle:@"相册" actionBlock:^(HSBaseCellModel *model) {
