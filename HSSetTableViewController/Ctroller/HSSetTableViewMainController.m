@@ -30,9 +30,10 @@
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     tableView.showsVerticalScrollIndicator = NO;
-    #ifdef NSFoundationVersionNumber_iOS_9_x_Max
-    tableView.cellLayoutMarginsFollowReadableWidth = NO;
-    #endif
+    
+    if(floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_8_x_Max){
+         tableView.cellLayoutMarginsFollowReadableWidth = NO;
+    }
     [self.view addSubview:tableView];
     self.tableView = tableView;
     

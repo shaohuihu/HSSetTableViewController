@@ -34,7 +34,12 @@
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-    tableView.cellLayoutMarginsFollowReadableWidth  = NO;
+    
+    if(floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_8_x_Max){
+        tableView.cellLayoutMarginsFollowReadableWidth = NO;
+    }
+    
+//    tableView.cellLayoutMarginsFollowReadableWidth  = NO;
     [self.view addSubview:tableView];
     self.tableView = tableView;
     self.dataSource = @[@"我(仿微信)",@"个人信息(仿微信)",@"复杂界面(更新)",@"个人资料(QQ)",@"统一风格(自定义)",@"知乎(包含自定义cell)"];
