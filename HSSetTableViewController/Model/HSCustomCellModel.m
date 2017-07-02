@@ -15,7 +15,11 @@
 {
     if(self = [super init]){
         self.cellHeight = HS_KCellHeight;
+        //获取当前时间
         CFAbsoluteTime now = CFAbsoluteTimeGetCurrent();
+        //获取当前线程id
+        NSString *threadNumber = [[[NSString stringWithFormat:@"%@",[NSThread currentThread]] componentsSeparatedByString:@"number = "].lastObject componentsSeparatedByString:@","].firstObject;
+        self.identifier = [NSString stringWithFormat:@"%lf%@",now,threadNumber];
         self.identifier = [NSString stringWithFormat:@"%lf",now];
         self.actionBlock = block;
         self.selectionStyle = UITableViewCellSelectionStyleDefault;

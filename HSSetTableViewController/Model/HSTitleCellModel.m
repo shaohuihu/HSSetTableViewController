@@ -18,8 +18,11 @@
         self.cellHeight = HS_KCellHeight;
         self.title = title;
         self.showArrow = YES;
+        //获取当前时间
         CFAbsoluteTime now = CFAbsoluteTimeGetCurrent();
-        self.identifier = [NSString stringWithFormat:@"%lf",now];
+        //获取当前线程id
+        NSString *threadNumber = [[[NSString stringWithFormat:@"%@",[NSThread currentThread]] componentsSeparatedByString:@"number = "].lastObject componentsSeparatedByString:@","].firstObject;
+        self.identifier = [NSString stringWithFormat:@"%lf%@",now,threadNumber];
         self.actionBlock = block;
         self.cellClass = HSTitleCellModelCellClass;
         self.selectionStyle = UITableViewCellSelectionStyleDefault;
@@ -44,7 +47,11 @@
         self.cellHeight = HS_KCellHeight;
         self.attributeTitle = attributeTitle;
         self.showArrow = YES;
+        //获取当前时间
         CFAbsoluteTime now = CFAbsoluteTimeGetCurrent();
+        //获取当前线程id
+        NSString *threadNumber = [[[NSString stringWithFormat:@"%@",[NSThread currentThread]] componentsSeparatedByString:@"number = "].lastObject componentsSeparatedByString:@","].firstObject;
+        self.identifier = [NSString stringWithFormat:@"%lf%@",now,threadNumber];
         self.identifier = [NSString stringWithFormat:@"%lf",now];
         self.actionBlock = block;
         self.cellClass = HSTitleCellModelCellClass;

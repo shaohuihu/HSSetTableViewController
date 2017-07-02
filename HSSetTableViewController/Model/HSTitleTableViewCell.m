@@ -65,6 +65,8 @@
 
 - (void)setupDataModel:(HSBaseCellModel *)model
 {
+    [super setupDataModel:model];
+    
     HSTitleCellModel *cellMoldel = (HSTitleCellModel *)model;
     if(cellMoldel.attributeTitle){
         self.textLabel.attributedText = cellMoldel.attributeTitle;
@@ -75,11 +77,7 @@
     }
     self.textLabel.textAlignment = cellMoldel.titileTextAlignment;
     self.imageView.image = cellMoldel.icon;
-    [self.bottomLine setHs_y:cellMoldel.cellHeight - cellMoldel.separateHeight];
-    [self.bottomLine setHs_height:cellMoldel.separateHeight];
-    [self.topLine setHs_height:cellMoldel.separateHeight];
-    [self.bottomLine setBackgroundColor:cellMoldel.separateColor.CGColor];
-    [self.topLine setBackgroundColor:cellMoldel.separateColor.CGColor];
+   
     
     self.arrow.hidden = !cellMoldel.showArrow;
     self.selectionStyle = cellMoldel.selectionStyle;

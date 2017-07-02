@@ -63,6 +63,12 @@
 - (void)setupDataModel:(HSBaseCellModel *)model
 {
     self.selectionStyle = model.selectionStyle;
+    
+    [self.bottomLine setHs_y:model.cellHeight - model.separateHeight];
+    [self.bottomLine setHs_height:model.separateHeight];
+    [self.topLine setHs_height:model.separateHeight];
+    [self.bottomLine setBackgroundColor:model.separateColor.CGColor];
+    [self.topLine setBackgroundColor:model.separateColor.CGColor];
 }
 
 
