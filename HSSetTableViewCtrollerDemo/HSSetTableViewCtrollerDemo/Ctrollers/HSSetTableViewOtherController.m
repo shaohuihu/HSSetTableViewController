@@ -70,9 +70,7 @@
     UIImage *placeHolder = [UIImage imageNamed:@"ic_icon_header"];
     HSImageCellModel *cell4 = [[HSImageCellModel alloc] initWithTitle:@"图片" placeholderImage:placeHolder imageUrl:@"http://scimg.jb51.net/170405/2-1F40522332a13.jpg" actionBlock:^(HSBaseCellModel *model) {
         
-    } imageBlock:^{
-        
-    }];
+    } imageBlock:nil];
     cell4.controlRightOffset = 40;
     cell4.showArrow = YES;
    // cell4.arrowControlRightOffset = 15;

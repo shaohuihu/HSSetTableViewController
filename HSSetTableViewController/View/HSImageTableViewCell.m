@@ -99,7 +99,7 @@
 {
     HSImageCellModel *bigModel = (HSImageCellModel *)self.cellModel;
     if(bigModel.imageBlock){
-        bigModel.imageBlock();
+        bigModel.imageBlock(self.cellModel);
     }
 }
 

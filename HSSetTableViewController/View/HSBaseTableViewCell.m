@@ -62,8 +62,8 @@
 
 - (void)setupDataModel:(HSBaseCellModel *)model
 {
+    self.cellModel = model;
     self.selectionStyle = model.selectionStyle;
-    
     [self.bottomLine setHs_y:model.cellHeight - model.separateHeight];
     [self.bottomLine setHs_height:model.separateHeight];
     [self.topLine setHs_height:model.separateHeight];

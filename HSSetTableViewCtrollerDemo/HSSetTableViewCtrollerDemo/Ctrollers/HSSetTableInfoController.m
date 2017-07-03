@@ -24,7 +24,9 @@
     UIImage *icon = [UIImage imageNamed:@"ic_icon_header"];
     HSImageCellModel *header = [[HSImageCellModel alloc] initWithTitle:@"头像" placeholderImage:icon imageUrl:nil actionBlock:^(HSBaseCellModel *model) {
         
-    } imageBlock:nil];
+    } imageBlock:^(HSBaseCellModel *cellModel) {
+        HSLog(@"点击头像--%@",cellModel)
+    }];
     
     //名字
     HSTextCellModel *name = [[HSTextCellModel alloc] initWithTitle:@"名字" detailText:@"人名的名义" actionBlock:^(HSBaseCellModel *model) {

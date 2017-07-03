@@ -1,6 +1,6 @@
 # HSSetTableViewController
 
-最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！100% App都能用到!!目前版本已经升级到1.1.7版本，结构做了部分调整，希望大家能升级到最新版本，完全没有后顾之忧，真正做到实用。
+最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！100% App都能用到!!目前版本已经升级到1.1.8版本，结构做了部分调整，希望大家能升级到最新版本，完全没有后顾之忧，真正做到实用。
 - 本库优势：
    1. 支持标题，详细文本配置，分割线自定义，箭头自定义，适配不同App风格。
    3. 支持cell右边文本更新，高度内部计算。支持横竖屏自动适应文本高度。
@@ -50,7 +50,7 @@
 ## <a id="How to use"></a>How to use
 * 使用 CocoaPods:
 请先安装cocoapods,如果版本太老无法找到,请升级cocopods到最新版本 命令：pod repo update
-  - pod 'HSSetTableViewController','~> 1.1.7'
+  - pod 'HSSetTableViewController','~> 1.1.8'
   - 导入头文件：`#import <HSSetTableViewController.h>`
 * 直接导入：
   - 拖动 `HSSetTableViewController` 文件夹以及SDWebImage到你工程目录。

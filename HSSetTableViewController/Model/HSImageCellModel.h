@@ -8,7 +8,7 @@
 
 #import "HSBaseCellModel.h"
 #import "HSTitleCellModel.h"
-typedef void(^ClickImageBlock)();
+typedef void(^ClickImageBlock)(HSBaseCellModel *cellModel);
 //右边大图model
 @interface HSImageCellModel : HSTitleCellModel
 

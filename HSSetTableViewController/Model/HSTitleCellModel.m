@@ -52,7 +52,6 @@
         //获取当前线程id
         NSString *threadNumber = [[[NSString stringWithFormat:@"%@",[NSThread currentThread]] componentsSeparatedByString:@"number = "].lastObject componentsSeparatedByString:@","].firstObject;
         self.identifier = [NSString stringWithFormat:@"%lf%@",now,threadNumber];
-        self.identifier = [NSString stringWithFormat:@"%lf",now];
         self.actionBlock = block;
         self.cellClass = HSTitleCellModelCellClass;
         self.selectionStyle = UITableViewCellSelectionStyleDefault;

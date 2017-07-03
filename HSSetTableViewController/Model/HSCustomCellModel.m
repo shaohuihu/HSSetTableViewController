@@ -20,7 +20,6 @@
         //获取当前线程id
         NSString *threadNumber = [[[NSString stringWithFormat:@"%@",[NSThread currentThread]] componentsSeparatedByString:@"number = "].lastObject componentsSeparatedByString:@","].firstObject;
         self.identifier = [NSString stringWithFormat:@"%lf%@",now,threadNumber];
-        self.identifier = [NSString stringWithFormat:@"%lf",now];
         self.actionBlock = block;
         self.selectionStyle = UITableViewCellSelectionStyleDefault;
         self.separateOffset = HS_KCellMargin;
@@ -31,4 +30,6 @@
     }
     return self;
 }
+
+
 @end

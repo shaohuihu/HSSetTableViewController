@@ -23,9 +23,7 @@
     UIImage *image = [UIImage imageNamed:@"ic_icon_photo"];
     HSImageCellModel *head = [[HSImageCellModel alloc] initWithTitle:@"账号管理" placeholderImage:image imageUrl:nil actionBlock:^(HSBaseCellModel *model) {
         
-    } imageBlock:^{
-        
-    }];
+    } imageBlock:nil];
     head.imageSize = CGSizeMake(30.0f, 30.0f);
     head.cornerRadius = 15;
     head.cellHeight = HS_KCellHeight;
