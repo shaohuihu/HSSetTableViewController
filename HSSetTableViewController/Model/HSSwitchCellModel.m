@@ -13,12 +13,16 @@
 - (instancetype)initWithTitle:(NSString *)title switchType:(BOOL)on switchBlock:(switchBlock)block
 {
     if(self = [super initWithTitle:title actionBlock:nil]){
-        self.cellClass = HSSwitchCellModelCellClass;
         self.switchBlock = block;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.showArrow = NO;
         self.on = on;
     }
     return self;
+}
+
+- (NSString *)cellClass
+{
+    return HSSwitchCellModelCellClass;
 }
 @end

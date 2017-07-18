@@ -27,6 +27,7 @@
     } imageBlock:^(HSBaseCellModel *cellModel) {
         HSLog(@"点击头像--%@",cellModel)
     }];
+    [header setValue:@"123" forKey:@"cellClass"];
     
     //名字
     HSTextCellModel *name = [[HSTextCellModel alloc] initWithTitle:@"名字" detailText:@"人名的名义" actionBlock:^(HSBaseCellModel *model) {

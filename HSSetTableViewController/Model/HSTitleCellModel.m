@@ -18,13 +18,7 @@
         self.cellHeight = HS_KCellHeight;
         self.title = title;
         self.showArrow = YES;
-        //获取当前时间
-        CFAbsoluteTime now = CFAbsoluteTimeGetCurrent();
-        //获取当前线程id
-        NSString *threadNumber = [[[NSString stringWithFormat:@"%@",[NSThread currentThread]] componentsSeparatedByString:@"number = "].lastObject componentsSeparatedByString:@","].firstObject;
-        self.identifier = [NSString stringWithFormat:@"%lf%@",now,threadNumber];
         self.actionBlock = block;
-        self.cellClass = HSTitleCellModelCellClass;
         self.selectionStyle = UITableViewCellSelectionStyleDefault;
         self.separateOffset = HS_KCellMargin;
         self.separateColor = HS_KSeparateColor;
@@ -47,13 +41,7 @@
         self.cellHeight = HS_KCellHeight;
         self.attributeTitle = attributeTitle;
         self.showArrow = YES;
-        //获取当前时间
-        CFAbsoluteTime now = CFAbsoluteTimeGetCurrent();
-        //获取当前线程id
-        NSString *threadNumber = [[[NSString stringWithFormat:@"%@",[NSThread currentThread]] componentsSeparatedByString:@"number = "].lastObject componentsSeparatedByString:@","].firstObject;
-        self.identifier = [NSString stringWithFormat:@"%lf%@",now,threadNumber];
         self.actionBlock = block;
-        self.cellClass = HSTitleCellModelCellClass;
         self.selectionStyle = UITableViewCellSelectionStyleDefault;
         self.separateColor = HS_KSeparateColor;
         self.separateHeight = HS_KSeparateHeight;
@@ -67,5 +55,10 @@
         self.titileTextAlignment = NSTextAlignmentLeft;
     }
     return self;
+}
+
+- (NSString *)cellClass
+{
+    return HSTitleCellModelCellClass;
 }
 @end

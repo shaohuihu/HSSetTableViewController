@@ -24,9 +24,7 @@
         self.leftPading = HS_KCellTextLeftPading;
         self.detailFont = HS_KDetailFont;
         self.detailColor = HS_KDetailColor;
-       
         self.detailText = detailText;
-        self.cellClass = HSTextCellModelCellClass;
     }
     return self;
 }
@@ -38,7 +36,6 @@
         self.detailFont = HS_KDetailFont;
         self.detailColor = HS_KDetailColor;
         self.attributeDetailText = attributrDetailText;
-        self.cellClass = HSTextCellModelCellClass;
     }
     return self;
 }
@@ -48,7 +45,6 @@
     if(self = [super initWithAttributeTitle:attributeTitle actionBlock:block]){
         self.leftPading = HS_KCellTextLeftPading;
         self.attributeDetailText = attributeDetailText;
-        self.cellClass = HSTextCellModelCellClass;
     }
     return self;
 }
@@ -61,9 +57,13 @@
         self.detailFont = HS_KDetailFont;
         self.detailColor = HS_KDetailColor;
         self.detailText = detailText;
-        self.cellClass = HSTextCellModelCellClass;
     }
     return self;
+}
+
+- (NSString *)cellClass
+{
+    return HSTextCellModelCellClass;
 }
 
 - (void)setShowArrow:(BOOL)showArrow

@@ -19,9 +19,13 @@
         self.imageSize = CGSizeMake(HS_KImageWidth, HS_KImageHeight);
         self.cornerRadius = .0f;
         self.cellHeight  = HS_KImageCellHeight;
-        self.cellClass = HSImageCellModelCellClass;
     }
     return self;
+}
+
+- (NSString *)cellClass
+{
+    return HSImageCellModelCellClass;
 }
 
 @end
