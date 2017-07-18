@@ -45,6 +45,7 @@
 
 ## <a id="Renderings"></a>Renderings
 
+<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/Architecture.png">
 <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo1.gif"> <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo3.gif"> <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo4.gif">      <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo5.gif"> 
 
 ## <a id="How to use"></a>How to use
