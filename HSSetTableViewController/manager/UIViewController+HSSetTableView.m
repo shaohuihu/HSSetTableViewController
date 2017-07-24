@@ -16,12 +16,30 @@
 @implementation UIViewController (HSSetTableView)
 
 
+
++ (void)swizzleMethod:(SEL)oneSel anotherMethod:(SEL)anotherSel {
+    
+    Method oneMethod = class_getInstanceMethod(self, oneSel);
+    Method anotherMethod = class_getInstanceMethod(self, anotherSel);
+    method_exchangeImplementations(oneMethod, anotherMethod);
+}
+
+
 - (void)initSetTableViewConfigure
 {
+    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        self.hs_dataArry = [NSMutableArray array];
-        self.manager = [[HSSetTableViewManager alloc] initSetTableViewManager:self.hs_dataArry];
+        [self.class swizzleMethod:NSSelectorFromString(@"dealloc") anotherMethod:@selector(hs_dealloc)];
+    });
+    
+    if(self.hs_dataArry == nil){
+      self.hs_dataArry = [NSMutableArray array];
+    }
+    if(self.manager == nil){
+       self.manager = [[HSSetTableViewManager alloc] initSetTableViewManager:self.hs_dataArry];
+    }
+    if(self.hs_tableView == nil){
         self.hs_tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         self.hs_tableView.translatesAutoresizingMaskIntoConstraints = NO;
         self.hs_tableView.backgroundColor = [UIColor clearColor];
@@ -30,7 +48,7 @@
         self.hs_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.hs_tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         self.hs_tableView.showsVerticalScrollIndicator = NO;
-
+        
         if(floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_8_x_Max){
             self.hs_tableView.cellLayoutMarginsFollowReadableWidth = NO;
         }
@@ -38,8 +56,9 @@
         
         //设置约束
         [self setupTableViewConstrint];
-        
-    });
+    }
+    
+    
 }
 
 //设置tableView约束
@@ -90,5 +109,17 @@
 - (HSSetTableViewManager *)manager
 {
     return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)hs_dealloc
+{
+    NSLog(@"分类调用");
+    self.hs_tableView.delegate = nil;
+    self.hs_tableView.dataSource = nil;
+    [self.hs_tableView removeFromSuperview];
+    [self.hs_dataArry removeAllObjects];
+    self.hs_dataArry = nil;
+    self.manager = nil;
+    [self hs_dealloc];
 }
 @end

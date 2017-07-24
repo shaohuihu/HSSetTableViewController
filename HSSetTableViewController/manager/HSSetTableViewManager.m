@@ -98,4 +98,9 @@
     [view setBackgroundColor:[UIColor clearColor]];
     return view;
 }
+
+- (void)dealloc
+{
+    NSLog(@"销毁--manager");
+}
 @end

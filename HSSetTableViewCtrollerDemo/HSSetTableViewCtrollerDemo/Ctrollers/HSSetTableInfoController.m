@@ -9,6 +9,7 @@
 #import "HSSetTableInfoController.h"
 #import "HSSetTableViewController.h"
 @interface HSSetTableInfoController ()
+@property (nonatomic, strong)HSImageCellModel *header;  ///<
 
 @end
 
@@ -20,6 +21,8 @@
     self.view.backgroundColor = [UIColor hs_colorWithHexString:@"#EBEDEF"];
     self.title = @"个人信息";
     
+    [self initSetTableViewConfigure];
+    
     //头像
     UIImage *icon = [UIImage imageNamed:@"ic_icon_header"];
     HSImageCellModel *header = [[HSImageCellModel alloc] initWithTitle:@"头像" placeholderImage:icon imageUrl:nil actionBlock:^(HSBaseCellModel *model) {
@@ -27,6 +30,11 @@
     } imageBlock:^(HSBaseCellModel *cellModel) {
         HSLog(@"点击头像--%@",cellModel)
     }];
+    self.header = header;
+    
+    self.header.actionBlock = ^(HSBaseCellModel *model) {
+//        NSLog(@"self class --%@",[self class]);
+    };
     
     //名字
     HSTextCellModel *name = [[HSTextCellModel alloc] initWithTitle:@"名字" detailText:@"人名的名义" actionBlock:^(HSBaseCellModel *model) {
@@ -81,6 +89,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    NSLog(@"HSSetTableInfoController销毁");
 }
 
 /*

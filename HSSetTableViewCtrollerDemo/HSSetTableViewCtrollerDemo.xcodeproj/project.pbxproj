@@ -296,7 +296,7 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
-		3B571E951F25EDAE0092E1F4 /* manager */ = {
+		3B571E951F25EDAE0092E1F4 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				3B571E9C1F25EFB50092E1F4 /* HSSetTableViewManager.h */,
@@ -304,6 +304,7 @@
 				3B571E9F1F25EFCF0092E1F4 /* UIViewController+HSSetTableView.h */,
 				3B571EA01F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m */,
 			);
+			name = Manager;
 			path = manager;
 			sourceTree = "<group>";
 		};
@@ -375,7 +376,7 @@
 		3BFD66381EB1DD050001E324 /* HSSetTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3B571E951F25EDAE0092E1F4 /* manager */,
+				3B571E951F25EDAE0092E1F4 /* Manager */,
 				3BFD66391EB1DD050001E324 /* Category */,
 				3BFD66441EB1DD050001E324 /* Ctroller */,
 				3BFD66471EB1DD050001E324 /* HSSetTableViewController.bundle */,

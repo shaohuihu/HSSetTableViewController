@@ -7,10 +7,10 @@
 //
 
 #import "HSSetTableViewController.h"
-#import "HSSetTableViewController.h"
+#import "UIViewController+HSSetTableView.h"
 /**
  微信个人信息
  */
-@interface HSSetTableInfoController : HSSetTableViewMainController
+@interface HSSetTableInfoController : UIViewController
 
 @end
