@@ -98,7 +98,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     NSMutableArray *sections = [self.hs_dataArry hs_objectWithIndex:indexPath.section];
     NSAssert([sections isKindOfClass:[NSMutableArray class]], @"此对象必须为一个可变数组,请检查数据源组装方式是否正确!");
     HSBaseCellModel *cellModel = (HSBaseCellModel *)[sections hs_objectWithIndex:indexPath.row];
@@ -201,6 +200,7 @@
         [self.hs_dataArry removeAllObjects];
         self.hs_dataArry = nil;
     }
+    
 }
 
 

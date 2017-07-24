@@ -13,6 +13,7 @@
 #import "HSSetTableViewQQController.h"
 #import "HSSetTableViewCustomController.h"
 #import "HSZhiHuTableViewController.h"
+#import "HSCategoryViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, weak)UITableView *tableView;  ///<
 @property (nonatomic, strong)NSArray *dataSource;  ///<
@@ -42,25 +43,11 @@
 //    tableView.cellLayoutMarginsFollowReadableWidth  = NO;
     [self.view addSubview:tableView];
     self.tableView = tableView;
-    self.dataSource = @[@"我(仿微信)",@"个人信息(仿微信)",@"复杂界面(更新)",@"个人资料(QQ)",@"统一风格(自定义)",@"知乎(包含自定义cell)"];
-    self.classSource = @[@"HSSetTableViewMeController",@"HSSetTableInfoController",@"HSSetTableViewOtherController",@"HSSetTableViewQQController",@"HSSetTableViewCustomController",@"HSZhiHuTableViewController"];
+    self.dataSource = @[@"我(仿微信)",@"个人信息(仿微信)",@"复杂界面(更新)",@"个人资料(QQ)",@"统一风格(自定义)",@"知乎(包含自定义cell)",@"控制器分类"];
+    self.classSource = @[@"HSSetTableViewMeController",@"HSSetTableInfoController",@"HSSetTableViewOtherController",@"HSSetTableViewQQController",@"HSSetTableViewCustomController",@"HSZhiHuTableViewController",@"HSCategoryViewController"];
 }
 
-- (NSArray *)dataSource
-{
-    if(_dataSource == nil){
-        _dataSource = [NSArray array];
-    }
-    return _dataSource;
-}
 
-- (NSArray *)classSource
-{
-    if(_classSource == nil){
-        _classSource = [NSArray new];
-    }
-    return _classSource;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

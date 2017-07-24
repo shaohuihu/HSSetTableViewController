@@ -1,24 +1,28 @@
 //
-//  HSSetTableInfoController.m
+//  HSCategoryViewController.m
 //  HSSetTableViewCtrollerDemo
 //
-//  Created by hushaohui on 2017/4/27.
+//  Created by hushaohui on 2017/7/24.
 //  Copyright © 2017年 ZLHD. All rights reserved.
 //
 
+#import "HSCategoryViewController.h"
 #import "HSSetTableInfoController.h"
-#import "HSSetTableViewController.h"
-@interface HSSetTableInfoController ()
+#import "UIViewController+HSSetTableView.h"
+@interface HSCategoryViewController ()
 
 @end
 
-@implementation HSSetTableInfoController
+@implementation HSCategoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.view.backgroundColor = [UIColor hs_colorWithHexString:@"#EBEDEF"];
     self.title = @"个人信息";
+    
+    [self initSetTableViewConfigure];
+    
     
     //头像
     UIImage *icon = [UIImage imageNamed:@"ic_icon_header"];
@@ -27,7 +31,6 @@
     } imageBlock:^(HSBaseCellModel *cellModel) {
         HSLog(@"点击头像--%@",cellModel)
     }];
-    [header setValue:@"123" forKey:@"cellClass"];
     
     //名字
     HSTextCellModel *name = [[HSTextCellModel alloc] initWithTitle:@"名字" detailText:@"人名的名义" actionBlock:^(HSBaseCellModel *model) {
@@ -61,23 +64,21 @@
     
     //地区
     HSTextCellModel *area = [[HSTextCellModel alloc] initWithTitle:@"地区" detailText:@"四川 成都" actionBlock:nil];
-//
-//    
+    //
+    //
     //个性签名
     HSTextCellModel *sign = [[HSTextCellModel alloc] initWithTitle:@"签名" detailText:@"气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹气质如虹" actionBlock:nil];
-//    sign.controlRightOffset = 30;
-//    sign.arrowControlRightOffset = 50;
+    //    sign.controlRightOffset = 30;
+    //    sign.arrowControlRightOffset = 50;
     
- 
+    
     
     NSMutableArray *section0 = [NSMutableArray arrayWithObjects:header,name,number,qrCode,address, nil];
     NSMutableArray *section1 = [NSMutableArray arrayWithObjects:area,sex,sign,nil];
     [self.hs_dataArry addObject:section0];
     [self.hs_dataArry addObject:section1];
-
+    [self.hs_tableView reloadData];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

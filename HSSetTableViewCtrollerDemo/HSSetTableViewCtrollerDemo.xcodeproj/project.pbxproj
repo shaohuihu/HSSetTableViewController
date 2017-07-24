@@ -26,6 +26,9 @@
 		3B07CCFE1EB1A21300CB0ADE /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCEC1EB1A21300CB0ADE /* UIImageView+HighlightedWebCache.m */; };
 		3B07CCFF1EB1A21300CB0ADE /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCEE1EB1A21300CB0ADE /* UIImageView+WebCache.m */; };
 		3B07CD001EB1A21300CB0ADE /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCF01EB1A21300CB0ADE /* UIView+WebCacheOperation.m */; };
+		3B571E8E1F25C3EC0092E1F4 /* HSCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B571E8D1F25C3EC0092E1F4 /* HSCategoryViewController.m */; };
+		3B571E9E1F25EFB50092E1F4 /* HSSetTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B571E9D1F25EFB50092E1F4 /* HSSetTableViewManager.m */; };
+		3B571EA11F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B571EA01F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m */; };
 		3B719B8D1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B719B8C1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m */; };
 		3BB3C4A31EAB991D004A9BA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB3C4A21EAB991D004A9BA9 /* main.m */; };
 		3BB3C4A61EAB991D004A9BA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB3C4A51EAB991D004A9BA9 /* AppDelegate.m */; };
@@ -120,6 +123,12 @@
 		3B07CCEE1EB1A21300CB0ADE /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		3B07CCEF1EB1A21300CB0ADE /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		3B07CCF01EB1A21300CB0ADE /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		3B571E8C1F25C3EC0092E1F4 /* HSCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSCategoryViewController.h; sourceTree = "<group>"; };
+		3B571E8D1F25C3EC0092E1F4 /* HSCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSCategoryViewController.m; sourceTree = "<group>"; };
+		3B571E9C1F25EFB50092E1F4 /* HSSetTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetTableViewManager.h; sourceTree = "<group>"; };
+		3B571E9D1F25EFB50092E1F4 /* HSSetTableViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSetTableViewManager.m; sourceTree = "<group>"; };
+		3B571E9F1F25EFCF0092E1F4 /* UIViewController+HSSetTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HSSetTableView.h"; sourceTree = "<group>"; };
+		3B571EA01F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HSSetTableView.m"; sourceTree = "<group>"; };
 		3B719B8B1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetTableViewCustomController.h; sourceTree = "<group>"; };
 		3B719B8C1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSetTableViewCustomController.m; sourceTree = "<group>"; };
 		3BB3C49E1EAB991D004A9BA9 /* HSSetTableViewCtrollerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSSetTableViewCtrollerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +242,8 @@
 				3B719B8C1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m */,
 				3BFF33291EEADCFA00299CEB /* HSZhiHuTableViewController.h */,
 				3BFF332A1EEADCFA00299CEB /* HSZhiHuTableViewController.m */,
+				3B571E8C1F25C3EC0092E1F4 /* HSCategoryViewController.h */,
+				3B571E8D1F25C3EC0092E1F4 /* HSCategoryViewController.m */,
 			);
 			path = Ctrollers;
 			sourceTree = "<group>";
@@ -283,6 +294,17 @@
 				3B07CCF01EB1A21300CB0ADE /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		3B571E951F25EDAE0092E1F4 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				3B571E9C1F25EFB50092E1F4 /* HSSetTableViewManager.h */,
+				3B571E9D1F25EFB50092E1F4 /* HSSetTableViewManager.m */,
+				3B571E9F1F25EFCF0092E1F4 /* UIViewController+HSSetTableView.h */,
+				3B571EA01F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m */,
+			);
+			path = manager;
 			sourceTree = "<group>";
 		};
 		3BB3C4951EAB991D004A9BA9 = {
@@ -353,6 +375,7 @@
 		3BFD66381EB1DD050001E324 /* HSSetTableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3B571E951F25EDAE0092E1F4 /* manager */,
 				3BFD66391EB1DD050001E324 /* Category */,
 				3BFD66441EB1DD050001E324 /* Ctroller */,
 				3BFD66471EB1DD050001E324 /* HSSetTableViewController.bundle */,
@@ -588,6 +611,7 @@
 				3BFD66651EB1DD050001E324 /* HSBaseCellModel.m in Sources */,
 				3BFD66641EB1DD050001E324 /* HSSetTableViewControllerConst.m in Sources */,
 				3B07CCF41EB1A21300CB0ADE /* SDWebImageCompat.m in Sources */,
+				3B571EA11F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m in Sources */,
 				3B07CCF31EB1A21300CB0ADE /* SDImageCache.m in Sources */,
 				3BFD66661EB1DD050001E324 /* HSImageCellModel.m in Sources */,
 				3BFD665D1EB1DD050001E324 /* NSArray+HSSafeAccess.m in Sources */,
@@ -611,6 +635,8 @@
 				3B07CCCA1EB18D1000CB0ADE /* HSSetTableInfoController.m in Sources */,
 				3B719B8D1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m in Sources */,
 				3BB3C4A91EAB991D004A9BA9 /* ViewController.m in Sources */,
+				3B571E9E1F25EFB50092E1F4 /* HSSetTableViewManager.m in Sources */,
+				3B571E8E1F25C3EC0092E1F4 /* HSCategoryViewController.m in Sources */,
 				3B07CCF71EB1A21300CB0ADE /* SDWebImageDownloaderOperation.m in Sources */,
 				3B07CCF91EB1A21300CB0ADE /* SDWebImagePrefetcher.m in Sources */,
 				3BFD66621EB1DD050001E324 /* HSSetTableViewMainController.m in Sources */,
