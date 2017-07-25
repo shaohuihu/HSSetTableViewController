@@ -92,7 +92,7 @@
     [self.hs_dataArry addObject:section1];
     [self.hs_dataArry addObject:section2];
     [self.hs_dataArry addObject:section3];
-    [self.tableView reloadData];
+    [self.hs_tableView reloadData];
     
 }
 

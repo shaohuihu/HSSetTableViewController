@@ -35,7 +35,7 @@
          tableView.cellLayoutMarginsFollowReadableWidth = NO;
     }
     [self.view addSubview:tableView];
-    self.tableView = tableView;
+    self.hs_tableView = tableView;
     
     [self setupTableViewConstrint];
    
@@ -45,18 +45,18 @@
 - (void)setupTableViewConstrint
 {
     
-    NSLayoutConstraint *tableViewTopConstraint = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    NSLayoutConstraint *tableViewTopConstraint = [NSLayoutConstraint constraintWithItem:self.hs_tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
     [self.view addConstraint:tableViewTopConstraint];
     
     
-    NSLayoutConstraint *tableViewLeftConstraint = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
+    NSLayoutConstraint *tableViewLeftConstraint = [NSLayoutConstraint constraintWithItem:self.hs_tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
     [self.view addConstraint:tableViewLeftConstraint];
    
     
-    NSLayoutConstraint *tableViewWidthConstraint = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
+    NSLayoutConstraint *tableViewWidthConstraint = [NSLayoutConstraint constraintWithItem:self.hs_tableView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
     [self.view addConstraint:tableViewWidthConstraint];
     
-    NSLayoutConstraint *tableViewHeightConstraint = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+    NSLayoutConstraint *tableViewHeightConstraint = [NSLayoutConstraint constraintWithItem:self.hs_tableView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
     [self.view addConstraint:tableViewHeightConstraint];
     
 }
@@ -160,9 +160,9 @@
                 [rows replaceObjectAtIndex:idx2 withObject:cellModel];
                 //更新cell
                 NSIndexPath *path = [NSIndexPath indexPathForRow:idx2 inSection:idx1];
-                [self.tableView beginUpdates];
-                [self.tableView reloadRowsAtIndexPaths:@[path] withRowAnimation:animation];
-                [self.tableView endUpdates];
+                [self.hs_tableView beginUpdates];
+                [self.hs_tableView reloadRowsAtIndexPaths:@[path] withRowAnimation:animation];
+                [self.hs_tableView endUpdates];
                 *stop = YES;
                 return;
             }
@@ -191,11 +191,11 @@
 
 - (void)dealloc
 {
-    if(self.tableView){
-        self.tableView.delegate = nil;
-        self.tableView.dataSource = nil;
-        [self.tableView removeFromSuperview];
-        self.tableView = nil;
+    if(self.hs_tableView){
+        self.hs_tableView.delegate = nil;
+        self.hs_tableView.dataSource = nil;
+        [self.hs_tableView removeFromSuperview];
+        self.hs_tableView = nil;
     }
     if(self.hs_dataArry){
         [self.hs_dataArry removeAllObjects];

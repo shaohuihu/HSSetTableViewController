@@ -70,7 +70,7 @@
     [self.hs_dataArry addObject:section2];
     
     
-    [self.tableView reloadData];
+    [self.hs_tableView reloadData];
     
    // self.tableView.tableHeaderView = [self viewTableHeader];
 
