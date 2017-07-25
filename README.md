@@ -1,6 +1,6 @@
 # HSSetTableViewController
 
-最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！100% App都能用到!!目前版本已经升级到1.1.9版本，结构做了部分调整，希望大家能升级到最新版本，完全没有后顾之忧，真正做到实用。
+最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！100%App都能用到!!目前版本已经升级到1.2.0版本，增加了界面分类功能，你的UIViewController只需要导入UIViewController+HSSetTableView即可。目前支持继承和分类两种实现方式，建议使用分类！
 - 本库优势：
    1. 支持标题，详细文本配置，分割线自定义，箭头自定义，适配不同App风格。
    3. 支持cell右边文本更新，高度内部计算。支持横竖屏自动适应文本高度。
@@ -43,6 +43,10 @@
 - `UIColor+HSExtension`
 - `UIView+HSFrame`
 
+### Manager
+- `HSSetTableViewManager`
+- `UIViewController+HSSetTableView`
+
 ## <a id="Architecture"></a>Architecture
 
 <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/Architecture.png">
@@ -54,15 +58,22 @@
 ## <a id="How to use"></a>How to use
 * 使用 CocoaPods:
 请先安装cocoapods,如果版本太老无法找到,请升级cocopods到最新版本 命令：pod repo update
-  - pod 'HSSetTableViewController','~> 1.1.9'
-  - 导入头文件：`#import <HSSetTableViewController.h>`
+  - pod 'HSSetTableViewController','~> 1.2.0'
+  - 导入头文件：`#import <UIViewController+HSSetTableView>`或者`#import <HSSetTableViewController.h>`
 * 直接导入：
   - 拖动 `HSSetTableViewController` 文件夹以及SDWebImage到你工程目录。
-  - 导入头文件：`#import "HSSetTableViewController.h"`
-* 类使用: 
-  - 你的UIViewController只需要继承基类HSSetTableViewMainController即可
+  - 导入头文件：`#import "UIViewController+HSSetTableView"`或者`#import "HSSetTableViewController.h"`
+* 使用方法: 
+  - 分类：你的UIViewController只需要调用初始化方法`- (void)initSetTableViewConfigure`或者   
+  `-(void)initSetTableViewConfigureWithSectionFooter:(UIView *)sectionFooter footerHeight:(CGFloat)footerHeight`
+
+  - 继承：你的UIViewController只需要继承基类HSSetTableViewMainController即可
 ## <a id="Details"></a>Details (See the example program HSSetTableViewControllerDemo for details)
 ```objc
+
+    //如果是分类，初始化tableView配置。继承则不需要设置
+    [self initSetTableViewConfigure];
+    
     // 1.创建cell title模型
      HSTitleCellModel *cell1 = [[HSTitleCellModel alloc] initWithTitle:@"相册" actionBlock:^(HSBaseCellModel *model) {
         HSLog(@"点击相册")
@@ -99,7 +110,7 @@
     //5.添加到数据源
     NSMutableArray *section0 = [NSMutableArray arrayWithObjects:header,cell1,cell2, cell3,cell4,nil];
     [self.hs_dataArry addObject:section0];
-    [self.tableView reloadData];
+    [self.hs_tableView reloadData];
    
    //6.更新每个cellModel属性后，只需要调用完成刷新
    [self updateCellModel:cell4];

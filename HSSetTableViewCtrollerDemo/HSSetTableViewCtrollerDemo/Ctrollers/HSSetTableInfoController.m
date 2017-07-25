@@ -23,7 +23,7 @@
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 100)];
     [view setBackgroundColor:[UIColor redColor]];
-    [self initSetTableViewConfigureWithSectionFooter:nil footerHeight:0];
+    [self initSetTableViewConfigure];
         
     //头像
     UIImage *icon = [UIImage imageNamed:@"ic_icon_header"];
