@@ -81,6 +81,11 @@
     NSMutableArray *section1 = [NSMutableArray arrayWithObjects:area,sex,sign,nil];
     [self.hs_dataArry addObject:section0];
     [self.hs_dataArry addObject:section1];
+    
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
+    [view setBackgroundColor:[UIColor redColor]];
+    [self setTableViewHeader:view section:1];
 
 }
 
@@ -95,6 +100,7 @@
 {
     NSLog(@"HSSetTableInfoController销毁");
 }
+
 
 /*
 #pragma mark - Navigation

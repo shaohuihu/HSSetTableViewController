@@ -172,6 +172,7 @@
 
 -(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
+    NSLog(@"控制器方法");
      __weak __typeof(&*self)weakSelf = self;
     [self.hs_dataArry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSMutableArray *sections = (NSMutableArray *)obj;
