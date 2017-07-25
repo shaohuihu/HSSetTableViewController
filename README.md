@@ -47,7 +47,7 @@
 - `HSSetTableViewManager`
 - `UIViewController+HSSetTableView`
 
-## <a id="Architecture"></a>Architecture
+## <a id="Structure"></a>Architecture
 
 <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/Architecture.png">
 
