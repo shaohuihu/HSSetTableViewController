@@ -11,12 +11,8 @@
 #import "HSTextCellModel.h"
 #import <objc/runtime.h>
 #import "NSArray+HSSafeAccess.h"
-#import "HSSetTableViewFooterManager.h"
-@interface UIViewController()<HSSetTableViewManagerDelegate>
+@interface UIViewController()
 @property (nonatomic, strong)HSSetTableViewManager *manager;  ///<表视图代理类
-@property (nonatomic, strong)HSSetTableViewFooterManager *footerManager;  ///<表视图尾部管理类
-@property (nonatomic, strong)NSMutableDictionary *headerDic;  ///<头部字典
-@property (nonatomic, strong)NSMutableDictionary *headHeightDic;  ///<头部视图高度
 @end
 
 @implementation UIViewController (HSSetTableView)
@@ -38,15 +34,21 @@
     method_exchangeImplementations(oneMethod, anotherMethod);
 }
 
-
 - (void)initSetTableViewConfigure
+{
+    [self initSetTableViewConfigureWithSectionFooter:nil footerHeight:0];
+}
+
+- (void)initSetTableViewConfigureWithSectionFooter:(UIView *)sectionFooter footerHeight:(CGFloat)footerHeight
 {
     
     if(self.hs_dataArry == nil){
-      self.hs_dataArry = [NSMutableArray array];
+       self.hs_dataArry = [NSMutableArray array];
     }
     if(self.manager == nil){
        self.manager = [[HSSetTableViewManager alloc] initSetTableViewManager:self.hs_dataArry];
+       self.manager.sectionViewFooter = sectionFooter;
+       self.manager.sectionViewFooterHieght = footerHeight;
     }
     if(self.hs_tableView == nil){
         self.hs_tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
@@ -66,13 +68,7 @@
         //设置tableView约束
         [self setupTableViewConstrint];
     }
-    //初始化footer视图
-    if(self.footerManager == nil){
-        self.footerManager = [[HSSetTableViewFooterManager alloc] init];
-        self.manager.delegate = self.footerManager;
-    }
-    
-    
+
 }
 
 //设置tableView约束
@@ -94,7 +90,6 @@
     [self.view addConstraint:tableViewHeightConstraint];
     
 }
-
 
 #pragma mark property
 - (void)setHs_tableView:(UITableView *)hs_tableView
@@ -125,24 +120,6 @@
 - (HSSetTableViewManager *)manager
 {
     return objc_getAssociatedObject(self, _cmd);
-}
-
-- (NSMutableDictionary *)headerDic
-{
-    return objc_getAssociatedObject(self, _cmd);
-}
-
-- (void)setHeaderDic:(NSMutableDictionary *)headerDic
-{
-    objc_setAssociatedObject(self, @selector(headerDic), headerDic, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSMutableDictionary *)headHeightDic {
-    return objc_getAssociatedObject(self, _cmd);
-}
-
-- (void)setHeadHeightDic:(NSMutableDictionary *)headHeightDic{
-    objc_setAssociatedObject(self, @selector(headHeightDic), headHeightDic, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 //更新model
 - (void)updateCellModel:(HSBaseCellModel *)cellModel
@@ -176,44 +153,6 @@
     }];
 }
 
-
-#pragma mark manager 代理方法
-- (UIView *)hs_tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    return [self.headerDic objectForKey:@(section)];
-}
-
-- (CGFloat)hs_tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return [[self.headHeightDic objectForKey:@(section)] floatValue];
-}
-- (void)setTableViewHeader:(UIView *)header section:(NSInteger)section
-{
-    if(self.headerDic == nil){
-        self.headerDic = [NSMutableDictionary dictionary];
-        
-    }
-    if(header && section >=0){
-         [self.headerDic setObject:header forKey:@(section)];
-        NSLog(@"打印字典个数--%lld",self.headerDic.count);
-    }
-   
-}
-
-- (void)setTableViewHeaderHeight:(CGFloat)height section:(NSInteger)section
-{
-    if(self.headHeightDic == nil){
-        self.headHeightDic = [NSMutableDictionary dictionary];
-        
-        //设置manager代理
-        self.manager.delegate = nil;
-        self.manager.delegate = self;
-    }
-    if(height >=0 && section >= 0){
-        [self.headHeightDic setObject:@(height) forKey:@(section)];
-    }
-    
-}
 
 #pragma mark 屏幕旋转方法
 -(void)hs_willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -252,6 +191,7 @@
     if(self.manager){
        self.manager = nil;
     }
+    
     [self hs_dealloc];
 }
 @end

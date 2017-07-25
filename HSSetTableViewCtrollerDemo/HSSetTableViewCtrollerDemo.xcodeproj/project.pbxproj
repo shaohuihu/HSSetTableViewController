@@ -26,7 +26,6 @@
 		3B07CCFE1EB1A21300CB0ADE /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCEC1EB1A21300CB0ADE /* UIImageView+HighlightedWebCache.m */; };
 		3B07CCFF1EB1A21300CB0ADE /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCEE1EB1A21300CB0ADE /* UIImageView+WebCache.m */; };
 		3B07CD001EB1A21300CB0ADE /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B07CCF01EB1A21300CB0ADE /* UIView+WebCacheOperation.m */; };
-		3B543DB51F2710B800547048 /* HSSetTableViewFooterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B543DB41F2710B800547048 /* HSSetTableViewFooterManager.m */; };
 		3B571E8E1F25C3EC0092E1F4 /* HSCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B571E8D1F25C3EC0092E1F4 /* HSCategoryViewController.m */; };
 		3B571E9E1F25EFB50092E1F4 /* HSSetTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B571E9D1F25EFB50092E1F4 /* HSSetTableViewManager.m */; };
 		3B571EA11F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B571EA01F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m */; };
@@ -124,8 +123,6 @@
 		3B07CCEE1EB1A21300CB0ADE /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		3B07CCEF1EB1A21300CB0ADE /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		3B07CCF01EB1A21300CB0ADE /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		3B543DB31F2710B800547048 /* HSSetTableViewFooterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetTableViewFooterManager.h; sourceTree = "<group>"; };
-		3B543DB41F2710B800547048 /* HSSetTableViewFooterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSetTableViewFooterManager.m; sourceTree = "<group>"; };
 		3B571E8C1F25C3EC0092E1F4 /* HSCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSCategoryViewController.h; sourceTree = "<group>"; };
 		3B571E8D1F25C3EC0092E1F4 /* HSCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSCategoryViewController.m; sourceTree = "<group>"; };
 		3B571E9C1F25EFB50092E1F4 /* HSSetTableViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetTableViewManager.h; sourceTree = "<group>"; };
@@ -306,8 +303,6 @@
 				3B571E9D1F25EFB50092E1F4 /* HSSetTableViewManager.m */,
 				3B571E9F1F25EFCF0092E1F4 /* UIViewController+HSSetTableView.h */,
 				3B571EA01F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m */,
-				3B543DB31F2710B800547048 /* HSSetTableViewFooterManager.h */,
-				3B543DB41F2710B800547048 /* HSSetTableViewFooterManager.m */,
 			);
 			name = Manager;
 			path = manager;
@@ -611,7 +606,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B543DB51F2710B800547048 /* HSSetTableViewFooterManager.m in Sources */,
 				3B07CCF51EB1A21300CB0ADE /* SDWebImageDecoder.m in Sources */,
 				3B07CCF11EB1A21300CB0ADE /* MKAnnotationView+WebCache.m in Sources */,
 				3B07CCC71EB18CE600CB0ADE /* HSSetTableViewMeController.m in Sources */,

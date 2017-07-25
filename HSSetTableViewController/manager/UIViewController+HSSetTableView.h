@@ -14,10 +14,18 @@
 @property (nonatomic, strong)NSMutableArray *hs_dataArry;  ///<数据源
 
 
+
 /**
- 初始化tableViewConfigure
+  初始化tableViewConfigure  section footer和height均是为默认
  */
 - (void)initSetTableViewConfigure;
+/**
+ 初始化tableViewConfigure
+
+ @param sectionFooter 每个section的footer
+ @param footerHeight 每个section的footer高度
+ */
+- (void)initSetTableViewConfigureWithSectionFooter:(UIView *)sectionFooter footerHeight:(CGFloat)footerHeight;
 
 /**
  更新cell模型方法
@@ -35,21 +43,4 @@
  */
 - (void)updateCellModel:(HSBaseCellModel *)cellModel animation:(UITableViewRowAnimation)animation;
 
-
-/**
- 设置section header头部
-
- @param header header头部
- @param section section
- */
-- (void)setTableViewHeader:(UIView *)header section:(NSInteger)section;
-
-
-/**
- 设置头部视图高度
-
- @param height 高度
- @param section section
- */
-- (void)setTableViewHeaderHeight:(CGFloat)height section:(NSInteger)section;
 @end

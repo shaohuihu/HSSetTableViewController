@@ -84,8 +84,8 @@
     if(section == self.dataSource.count - 1){
         return 0;
     }
-    if([self.delegate respondsToSelector:@selector(hs_tableView:heightForFooterInSection:)]){
-        return [self.delegate hs_tableView:tableView heightForFooterInSection:section];
+    if(self.sectionViewFooterHieght >=0 && self.sectionViewFooter){
+        return self.sectionViewFooterHieght;
     }
     return HS_SectionHeight;
 }
@@ -97,8 +97,8 @@
     if(section == self.dataSource.count - 1){
         return nil;
     }
-    if([self.delegate respondsToSelector:@selector(hs_tableView:viewForFooterInSection:)]){
-      return  [self.delegate hs_tableView:tableView viewForFooterInSection:section];
+    if(self.sectionViewFooterHieght >=0 && self.sectionViewFooter){
+        return self.sectionViewFooter;
     }//默认
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_HEIGHT, HS_SectionHeight)];
     [view setBackgroundColor:[UIColor clearColor]];
@@ -106,8 +106,4 @@
    
 }
 
-- (void)dealloc
-{
-    NSLog(@"销毁--manager");
-}
 @end

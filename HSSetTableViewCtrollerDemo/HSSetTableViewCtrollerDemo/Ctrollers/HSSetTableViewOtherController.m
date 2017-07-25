@@ -22,7 +22,7 @@
     [super viewDidLoad];
     
      self.view.backgroundColor = [UIColor hs_colorWithHexString:@"#EBEDEF"];
-    
+     [self initSetTableViewConfigure];
      __weak __typeof(&*self)weakSelf = self;
     
     HSTitleCellModel *cell0 = [[HSTitleCellModel alloc] initWithTitle:@"分割线从0开始" actionBlock:^(HSBaseCellModel *model) {
@@ -103,7 +103,7 @@
     NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell0,cell1,cell2, cell3,cell4,cell6,nil];
 //    NSMutableArray *section0 = [NSMutableArray arrayWithObjects:cell6,nil];
     [self.hs_dataArry addObject:section0];
-    [self.tableView reloadData];
+    [self.hs_tableView reloadData];
 }
 
 

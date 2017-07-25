@@ -9,17 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol HSSetTableViewManagerDelegate <NSObject>
-
-- (UIView *)hs_tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section;
-- (CGFloat)hs_tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section;
-
-@end
 
 
 @interface HSSetTableViewManager : NSObject <UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, weak) id<HSSetTableViewManagerDelegate> delegate;  ///<代理
+
+@property (nonatomic, strong)UIView *sectionViewFooter;  ///<section的footer
+@property (nonatomic, assign)CGFloat sectionViewFooterHieght;  ///<section的footer高度
 
 
 /**

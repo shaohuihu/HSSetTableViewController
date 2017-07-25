@@ -21,8 +21,10 @@
     self.view.backgroundColor = [UIColor hs_colorWithHexString:@"#EBEDEF"];
     self.title = @"个人信息";
     
-    [self initSetTableViewConfigure];
-    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 100)];
+    [view setBackgroundColor:[UIColor redColor]];
+    [self initSetTableViewConfigureWithSectionFooter:nil footerHeight:0];
+        
     //头像
     UIImage *icon = [UIImage imageNamed:@"ic_icon_header"];
     HSImageCellModel *header = [[HSImageCellModel alloc] initWithTitle:@"头像" placeholderImage:icon imageUrl:nil actionBlock:^(HSBaseCellModel *model) {
@@ -79,13 +81,11 @@
     
     NSMutableArray *section0 = [NSMutableArray arrayWithObjects:header,name,number,qrCode,address, nil];
     NSMutableArray *section1 = [NSMutableArray arrayWithObjects:area,sex,sign,nil];
+    
     [self.hs_dataArry addObject:section0];
     [self.hs_dataArry addObject:section1];
     
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
-    [view setBackgroundColor:[UIColor redColor]];
-    [self setTableViewHeader:view section:1];
+
 
 }
 

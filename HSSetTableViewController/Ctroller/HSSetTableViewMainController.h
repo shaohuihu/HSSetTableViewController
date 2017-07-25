@@ -17,7 +17,7 @@
 
 
 
-@property (nonatomic, weak)UITableView *tableView;  ///<tableView
+@property (nonatomic, weak)UITableView *hs_tableView;  ///<tableView
 
 @property (nonatomic, strong)NSMutableArray *hs_dataArry;  ///<数据源
 
