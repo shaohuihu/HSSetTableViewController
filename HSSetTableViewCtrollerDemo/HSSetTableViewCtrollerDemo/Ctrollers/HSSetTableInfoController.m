@@ -19,11 +19,47 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor hs_colorWithHexString:@"#EBEDEF"];
-    self.title = @"个人信息";
+    self.title = @" 个人信息";
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 100)];
-    [view setBackgroundColor:[UIColor redColor]];
-    [self initSetTableViewConfigure];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
+    UILabel *lable = [[UILabel alloc] initWithFrame:view.bounds];
+    lable.text = @" 第一个section";
+    [view addSubview:lable];
+    [view setBackgroundColor:[UIColor clearColor]];
+    
+    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
+    lable = [[UILabel alloc] initWithFrame:view.bounds];
+    lable.text = @" 第二个section";
+    lable.center = view1.center;
+    lable.textColor = [UIColor blackColor];
+    [view1 addSubview:lable];
+    [view1 setBackgroundColor:[UIColor clearColor]];
+    
+    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
+    lable = [[UILabel alloc] initWithFrame:view.bounds];
+    lable.text = @" 第三个section";
+    lable.center = view2.center;
+    [view2 addSubview:lable];
+    [view2 setBackgroundColor:[UIColor clearColor]];
+    
+    UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
+    lable = [[UILabel alloc] initWithFrame:view.bounds];
+    lable.text = @" 第四个section";
+    lable.center = view3.center;
+    [view3 addSubview:lable];
+    [view3 setBackgroundColor:[UIColor clearColor]];
+    
+    UIView *view4 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
+    lable = [[UILabel alloc] initWithFrame:view.bounds];
+    lable.text = @" 第五个section";
+    lable.center = view4.center;
+    [view4 addSubview:lable];
+    [view4 setBackgroundColor:[UIColor clearColor]];
+    
+    
+    //[self initSetTableViewConfigure];
+    
+    [self initSetTableViewConfigureWithSectionFooter:@[[[UIView alloc] init],view,view2,view3,view4] footerHeight:@[@(-10),@(30),@(30),@(30),@(30)]];
         
     //头像
     UIImage *icon = [UIImage imageNamed:@"ic_icon_header"];
@@ -82,6 +118,10 @@
     NSMutableArray *section0 = [NSMutableArray arrayWithObjects:header,name,number,qrCode,address, nil];
     NSMutableArray *section1 = [NSMutableArray arrayWithObjects:area,sex,sign,nil];
     
+    [self.hs_dataArry addObject:section0];
+    [self.hs_dataArry addObject:section0];
+    [self.hs_dataArry addObject:section0];
+    [self.hs_dataArry addObject:section0];
     [self.hs_dataArry addObject:section0];
     [self.hs_dataArry addObject:section1];
     

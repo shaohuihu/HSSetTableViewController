@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     tableView.translatesAutoresizingMaskIntoConstraints = NO;
     tableView.backgroundColor = [UIColor clearColor];
     tableView.delegate = self;
@@ -120,23 +120,29 @@
 #pragma mark tableView代理方法
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    //如果是最后一个section
-    if(section == self.hs_dataArry.count - 1){
-       return 0;
-    }
-    return HS_SectionHeight;
+    return  0.01;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     
-    //如果是最后一个section
-    if(section == self.hs_dataArry.count - 1){
-        return nil;
-    }
+    return nil;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    //如果是第一个section
+    if (section == 0) return nil;
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, HS_SectionHeight)];
     [view setBackgroundColor:[UIColor clearColor]];
     return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    //默认
+    if(section == 0) return 0.01;
+    return HS_SectionHeight;
 }
 
 

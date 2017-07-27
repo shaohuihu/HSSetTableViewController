@@ -14,8 +14,8 @@
 @interface HSSetTableViewManager : NSObject <UITableViewDataSource,UITableViewDelegate>
 
 
-@property (nonatomic, strong)UIView *sectionViewFooter;  ///<section的footer
-@property (nonatomic, assign)CGFloat sectionViewFooterHieght;  ///<section的footer高度
+@property (nonatomic, strong)NSArray<UIView *>  *viewFooterArry;         ///<section的footer
+@property (nonatomic, strong)NSArray<NSNumber*> *viewFooterHeightArry;  ///<section的footer高度
 
 
 /**

@@ -80,30 +80,34 @@
 #pragma mark tableView代理方法
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    //如果是最后一个section
-    if(section == self.dataSource.count - 1){
-        return 0;
-    }
-    if(self.sectionViewFooterHieght >=0 && self.sectionViewFooter){
-        return self.sectionViewFooterHieght;
-    }
-    return HS_SectionHeight;
+    return 0.01;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    
-    //如果是最后一个section
-    if(section == self.dataSource.count - 1){
-        return nil;
+    if(self.viewFooterArry  && self.viewFooterHeightArry){
+        NSNumber *number = (NSNumber *)[self.viewFooterHeightArry hs_objectWithIndex:section];
+        if(number.floatValue <=0) number = @(0.01);
+        return number.floatValue;
+    }else{
+        if(section == 0) return 0.01;
+        return HS_SectionHeight;
     }
-    if(self.sectionViewFooterHieght >=0 && self.sectionViewFooter){
-        return self.sectionViewFooter;
-    }//默认
+    return 0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if(self.viewFooterArry && self.viewFooterHeightArry){
+        UIView *view = (UIView *)[self.viewFooterArry hs_objectWithIndex:section];
+        return view;
+    }
+    //默认
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_HEIGHT, HS_SectionHeight)];
     [view setBackgroundColor:[UIColor clearColor]];
     return view;
-   
 }
+
 
 @end
