@@ -1,12 +1,12 @@
 # HSSetTableViewController
 
-最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！100%App都能用到!!目前版本已经升级到1.2.1版本，增加了界面分类功能，你的UIViewController只需要导入UIViewController+HSSetTableView即可。目前支持继承和分类两种实现方式，建议使用分类！
+最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！100%App都能用到!!目前版本已经升级到1.2.2版本，增加了界面分类功能，你的UIViewController只需要导入UIViewController+HSSetTableView即可。目前支持继承和分类两种实现方式，建议使用分类！
 - 本库优势：
    1. 支持标题，详细文本配置，分割线自定义，箭头自定义，适配不同App风格。
-   3. 支持cell右边文本更新，高度内部计算。支持横竖屏自动适应文本高度。
-   4. 支持cell右边图片下载，和图片大小以及圆角设置。
-   5. 支持标题，详细富文本配置。
-   7. 支持自定义cell和模型
+   2. 支持cell右边文本更新，高度内部计算。支持横竖屏自动适应文本高度。
+   3. 支持cell右边图片下载，和图片大小以及圆角设置。
+   4. 支持标题，详细富文本配置。
+   5. 支持自定义cell和模型
    6. 支持所有cell动态更新内容。
 ## Features
 - [x] 支持最基本cell(左边标题，右边箭头)
@@ -57,7 +57,7 @@
 
 ## <a id="How to use"></a>How to use
 * 使用 CocoaPods:
-请先安装cocoapods,如果版本太老无法找到,请升级cocopods到最新版本 命令：pod repo update
+  请先安装cocoapods,如果版本太老无法找到,请升级cocopods到最新版本 命令：pod repo update
   - pod 'HSSetTableViewController','~> 1.2.1'
   - 导入头文件：`#import <UIViewController+HSSetTableView>`或者`#import <HSSetTableViewController.h>`
 * 直接导入：
@@ -65,7 +65,7 @@
   - 导入头文件：`#import "UIViewController+HSSetTableView"`或者`#import "HSSetTableViewController.h"`
 * 使用方法: 
   - 分类：你的UIViewController只需要调用初始化方法`- (void)initSetTableViewConfigure`或者   
-  `- (void)initSetTableViewConfigureWithSectionFooter:(NSArray<UIView *> *)footerViewArry footerHeight:(NSArray<NSNumber *> *)footerHeightArry`
+    `- (void)initSetTableViewConfigureWithSectionFooter:(NSArray<UIView *> *)footerViewArry footerHeight:(NSArray<NSNumber *> *)footerHeightArry`
 
   - 继承：你的UIViewController只需要继承基类HSSetTableViewMainController即可
 ## <a id="Details"></a>Details (See the example program HSSetTableViewControllerDemo for details)
