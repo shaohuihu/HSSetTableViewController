@@ -18,6 +18,7 @@ typedef void(^ClickActionBlock)(HSBaseCellModel *model);
  */
 @property (nonatomic,  copy,readonly)   NSString   *identifier;  ///<唯一标识符(更新会用到)
 @property (nonatomic,  copy,readonly)   NSString   *cellClass;  ///<该模型绑定的cell类名
+@property (nonatomic, strong)           UIColor *backgroundColor;
 @property (nonatomic, assign)           UITableViewCellSelectionStyle   selectionStyle;//选中cell效果
 @property (nonatomic, assign)           CGFloat    cellHeight;  ///<cell高度(默认有高度)
 @property (nonatomic, assign)           CGFloat separateHeight;  ///<分割线高度

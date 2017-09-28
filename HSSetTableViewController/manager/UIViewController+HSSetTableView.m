@@ -36,10 +36,10 @@
 
 - (void)initSetTableViewConfigure
 {
-    [self initSetTableViewConfigureWithSectionFooter:nil footerHeight:0];
+    [self initSetTableViewConfigureWithSectionFooter:nil footerHeight:nil];
 }
 
-- (void)initSetTableViewConfigureWithSectionFooter:(UIView *)sectionFooter footerHeight:(CGFloat)footerHeight
+- (void)initSetTableViewConfigureWithSectionFooter:(NSArray<UIView *> *)footerViewArry footerHeight:(NSArray<NSNumber *> *)footerHeightArry
 {
     
     if(self.hs_dataArry == nil){
@@ -47,11 +47,11 @@
     }
     if(self.manager == nil){
        self.manager = [[HSSetTableViewManager alloc] initSetTableViewManager:self.hs_dataArry];
-       self.manager.sectionViewFooter = sectionFooter;
-       self.manager.sectionViewFooterHieght = footerHeight;
+       self.manager.viewFooterArry = footerViewArry;
+       self.manager.viewFooterHeightArry = footerHeightArry;
     }
     if(self.hs_tableView == nil){
-        self.hs_tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        self.hs_tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         self.hs_tableView.translatesAutoresizingMaskIntoConstraints = NO;
         self.hs_tableView.backgroundColor = [UIColor clearColor];
         self.hs_tableView.delegate = self.manager;

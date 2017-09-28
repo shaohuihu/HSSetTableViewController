@@ -60,4 +60,24 @@
  */
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section;
 
+
+/**
+ header view tableView代理方法
+
+ @param tableView tableView
+ @param section section
+ @return header
+ */
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
+
+
+/**
+ header 高度 tableView代理方法
+
+ @param tableView tableView
+ @param section section
+ @return header 高度
+ */
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section;
+
 @end

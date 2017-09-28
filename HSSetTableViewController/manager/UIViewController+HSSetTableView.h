@@ -19,13 +19,14 @@
   初始化tableViewConfigure  section footer和height均是为默认
  */
 - (void)initSetTableViewConfigure;
+
 /**
  初始化tableViewConfigure
 
- @param sectionFooter 每个section的footer
- @param footerHeight 每个section的footer高度
+ @param footerViewArry footer 数组
+ @param footerHeightArry footer高度数组
  */
-- (void)initSetTableViewConfigureWithSectionFooter:(UIView *)sectionFooter footerHeight:(CGFloat)footerHeight;
+- (void)initSetTableViewConfigureWithSectionFooter:(NSArray <UIView *> *)footerViewArry footerHeight:(NSArray<NSNumber *> *)footerHeightArry;
 
 /**
  更新cell模型方法
