@@ -12,12 +12,26 @@
 #import <CoreText/CoreText.h>
 
 @interface HSTextCellModel()
+
 @property (nonatomic, assign) CGFloat heightOne;  ///<一行文本的高度
 @property (nonatomic, assign) CGFloat heightMore;  ///<多行文本高度
+@property (nonatomic, assign) CGFloat leftMargin;  ///<tableView离左边的边距(默认为0)
+@property (nonatomic, assign) CGFloat rightMargin;  ///<tableView离右边的边距(可能为负数)
 
 @end
 @implementation HSTextCellModel
 
+
+
+
+- (void)getConstrintsInfo
+{
+    NSDictionary *constrintsInfo = [[NSUserDefaults standardUserDefaults] objectForKey:@"HSTableViewConstrintUpdate"];
+    if(constrintsInfo){
+        self.leftMargin = [[constrintsInfo objectForKey:@"left"] floatValue];
+        self.rightMargin = [[constrintsInfo objectForKey:@"right"] floatValue];
+    }
+}
 - (instancetype)initWithTitle:(NSString *)title detailText:(NSString *)detailText actionBlock:(ClickActionBlock)block
 {
     if(self = [super initWithTitle:title actionBlock:block]){
@@ -57,6 +71,7 @@
         self.detailFont = HS_KDetailFont;
         self.detailColor = HS_KDetailColor;
         self.detailText = detailText;
+       
     }
     return self;
 }
@@ -93,6 +108,7 @@
 - (void)setLeftPading:(CGFloat)leftPading
 {
     _leftPading = leftPading;
+
     [self setDetailText:self.detailText];
 }
 
@@ -117,12 +133,12 @@
         return;
     }
     _attributeDetailText = attributeDetailText;
-    [self heightSizeWithTextObject:attributeDetailText];
-    
 }
 
 - (void)heightSizeWithTextObject:(id)object
 {
+    //先获取父视图的约束信息
+    [self getConstrintsInfo];
     //初始化文本高度  外部不可任意改变不然界面看起来很奇怪
     self.cellHeight = 0.0f;
     UIDeviceOrientation duration = [[UIDevice currentDevice]orientation];
@@ -132,27 +148,29 @@
     }else{
         screenWidth = HS_SCREEN_HEIGHT < HS_SCREEN_WIDTH ? HS_SCREEN_HEIGHT:HS_SCREEN_WIDTH;
     }
+    NSLog(@"left  margin  --%f----right margin --%f",self.leftMargin,self.rightMargin);
     CGFloat height = 0;
     UIFont *font;
     if([object isKindOfClass:[NSString class]]){
-       height = [(NSString *)object hs_heightWithFont:self.detailFont constrainedToWidth:screenWidth - self.leftPading - (self.showArrow ?  self.controlRightOffset + self.arrowControlRightOffset + self.arrowWidth : self.controlRightOffset)];
+       height = [(NSString *)object hs_heightWithFont:self.detailFont constrainedToWidth:screenWidth - self.leftPading - (self.showArrow ?  self.controlRightOffset + self.arrowControlRightOffset + self.arrowWidth : self.controlRightOffset) - self.leftMargin + self.rightMargin];
         font = self.detailFont;
-        
-    }else{
-        
     }
-    
     if(height < font.pointSize + 5 || height == 0){
         //说明只有一行
         self.heightOne = height;
         self.heightMore = .0f;
         self.cellHeight = HS_KCellHeight;
     }else{
+        //cell足够大
         self.heightMore = height;
         self.heightOne = .0f;
-        //cell足够大
         self.cellHeight = height + 2 * HS_KCellPading;
     }
+}
+
+- (void)dealloc
+{
+    HSLog(@"销毁--%@",self.class);
 }
 
 

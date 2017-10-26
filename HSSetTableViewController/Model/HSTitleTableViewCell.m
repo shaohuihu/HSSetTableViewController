@@ -78,7 +78,7 @@
     self.textLabel.textAlignment = cellMoldel.titileTextAlignment;
     self.imageView.image = cellMoldel.icon;
    
-    self.backgroundColor = model.backgroundColor;
+    self.backgroundColor = model.backgroundColor?:[UIColor whiteColor];
     self.arrow.hidden = !cellMoldel.showArrow;
     self.selectionStyle = cellMoldel.selectionStyle;
     self.arrow.image = cellMoldel.arrowImage;

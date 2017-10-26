@@ -10,12 +10,12 @@
 #import <UIKit/UIKit.h>
 
 
-
+@class HSFooterModel,HSHeaderModel;
 @interface HSSetTableViewManager : NSObject <UITableViewDataSource,UITableViewDelegate>
 
 
-@property (nonatomic, strong)NSArray<UIView *>  *viewFooterArry;         ///<section的footer
-@property (nonatomic, strong)NSArray<NSNumber*> *viewFooterHeightArry;  ///<section的footer高度
+@property (nonatomic, strong)NSArray<HSFooterModel *> *footerArry;   ///footer 数组
+@property (nonatomic, strong)NSArray<HSHeaderModel *> *headerArry;  ///<header 数组
 
 
 /**

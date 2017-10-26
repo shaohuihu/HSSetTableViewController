@@ -23,6 +23,10 @@
 
 
 /**
+ 设置约束方法，如果子类需要修改约束，请重新该方法
+ */
+- (void)setupTableViewConstrint;
+/**
  更新cell模型方法
 
  @param cellModel model

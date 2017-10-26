@@ -7,7 +7,6 @@
 //
 
 #import "HSSetTableViewController.h"
-#import "UIViewController+HSSetTableView.h"
 /**
  微信个人信息
  */

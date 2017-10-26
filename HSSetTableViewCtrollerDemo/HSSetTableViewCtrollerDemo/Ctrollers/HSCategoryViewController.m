@@ -21,7 +21,7 @@
     self.view.backgroundColor = [UIColor hs_colorWithHexString:@"#EBEDEF"];
     self.title = @"个人信息";
     
-    [self initSetTableViewConfigure];
+    [self initSetTableViewConfigureStyle:UITableViewStylePlain];
     
     
     //头像

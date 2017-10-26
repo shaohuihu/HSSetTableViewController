@@ -30,6 +30,8 @@
 		3B571E9E1F25EFB50092E1F4 /* HSSetTableViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B571E9D1F25EFB50092E1F4 /* HSSetTableViewManager.m */; };
 		3B571EA11F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B571EA01F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m */; };
 		3B719B8D1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B719B8C1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m */; };
+		3B887ADF1FA038DF000D2646 /* HSHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B887ADE1FA038DF000D2646 /* HSHeaderModel.m */; };
+		3B887AE21FA0396A000D2646 /* HSFooterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B887AE11FA0396A000D2646 /* HSFooterModel.m */; };
 		3BB3C4A31EAB991D004A9BA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB3C4A21EAB991D004A9BA9 /* main.m */; };
 		3BB3C4A61EAB991D004A9BA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB3C4A51EAB991D004A9BA9 /* AppDelegate.m */; };
 		3BB3C4A91EAB991D004A9BA9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB3C4A81EAB991D004A9BA9 /* ViewController.m */; };
@@ -131,6 +133,10 @@
 		3B571EA01F25EFCF0092E1F4 /* UIViewController+HSSetTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HSSetTableView.m"; sourceTree = "<group>"; };
 		3B719B8B1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSetTableViewCustomController.h; sourceTree = "<group>"; };
 		3B719B8C1ED3C5FD00DB0BE9 /* HSSetTableViewCustomController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSetTableViewCustomController.m; sourceTree = "<group>"; };
+		3B887ADD1FA038DF000D2646 /* HSHeaderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSHeaderModel.h; sourceTree = "<group>"; };
+		3B887ADE1FA038DF000D2646 /* HSHeaderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSHeaderModel.m; sourceTree = "<group>"; };
+		3B887AE01FA0396A000D2646 /* HSFooterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSFooterModel.h; sourceTree = "<group>"; };
+		3B887AE11FA0396A000D2646 /* HSFooterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSFooterModel.m; sourceTree = "<group>"; };
 		3BB3C49E1EAB991D004A9BA9 /* HSSetTableViewCtrollerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSSetTableViewCtrollerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BB3C4A21EAB991D004A9BA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BB3C4A41EAB991D004A9BA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -431,6 +437,10 @@
 				3BFF331A1EEAA24000299CEB /* HSTitleCellModel.m */,
 				3BFF331C1EEAB77200299CEB /* HSCustomCellModel.h */,
 				3BFF331D1EEAB77200299CEB /* HSCustomCellModel.m */,
+				3B887ADD1FA038DF000D2646 /* HSHeaderModel.h */,
+				3B887ADE1FA038DF000D2646 /* HSHeaderModel.m */,
+				3B887AE01FA0396A000D2646 /* HSFooterModel.h */,
+				3B887AE11FA0396A000D2646 /* HSFooterModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -621,6 +631,8 @@
 				3BFD666B1EB1DD050001E324 /* HSSwitchTableViewCell.m in Sources */,
 				3B07CCFB1EB1A21300CB0ADE /* UIImage+GIF.m in Sources */,
 				3B07CCF61EB1A21300CB0ADE /* SDWebImageDownloader.m in Sources */,
+				3B887ADF1FA038DF000D2646 /* HSHeaderModel.m in Sources */,
+				3B887AE21FA0396A000D2646 /* HSFooterModel.m in Sources */,
 				3BFD66671EB1DD050001E324 /* HSSwitchCellModel.m in Sources */,
 				3BFD666A1EB1DD050001E324 /* HSImageTableViewCell.m in Sources */,
 				3BFD665E1EB1DD050001E324 /* NSBundle+HSImage.m in Sources */,

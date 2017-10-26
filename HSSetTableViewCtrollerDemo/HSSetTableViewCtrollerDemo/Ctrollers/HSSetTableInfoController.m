@@ -7,60 +7,61 @@
 //
 
 #import "HSSetTableInfoController.h"
-#import "HSSetTableViewController.h"
 @interface HSSetTableInfoController ()
-@property (nonatomic, strong)HSImageCellModel *header;  ///<
-
-@end
+@property (nonatomic, strong)HSImageCellModel *header;
+@end      
 
 @implementation HSSetTableInfoController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.view.backgroundColor = [UIColor hs_colorWithHexString:@"#EBEDEF"];
     self.title = @" 个人信息";
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
-    UILabel *lable = [[UILabel alloc] initWithFrame:view.bounds];
-    lable.text = @" 第一个section";
-    [view addSubview:lable];
-    [view setBackgroundColor:[UIColor clearColor]];
-    
-    UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
-    lable = [[UILabel alloc] initWithFrame:view.bounds];
-    lable.text = @" 第二个section";
-    lable.center = view1.center;
-    lable.textColor = [UIColor blackColor];
-    [view1 addSubview:lable];
-    [view1 setBackgroundColor:[UIColor clearColor]];
-    
-    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
-    lable = [[UILabel alloc] initWithFrame:view.bounds];
-    lable.text = @" 第三个section";
-    lable.center = view2.center;
-    [view2 addSubview:lable];
-    [view2 setBackgroundColor:[UIColor clearColor]];
-    
-    UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
-    lable = [[UILabel alloc] initWithFrame:view.bounds];
-    lable.text = @" 第四个section";
-    lable.center = view3.center;
-    [view3 addSubview:lable];
-    [view3 setBackgroundColor:[UIColor clearColor]];
-    
-    UIView *view4 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
-    lable = [[UILabel alloc] initWithFrame:view.bounds];
-    lable.text = @" 第五个section";
-    lable.center = view4.center;
-    [view4 addSubview:lable];
-    [view4 setBackgroundColor:[UIColor clearColor]];
+
+    //初始化tableView
+    [self initSetTableViewConfigureStyle:UITableViewStyleGrouped];
+    //模拟演示tableView frame改变
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+         [self setupTableViewConstrint:0 left:0 right:0 bottom:0];
+    });
+    [self setupTableViewConstrint:0 left:20 right:-20 bottom:0];
     
     
-    //[self initSetTableViewConfigure];
-    
-    [self initSetTableViewConfigureWithSectionFooter:@[[[UIView alloc] init],view,view2,view3,view4] footerHeight:@[@(-10),@(30),@(30),@(30),@(30)]];
+    //组装头部和尾部视图
+    NSMutableArray *headerModels = [NSMutableArray array];
+    NSMutableArray *footerModels = [NSMutableArray array];
+    for(NSInteger index = 0;index <= 5;index++){
+        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
+        UILabel *lable = [[UILabel alloc] initWithFrame:header.bounds];
+        lable.text = [NSString stringWithFormat:@"  第%d个sectionheader",(int)index];
+        [header addSubview:lable];
+        [header setBackgroundColor:[UIColor clearColor]];
         
+        HSHeaderModel *headerModel = [HSHeaderModel new];
+        headerModel.headerView = header;
+        headerModel.headerViewHeight = 30.0f;
+        [headerModels addObject:headerModel];
+        
+        UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_WIDTH, 30)];
+        lable = [[UILabel alloc] initWithFrame:footer.bounds];
+        lable.text = [NSString stringWithFormat:@"  第%d个sectionfooter",(int)index];
+        [footer addSubview:lable];
+        [footer setBackgroundColor:[UIColor clearColor]];
+        
+        HSFooterModel *footerModel = [HSFooterModel new];
+        footerModel.footerView = footer;
+        footerModel.footerViewHeight = 30.0f;
+        [footerModels addObject:footerModel];
+    }
+#if 0
+    [self setTableViewHeaderArry:headerModels];
+    [self setTableViewFooterArry:footerModels];
+#endif
+    
+    
+    //组装数据源
     //头像
     UIImage *icon = [UIImage imageNamed:@"ic_icon_header"];
     HSImageCellModel *header = [[HSImageCellModel alloc] initWithTitle:@"头像" placeholderImage:icon imageUrl:nil actionBlock:^(HSBaseCellModel *model) {

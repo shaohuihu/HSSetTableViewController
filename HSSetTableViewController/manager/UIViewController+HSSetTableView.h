@@ -7,28 +7,44 @@
 //
 
 #import <UIKit/UIKit.h>
-@class HSBaseCellModel;
+@class HSBaseCellModel,HSHeaderModel,HSFooterModel;
 @interface UIViewController (HSSetTableView)
 
 @property (nonatomic, strong)UITableView *hs_tableView;  ///<表视图
 @property (nonatomic, strong)NSMutableArray *hs_dataArry;  ///<数据源
 
 
+/**
+ 设置当前tableView 约束
 
+ @param top 上边距    默认0
+ @param left 左边距   默认0
+ @param right 右边距  默认0(正数是向右边)
+ @param bottom 下边距 默认0（正数是向上边）
+ */
+- (void)setupTableViewConstrint:(CGFloat)top left:(CGFloat)left right:(CGFloat)right bottom:(CGFloat)bottom;
+/**
+ 初始化tableView 类型
+
+ @param style   UITableViewStylePlain,          // regular table view
+                UITableViewStyleGrouped         // preferences style table vie
+ */
+- (void)initSetTableViewConfigureStyle:(UITableViewStyle)style;
+
+/**
+ 设置footerArry HSFooterModel 数组
+
+ @param footerArry footerArry
+ */
+- (void)setTableViewFooterArry:(NSMutableArray <HSFooterModel *>*)footerArry;
 
 
 /**
-  初始化tableViewConfigure  section footer和height均是为默认
- */
-- (void)initSetTableViewConfigure;
+ 设置headerArry HSHeaderModel数组
 
-/**
- 初始化tableViewConfigure
-
- @param footerViewArry footer 数组
- @param footerHeightArry footer高度数组
+ @param headerArry headerArry
  */
-- (void)initSetTableViewConfigureWithSectionFooter:(NSArray <UIView *> *)footerViewArry footerHeight:(NSArray<NSNumber *> *)footerHeightArry;
+- (void)setTableViewHeaderArry:(NSMutableArray <HSHeaderModel *> *)headerArry;
 
 /**
  更新cell模型方法

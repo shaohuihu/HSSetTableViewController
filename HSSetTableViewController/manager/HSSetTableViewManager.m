@@ -13,6 +13,9 @@
 #import "UIView+HSFrame.h"
 #import "HSSetTableViewControllerConst.h"
 #import "HSTextCellModel.h"
+#import "HSFooterModel.h"
+#import "HSHeaderModel.h"
+
 @interface HSSetTableViewManager()
 
 @property (nonatomic, strong)NSMutableArray *dataSource;  ///<
@@ -80,38 +83,39 @@
 #pragma mark tableView代理方法
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 0.01;
+    HSFooterModel *footer = (HSFooterModel*)[self.footerArry hs_objectWithIndex:section];
+    return footer.footerViewHeight;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    return nil;
+    HSFooterModel *footer = (HSFooterModel*)[self.footerArry hs_objectWithIndex:section];
+    return footer.footerView;
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if(self.viewFooterArry  && self.viewFooterHeightArry){
-        NSNumber *number = (NSNumber *)[self.viewFooterHeightArry hs_objectWithIndex:section];
-        if(number.floatValue <=0) number = @(0.01);
-        return number.floatValue;
-    }else{
-        if(section == 0) return 0.01;
+    
+    //如果外部不设置header给一个默认的高度
+    if(!self.headerArry || self.headerArry.count == 0){
         return HS_SectionHeight;
     }
-    return 0;
+    HSHeaderModel *header = (HSHeaderModel *)[self.headerArry hs_objectWithIndex:section];
+    return header.headerViewHeight;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if(self.viewFooterArry && self.viewFooterHeightArry){
-        UIView *view = (UIView *)[self.viewFooterArry hs_objectWithIndex:section];
-        return view;
+    //如果外部不设置header给一个默认的透明header
+    if(!self.headerArry || self.headerArry.count == 0){
+        UIView *header = [UIView new];
+        header.frame = CGRectMake(0, 0, HS_SCREEN_WIDTH, HS_SectionHeight);
+        [header setBackgroundColor:[UIColor clearColor]];
+        return header;
     }
-    //默认
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HS_SCREEN_HEIGHT, HS_SectionHeight)];
-    [view setBackgroundColor:[UIColor clearColor]];
-    return view;
+    HSHeaderModel *header = (HSHeaderModel *)[self.headerArry hs_objectWithIndex:section];
+    return header.headerView;
 }
 
 
