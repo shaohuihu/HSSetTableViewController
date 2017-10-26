@@ -9,8 +9,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "HSSetTableViewController"
-  s.version      = "1.2.2"
-  s.summary      = "所有App都能用到的设置界面和个人信息框架，高度封装，外部只需要组装数据源。可继承、可分类。0污染！"
+  s.version      = "1.3.0"
+  s.summary      = "所有App都能用到的设置界面和个人信息框架，高度封装。外部只需要组装数据源。可继承、可分类。0污染，功能强大，强烈建议使用分类！"
   s.ios.deployment_target = '8.0'
 
   s.description  = <<-DESC
