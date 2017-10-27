@@ -32,6 +32,28 @@
         self.rightMargin = [[constrintsInfo objectForKey:@"right"] floatValue];
     }
 }
+
+- (instancetype)initWithTitle:(NSString *)title actionBlock:(ClickActionBlock)block{
+    
+    if (self = [super initWithTitle:title actionBlock:block]) {
+        self.leftPading = HS_KCellTextLeftPading;
+        self.detailFont = HS_KDetailFont;
+        self.detailColor = HS_KDetailColor;
+    }
+    return self;
+}
+
+- (instancetype)initWithAttributeTitle:(NSAttributedString *)attributeTitle actionBlock:(ClickActionBlock)block
+{
+    if(self = [super initWithAttributeTitle:attributeTitle actionBlock:block]){
+        self.leftPading = HS_KCellTextLeftPading;
+        self.detailFont = HS_KDetailFont;
+        self.detailColor = HS_KDetailColor;
+    }
+    return self;
+}
+
+
 - (instancetype)initWithTitle:(NSString *)title detailText:(NSString *)detailText actionBlock:(ClickActionBlock)block
 {
     if(self = [super initWithTitle:title actionBlock:block]){
@@ -148,7 +170,6 @@
     }else{
         screenWidth = HS_SCREEN_HEIGHT < HS_SCREEN_WIDTH ? HS_SCREEN_HEIGHT:HS_SCREEN_WIDTH;
     }
-    NSLog(@"left  margin  --%f----right margin --%f",self.leftMargin,self.rightMargin);
     CGFloat height = 0;
     UIFont *font;
     if([object isKindOfClass:[NSString class]]){
