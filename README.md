@@ -1,10 +1,12 @@
 # HSSetTableViewController
 
 最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！100%App都能用到!!目前版本已经升级到1.3.0版本,你的UIViewController只需要导入HSSetTableViewController即可。目前支持继承和分类两种实现方式，强烈建议使用分类！
--  本库由来背景：
+
+本库由来背景:
+
 -  采用model作为封装列表的想法并不稀奇,只是看过的太简单封装,并没有深度挖掘，无法扩展和自定义。
 -  个人项目接触到类似界面比较多,并且都不是简单的几个点击事件能处理,传统做法太low,一次封装长期受用。
-## Features
+## 特色
 - [x] 支持设置滑动列表位置约束，AutoLayout，横屏竖屏均适配(相对于父视图)
 - [x] 支持设置header和footer模型
 - [x] 支持最基本cell(左边标题，右边箭头)
@@ -14,11 +16,10 @@
 - [x] 支持cell点击和自定义cell和以及cell事件（建议使用block交互）
 - [x] 支持每个cell动态更新（如果自定义含有textField，注意失去焦点问题,此时建议用reloadData）
 
-## Requirements
+## 要求
 * Xcode 7.0以上
 
-## Architecture
-### Main
+### 类库
 - `HSBaseCellModel`
 - `HSImageCellModel`
 - `HSSwitchCellModel`
@@ -34,19 +35,19 @@
 - `HSHeaderModel`
 - `HSFooterModel`
 
-### Category
+### 分类
 - `NSArray+HSSafeAccess`
 - `NSBundle+HSImage`
 - `NSBundle+HSImage`
 - `UIColor+HSExtension`
 - `UIView+HSFrame`
 
-### Manager
+### 主要类
 - `HSSetTableViewManager`
 - `UIViewController+HSSetTableView`
 - HSSetTableViewMainController`
 
-## <a id="Structure"></a>Architecture
+## <a id="Structure"></a>架构图
 
 <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/Architecture.png">
 
@@ -54,7 +55,7 @@
 
 <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo7.gif"> <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo8.gif">
 
-## <a id="How to use"></a>How to use
+## <a id="How to use"></a>这么用
 * 使用 CocoaPods:
   请先安装cocoapods,如果版本太老无法找到,请升级cocopods到最新版本 命令：pod repo update
   - pod 'HSSetTableViewController','~> 1.3.0'
@@ -75,7 +76,7 @@
     更改tableView位置约束:  
     `- (void)setupTableViewConstrint:(CGFloat)top left:(CGFloat)left right:(CGFloat)right bottom:(CGFloat)bottom;`
 - 继承：你的UIViewController只需要继承基类HSSetTableViewMainController即可
-## <a id="Details"></a>Details (See the example program HSSetTableViewControllerDemo for details)
+## <a id="Details"></a>代码演示（详见个人信息界面demo）
 ```objc
 
      //初始化tableView
@@ -159,12 +160,12 @@
     
 ```
 
-## <a id="Warning"></a>Warning
+## <a id="Warning"></a>警告
 
 - 因为涉及到更新问题，添加到数据源的形式请使用NSMutableArray，不要使用NSArray存放。
 - 不是把cell模型直接放入基类数据源，是先放入NSMutableArray的形式。再用self.hs_dataArry添加NSMutableArray。
 
-## <a id="Hope"></a>Hope
+## <a id="Hope"></a>希望
 
 - 如果有任何问题，你可以 [issues me](https://github.com/shaohuihu/HSSetTableViewController/issues/new)! 
 - 后续将会对cell扩展和配置，希望能支持更多的主流App.
