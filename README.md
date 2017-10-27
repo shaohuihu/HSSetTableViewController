@@ -52,7 +52,7 @@
 
 ## <a id="Renderings"></a>Renderings
 
-<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo1.gif"> <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo3.gif"> <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo4.gif">      <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo5.gif"> 
+<img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo7.gif"> <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo8.gif">
 
 ## <a id="How to use"></a>How to use
 * 使用 CocoaPods:
@@ -65,7 +65,7 @@
 * 使用方法: 
   - 分类使用：
 
-     你的UIViewController只需要调用初始化方法:  
+    初始化配置 
 
     `- (void)initSetTableViewConfigureStyle:(UITableViewStyle)style;`  
     设置header:  
