@@ -50,7 +50,7 @@
 
 <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/Architecture.png">
 
-## <a id="Renderings"></a>Renderings
+## <a id="Renderings"></a>演示如下：（第二张为本人项目运用本框架的界面效果图）
 
 <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo7.gif"> <img src="https://raw.githubusercontent.com/wiki/shaohuihu/HSSettableViewController/demo8.gif">
 
