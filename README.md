@@ -64,11 +64,15 @@
   - 导入头文件：`#import "UIViewController+HSSetTableView"`或者`#import "HSSetTableViewController.h"`
 * 使用方法: 
   - 分类使用：
- 你的UIViewController只需要调用初始化方法`- (void)initSetTableViewConfigureStyle:(UITableViewStyle)style;`
-设置header: `- (void)setTableViewHeaderArry:(NSMutableArray <HSHeaderModel *> *)headerArry`;
-设置footer: `- (void)setTableViewFooterArry:(NSMutableArray <HSHeaderModel *> *)headerArry`;
-更改tableView位置约束:`- (void)setupTableViewConstrint:(CGFloat)top left:(CGFloat)left right:(CGFloat)right bottom:(CGFloat)bottom;`;
- - 继承：你的UIViewController只需要继承基类HSSetTableViewMainController即可
+     你的UIViewController只需要调用初始化方法:
+    `- (void)initSetTableViewConfigureStyle:(UITableViewStyle)style;`
+    设置header: 
+    `- (void)setTableViewHeaderArry:(NSMutableArray <HSHeaderModel *> *)headerArry`;
+    设置footer: 
+    `- (void)setTableViewFooterArry:(NSMutableArray <HSHeaderModel *> *)headerArry`;
+    更改tableView位置约束:
+    `- (void)setupTableViewConstrint:(CGFloat)top left:(CGFloat)left right:(CGFloat)right bottom:(CGFloat)bottom;`
+- 继承：你的UIViewController只需要继承基类HSSetTableViewMainController即可
 ## <a id="Details"></a>Details (See the example program HSSetTableViewControllerDemo for details)
 ```objc
 
