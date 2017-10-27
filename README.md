@@ -58,19 +58,21 @@
 * 使用 CocoaPods:
   请先安装cocoapods,如果版本太老无法找到,请升级cocopods到最新版本 命令：pod repo update
   - pod 'HSSetTableViewController','~> 1.3.0'
-  - 导入头文件：`#import <UIViewController+HSSetTableView>`或者`#import <HSSetTableViewController.h>`
+  - 导入头文件:`#import <HSSetTableViewController.h>`
 * 直接导入：
   - 拖动 `HSSetTableViewController` 文件夹以及SDWebImage到你工程目录。
-  - 导入头文件：`#import "UIViewController+HSSetTableView"`或者`#import "HSSetTableViewController.h"`
+  - 导入头文件：`#import "HSSetTableViewController.h"`
 * 使用方法: 
   - 分类使用：
-     你的UIViewController只需要调用初始化方法:
+
+     你的UIViewController只需要调用初始化方法:  
+
     `- (void)initSetTableViewConfigureStyle:(UITableViewStyle)style;`
-    设置header: 
+    设置header:  
     `- (void)setTableViewHeaderArry:(NSMutableArray <HSHeaderModel *> *)headerArry`;
-    设置footer: 
+    设置footer:   
     `- (void)setTableViewFooterArry:(NSMutableArray <HSHeaderModel *> *)headerArry`;
-    更改tableView位置约束:
+    更改tableView位置约束:  
     `- (void)setupTableViewConstrint:(CGFloat)top left:(CGFloat)left right:(CGFloat)right bottom:(CGFloat)bottom;`
 - 继承：你的UIViewController只需要继承基类HSSetTableViewMainController即可
 ## <a id="Details"></a>Details (See the example program HSSetTableViewControllerDemo for details)
