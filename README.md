@@ -65,9 +65,7 @@
   - 导入头文件：`#import "HSSetTableViewController.h"`
 * 使用方法: 
   - 分类使用：
-
     初始化配置 
-
     `- (void)initSetTableViewConfigureStyle:(UITableViewStyle)style;`  
     设置header:  
     `- (void)setTableViewHeaderArry:(NSMutableArray <HSHeaderModel *> *)headerArry`;  
