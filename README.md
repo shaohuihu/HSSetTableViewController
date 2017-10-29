@@ -45,7 +45,7 @@
 ### 主要类
 - `HSSetTableViewManager`
 - `UIViewController+HSSetTableView`
-- HSSetTableViewMainController`
+- `HSSetTableViewMainController`
 
 ## <a id="Structure"></a>架构图
 
