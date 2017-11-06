@@ -1,6 +1,6 @@
 # HSSetTableViewController
 
-最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！100%App都能用到!!目前版本已经升级到1.3.0版本,你的UIViewController只需要导入HSSetTableViewController即可。目前支持继承和分类两种实现方式，强烈建议使用分类！
+最好用的设置界面和个人信息框架，上至分割线，下到箭头，标题，详细标题，富文本标题等等统统可配置，可更新，你无须判断indexPath.row。也无须纠结如何更新cell，HSSetTableViewController一行代码帮你搞定！100%App都能用到!!目前版本已经升级到1.3.1版本,你的UIViewController只需要导入HSSetTableViewController即可。目前支持继承和分类两种实现方式，强烈建议使用分类！
 
 本库由来背景:
 
