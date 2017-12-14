@@ -58,7 +58,7 @@
 ## <a id="How to use"></a>这么用
 * 使用 CocoaPods:
   请先安装cocoapods,如果版本太老无法找到,请升级cocopods到最新版本 命令：pod repo update
-  - pod 'HSSetTableViewController','~> 1.3.0'
+  - pod 'HSSetTableViewController','~> 1.3.1'
   - 导入头文件:`#import <HSSetTableViewController.h>`
 * 直接导入：
   - 拖动 `HSSetTableViewController` 文件夹以及SDWebImage到你工程目录。
